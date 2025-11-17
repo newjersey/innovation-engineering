@@ -1,6 +1,6 @@
 ---
-title: Meetings
-description: Regular calendar events for our engineering practice
+title: People
+description: Engineers and their specialties
 ---
 
-TBD: put meeting reference here
+TBD
