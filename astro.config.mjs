@@ -4,6 +4,8 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://newjersey.github.io',
+	base: "/innovation-engineering",
 	integrations: [
 		starlight({
 			title: '🤖 OOI Engineering',
