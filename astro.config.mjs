@@ -6,7 +6,7 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'OOI Engineering',
+			title: '🤖 OOI Engineering',
 			customCss: [
 				// Fontsource files for to regular, semi-bold, and bold font weights.
 				"@fontsource/public-sans/latin.css",
@@ -24,8 +24,12 @@ export default defineConfig({
 					autogenerate: { directory: 'reference' },
 				},
 				{
-					label: 'Self',
-					autogenerate: { directory: 'self' },
+					label: 'Tech Recommendations',
+					autogenerate: { directory: 'tech-recommendations' },
+				},
+				{
+					label: 'Onboarding',
+					autogenerate: { directory: 'onboarding' },
 				},
 			],
 		}),
