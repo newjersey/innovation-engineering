@@ -1,5 +1,5 @@
 ---
-title: Giving High-Quality Feedback
+title: Giving high-quality feedback
 description: How to give (and receive) feedback effectively
 ---
 

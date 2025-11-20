@@ -1,5 +1,5 @@
 ---
-title: Story Estimation
+title: Story estimation
 description: How we estimate stories
 ---
 

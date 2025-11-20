@@ -16,6 +16,10 @@ export default defineConfig({
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/newjersey/innovation-engineering' }],
 			sidebar: [
 				{
+					label: 'Wiki Meta',
+					autogenerate: { directory: 'wiki-meta' },
+				},
+				{
 					label: 'Guides',
 					autogenerate: { directory: 'guides' },
 				},

@@ -1,5 +1,5 @@
 ---
-title: How to Publish an NJ npm package
+title: How to publish an NJ npm package
 description: npm package deployments
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: How to Cold-Email SMEs
+title: How to cold-email SMEs
 description: Guide to writing effective email communications
 ---
 

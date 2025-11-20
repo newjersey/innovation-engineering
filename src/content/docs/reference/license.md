@@ -1,5 +1,5 @@
 ---
-title: Open-Source License
+title: Open-source license
 description: Decision doc for how we license our work
 ---
 

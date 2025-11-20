@@ -1,5 +1,5 @@
 ---
-title: Code Review Guidelines
+title: Code review guidelines
 description: How we do code reviews
 ---
 

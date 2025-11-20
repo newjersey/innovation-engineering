@@ -1,5 +1,5 @@
 ---
-title: Slack Channels
+title: Slack channels
 description: Where we're talking
 ---
 
