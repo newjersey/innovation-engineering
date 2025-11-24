@@ -1,5 +1,5 @@
 ---
-title: When should a repo be public or private?
+title: Making a repo public or private
 description: Checklist to ensure your repo can safely be public
 ---
 

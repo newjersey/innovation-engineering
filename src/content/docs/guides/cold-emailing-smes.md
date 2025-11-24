@@ -55,7 +55,7 @@ Thanks so much,
 [Your name]
 
 
-## Tips
+## 💡 Tips
 - It’s not always easy to do this, YMMV, but one time a mentor of mine gave the advice of: try to avoid yes/no requests in emails. Use “How can we…?” or “What do you propose…?” instead of “Are you able to…?” or “Is this possible…?” or “Does this work…?” The idea is that you want to encourage a dialogue in your request and not just a yes/no response.
 - If you’re cold-emailing someone you haven’t met/emailed before, don’t skip the "Why are we contacting you" section: make sure you include who put you in touch with them. Name-dropping the stakeholder who said “oh you should reach out to X with that question” is a good way for them to situate you and your team in the context of someone they already know.
 - It’s often useful to specify a virtual meeting. A lot of department partners work in-office and it’s nice for them to know up-front that you’re talking about a remote meeting. Include “on Teams” (for government partners) or “on Zoom videoconferencing software” (for residents / external partners) can help set their expectations correctly.

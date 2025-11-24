@@ -8,7 +8,10 @@ export default defineConfig({
 	base: "/innovation-engineering",
 	integrations: [
 		starlight({
-			title: '🤖 OOI Engineering',
+			title: 'OOI Engineering',
+			logo: {
+				src: './src/assets/robot.png',
+			},
 			customCss: [
 				// Fontsource files for to regular, semi-bold, and bold font weights.
 				"@fontsource/public-sans/latin.css",
@@ -18,8 +21,8 @@ export default defineConfig({
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/newjersey/innovation-engineering' }],
 			sidebar: [
 				{
-					label: 'Wiki Meta',
-					autogenerate: { directory: 'wiki-meta' },
+					label: 'Meta',
+					autogenerate: { directory: 'meta' },
 				},
 				{
 					label: 'Guides',

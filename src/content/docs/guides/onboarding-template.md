@@ -1,5 +1,5 @@
 ---
-title: How to onboard a new team member
+title: Onboarding a new team member
 description: What to include in an onboarding guide
 ---
 
