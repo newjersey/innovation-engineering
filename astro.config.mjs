@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import starlightLinksValidator from 'starlight-links-validator'
 
 // https://astro.build/config
 export default defineConfig({
@@ -8,6 +9,7 @@ export default defineConfig({
 	base: "/innovation-engineering",
 	integrations: [
 		starlight({
+			plugins: [starlightLinksValidator()],
 			title: 'OOI Engineering',
 			logo: {
 				src: './src/assets/robot.png',

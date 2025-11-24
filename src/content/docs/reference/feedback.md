@@ -36,7 +36,7 @@ Giving feedback is a conversation. Prepare for the receiver to seek to understan
 
 #### Timely
 
-Ideally, feedback should be given at the time at which you notice it so that a person can understand the context while it’s fresh. After a meeting, say “I liked how you…” or “I noticed you…, maybe you could try…” Of course, this isn’t always possible, and in a [speedback](innovation-engineering//reference/glossary) session this can be skipped.
+Ideally, feedback should be given at the time at which you notice it so that a person can understand the context while it’s fresh. After a meeting, say “I liked how you…” or “I noticed you…, maybe you could try…” Of course, this isn’t always possible, and in a [speedback](/innovation-engineering/reference/glossary) session this can be skipped.
 
 #### Actionable
 

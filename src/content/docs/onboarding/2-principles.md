@@ -42,7 +42,7 @@ We want **product feedback** (“does it solve the problem well?”) - this come
 
 We want **interpersonal feedback** (“are we doing this well?”) - this comes in the form of retrospectives and other touchpoints to consider team health and adjustments to be made. This kind of feedback requires a whole bunch of **courage**, and that's no small thing, which makes the value of fostering a courageous and vulnerable team environment all the more important.
 
-Regarding interpersonal feedback, while there is a formal structure across the office (approximately 3x/year, facilitated by the leadership team), it may still be your responsibility to request feedback from your teammates and stakeholders as applicable and aligned with your career goals. Some initiatives or individuals have avenues for feedback, such as 1:1s and [speedback](/innovation-engineering/references/glossary). Additionally, you should feel empowered to ask for feedback, set up 1:1s, and organize feedback structures within your team.
+Regarding interpersonal feedback, while there is a formal structure across the office (approximately 3x/year, facilitated by the leadership team), it may still be your responsibility to request feedback from your teammates and stakeholders as applicable and aligned with your career goals. Some initiatives or individuals have avenues for feedback, such as 1:1s and [speedback](/innovation-engineering/reference/glossary). Additionally, you should feel empowered to ask for feedback, set up 1:1s, and organize feedback structures within your team.
 
 In all cases, we want **_rapid_** feedback, which is why:
 - We write tests as we go, so we immediately know if the software works - we don’t wait until days have passed implementing a huge feature to start testing it.
@@ -65,7 +65,7 @@ On a **team level**, we practice continuous improvement by always looking for wa
 
 On an **individual level**, we seek to always better ourselves, to continuously improve at our craft. We want to learn, and to seek out new knowledge and new ways of doing things. We want to welcome feedback, and welcome other perspectives with an open mind. We are humble and we want to improve.
 
-On a **code level**, we continuously improve by embracing refactoring. Refactoring is the process that allows us to continuously write high-quality code under changing conditions. See the [refactoring practice](/innovation-engineering/onboarding/4-practices) for more.
+On a **code level**, we continuously improve by embracing refactoring. Refactoring is the process that allows us to continuously write high-quality code under changing conditions. See the [refactoring practice](/innovation-engineering/onboarding/3-practices) for more.
 
 At all levels, we embrace the principle of **fail quickly; learn from it**. Failure is blameless. It’s okay to make mistakes, it’s encouraged. As long as we fail quickly (thanks to the _rapid feedback_ discussed earlier), we can always learn, _iterate_, and continuously improve. We embrace change in the form of feedback, in others’ opinions, and in others’ ideas. We are agile.
 
