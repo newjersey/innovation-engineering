@@ -27,7 +27,7 @@ We aim to have an office where all engineers are at least familiar with the work
 
 We respect each other’s expertise and have courage to trust one another to make good decisions and take feedback. (That being said, as we mention in the shared responsibility above, nothing is your own problem, and you should be encouraged to reach out to others.)
 
-Some examples of how we trust-by-default would include: not _requiring_ PR reviews before merging code to a repo, and allowing developers to push directly to a main branch. (To learn more about this example, see our [code review guidelines](/innovation-engineering/reference/code-review1234) and our usage of the [ship/show/ask framework](https://martinfowler.com/articles/ship-show-ask.html)) 
+Some examples of how we trust-by-default would include: not _requiring_ PR reviews before merging code to a repo, and allowing developers to push directly to a main branch. (To learn more about this example, see our [code review guidelines](/innovation-engineering/reference/code-review) and our usage of the [ship/show/ask framework](https://martinfowler.com/articles/ship-show-ask.html)) 
 
 We are not saying that you should never enact such restrictions. But you should consider _why_ before simply defaulting to placing such restrictions. Many of us come from backgrounds at private companies, where large organizations will default towards a _lack_ of trust in developers, and we want to push back against this mindset which may be implicit in your attitude without realizing it. We want to instead create an environment where we trust developers to make decisions and know for themselves when it may or may not be appropriate to, say, push to main.
 
