@@ -13,6 +13,10 @@
     --sl-color-black: #121a1c;
 
     --sl-font: "Public Sans";
+
+    h1 {
+        color: #e4bad7;
+    }
 }
 
 /* Light mode colors. */
@@ -29,4 +33,16 @@
     --sl-color-gray-6: #e7eff2;
     --sl-color-gray-7: #f3f7f9;
     --sl-color-black: #ffffff;
+
+    h1 {
+        color: #8f1179;
+    }
+}
+
+.sl-heading-wrapper.level-h2 {
+    padding-bottom: 0.5rem;
+}
+
+h1, h2 {
+    font-weight: bold;
 }
