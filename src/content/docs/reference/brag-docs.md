@@ -26,7 +26,7 @@ The brag document is useful not just to hype accomplishments, but also to reflec
 - Which of my projects had the effect I wanted, and which didn’t? Why might that have been?
 - What could have gone better with project X? What might I want to do differently next time?
 
-### Tracking the Fuzzy Work
+### Tracking the fuzzy work
 
 A lot of us work on fuzzy projects that can feel hard to quantify or invisible when it comes to just looking at tickets that have been accomplished. Like:
 

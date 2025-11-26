@@ -7,7 +7,7 @@ Use the following template to build out an onboarding doc and checklist for new 
 
 ## 💼 Non-Engineering
 
-### Project Background
+### Project background
 Use this section to summarize the project, its primary goals and objectives, and any historical context around its current goals and status and roadmap. 
 
 Provide links to more info, such as:
@@ -15,13 +15,13 @@ Provide links to more info, such as:
 - Recent roadmap review slides
 - Recent stakeholder checkin arifacts
 
-### Project Team
+### Project team
 List all team members and their roles.
 
-### Key Stakeholders
+### Key stakeholders
 List any names external to the project team (such as agency stakeholders) that team members are likely to encounter in conversation or on the project. Include their role and the context of their involvement.
 
-### Team Processes
+### Team processes
 Write up (or link to any documents) explaining team processes such as:
 - Team working agreement
 - Sprint Process
@@ -30,7 +30,7 @@ Write up (or link to any documents) explaining team processes such as:
 
 ## 💻 Engineering
 
-### Onboarding Planning
+### Onboarding planning
 Use this section to write a checklist of contextual background information that should be voiced over and talked through between the team and the new team member. Make a plan for what team member will be responsible for covering each item
 - Tour of the product
 - Tour of the codebase - how is it organized
@@ -41,10 +41,10 @@ Use this section to write a checklist of contextual background information that 
 ### Tools
 List all tools used on the project and the onboarding process to get access to those tools (who is responsible for adding the new team member to X?)
 
-### Engineering Links 
+### Engineering links 
 List repository links, sprint boards, documentation, or any other relevant resources.
 
-### What’s Next
+### What’s next
 Use this section to make a plan/schedule of actions for the team and the new team member to carry out. Things might include:
 - New team member should try to follow README and run the code locally
 - Pairing session with an existing team member to follow along with existing work

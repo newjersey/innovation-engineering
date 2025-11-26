@@ -3,7 +3,7 @@ title: How to cold-email SMEs
 description: Guide to writing effective email communications
 ---
 
-## 💬 Who We Are 
+## 💬 Who we are 
 
 Tip: write “what is this project” and “why are we speaking with you” as a team to be saved and reused. This can be re-used in emails and also at the start of meetings!
 
@@ -17,7 +17,7 @@ Tip: write “what is this project” and “why are we speaking with you” as 
 ### Why are we speaking with you?
 > To support that effort, we're speaking with you to learn how your unique experience and insights can shape the development of [our outcomes]. We aim to learn more about the challenges you face and patterns you see, so that we can design and implement more effective ways of achieving the best possible outcomes for residents.
 
-## 📧 The Email Template
+## 📧 The email template
 
 Hi [Name],
 

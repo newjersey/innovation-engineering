@@ -11,7 +11,7 @@ A bit of a tension / balancing act. We **do what works** by doing the smallest, 
 
 Simultaneously, we **do the right thing** by knowing what is right, and what is necessary, even if it’s not the “simplest” case. It may be simpler to store user passwords as an unencrypted string, and it would even get the job done for now, but it is not the right thing. We know when we should spend time coding something well, doing it right the first time to make future cases easier to work with. We know that it is right to document and test our code, even if it gets in the way of doing-what-works and continuously, quickly delivering new features. The “right thing” might be subjective, but it should always be centered on what is best for the user / resident.
 
-## Shared Context / Shared Responsibility
+## Shared context / shared responsibility
 
 We don’t want a [lottery count](https://en.wikipedia.org/wiki/Bus_factor) of 1. When there is more than one engineer on a team, we want to create an engineering environment where everyone has context on any given story or part of the code. We hire full-stack engineers so that anyone can (and should) touch any part of the codebase. As a principle, we don’t believe in siloing, nor in creating “ownership domains” that define _my_ code and _your_ code. Instead it’s all _our_ code.
 
@@ -19,11 +19,11 @@ Going hand-in-hand with that shared context is the shared responsibility for the
 
 Sometimes, we have teams of just 1 engineer. In this case, we still look for ways to share responsibility and context across the team, especially within an initiative (such as ResX). We have the freedom to experiment with ways we can increase **context awareness** even when the responsibility lies on one engineer.
 
-## Context Awareness
+## Context awareness
 
 We aim to have an office where all engineers are at least familiar with the work, challenges, and successes of the rest of the engineering team. Outside of a given initiative where you work closely and frequently, we should at least [know what’s happening](https://docs.google.com/spreadsheets/d/15RsicroDz-Uc3ZK87aVycqIHLCGa9cySv0rWYjmdsJc/edit#gid=450523152), even if not directly having ownership.
 
-## Developer Trust & Autonomy
+## Developer trust & autonomy
 
 We respect each other’s expertise and have courage to trust one another to make good decisions and take feedback. (That being said, as we mention in the shared responsibility above, nothing is your own problem, and you should be encouraged to reach out to others.)
 
@@ -81,6 +81,6 @@ We want to be open source & a model for other governments / organizations / etc.
 
 For more information on how to implement this principle effectively, see our resources on [making repos public](/innovation-engineering/guides/public-private-repo) and [cybersecurity](/innovation-engineering/guides/cybersecurity).
 
-## Sustainable Pace
+## Sustainable pace
 
 We believe in work-life balance for our team members. This means that you are not expected to work nights and weekends, etc. We avoid “fixed-time, fixed-scope” pain by redefining deliverables, dates, and requirements in collaboration with our Agency partners.
