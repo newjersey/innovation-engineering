@@ -1,5 +1,12 @@
 ---
 title: Database 
+wip: true
 ---
 
-To be filled in
+DynamoDB
+
+PostgreSQL not mySQL
+
+ORMs
+
+Migrations

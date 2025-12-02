@@ -20,6 +20,9 @@ export default defineConfig({
 				"@fontsource/public-sans/latin-italic.css",
 				"./src/styles/custom.css",
 			],
+			components: {
+				MarkdownContent: './src/components/MarkdownContent.astro',
+			},
 			lastUpdated: true,
 			editLink: {
 				baseUrl: 'https://github.com/newjersey/innovation-engineering/edit/main/',
