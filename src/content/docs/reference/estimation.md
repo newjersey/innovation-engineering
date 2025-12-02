@@ -3,7 +3,7 @@ title: Story estimation
 description: How we estimate stories
 ---
 
-## Goals
+## 🥅 Goals
 
 There are a few reasons for estimating work:
 
@@ -25,7 +25,7 @@ There are a few reasons for estimating work:
    higher estimation than the product folks expected, it’s a signal to start a conversation about
    whether the story could be simplified or split to still achieve value for the user.
 
-## Non-goals
+## ⛔ Non-goals
 
 There are other valid reasons for estimating work, but these are not explicit goals for us at the
 moment.
@@ -82,7 +82,7 @@ production and considered done. These tickets are also worked on and created by 
 as they attempt to support and streamline the codebase, thus increasing our velocity over time. If a
 ticket feels like it should have points, we should ask ourselves if it’s a feature instead.
 
-## Story point guides
+## 📏 Story point guides
 
 Story points measure **complexity**, not **time**. For example, two tasks with the same level of
 complexity can take different amounts of time depending on who’s working on it. Also, the complexity

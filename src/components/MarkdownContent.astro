@@ -11,7 +11,7 @@ const { starlightRoute } = Astro.locals;
       <Icon name="warning" size="1.5em" color="var(--sl-color-orange-high)" />
       <span>
         <b>Work in Progress:</b>
-        This content is incomplete; you can help by <a href="https://github.com/newjersey/innovation-engineering">expanding it</a>
+        This content is incomplete; you can help by <a href={starlightRoute.editUrl?.href}>expanding it</a>
       </span>
     </p>
   )}
