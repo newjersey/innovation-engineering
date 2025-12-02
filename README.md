@@ -10,6 +10,10 @@ Deployed at: https://newjersey.github.io/innovation-engineering/
 
 All engineers are encouraged to contribute and make improvements to existing documentation as they see fit.
 
+### QUICK LINKS
+- [Add a new guide](https://github.com/newjersey/innovation-engineering/new/main/src/content/docs/guides)
+- [Add a new reference doc](https://github.com/newjersey/innovation-engineering/new/main/src/content/docs/reference)
+
 ### Process
 1. Create a branch
 2. Migrate your document to a `.md`/`.mdx` file in `src/content/docs`
