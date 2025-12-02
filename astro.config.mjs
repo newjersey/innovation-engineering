@@ -42,7 +42,7 @@ export default defineConfig({
 					autogenerate: { directory: 'reference' },
 				},
 				{
-					label: 'Tech Recommendations',
+					label: 'Tools we use',
 					autogenerate: { directory: 'tech-recommendations' },
 				},
 				{

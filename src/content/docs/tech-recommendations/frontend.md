@@ -3,7 +3,13 @@ title: Frontend
 wip: true
 ---
 
-## Frameworks
+## Language
+
+React - Unless there’s a very good reason, we use React on our team over other frontend frameworks (Angular, Vue, etc). There may sometimes be a reason to use pure vanilla JS and not use a frontend framework at all; that’s fine. 
+
+TypeScript - Static typing can be philosophically considered a form of testing - it provides immediate, useful feedback as to whether the code written satisfies the defined constraints. We have a strong preference that TypeScript is used over plain JavaScript.
+
+## React Frameworks
 
 - create-vite-app for Single-Page Applications (SPAs)
 - Next.js for server-side rendered applications
@@ -26,18 +32,7 @@ Use React Testing Library and install the following:
 - Cypress is recommended, or more commonly used
 - Some folks have used Playwright
 
-## Linting & Formatting
-
-eslint
-
-prettier
-
-## Design system
-
-We use NJWDS for micro-css classes, not Tailwind or similar
-
-For React apps, also add the https://github.com/trussworks/react-uswds component library
-For non-react, include the USWDS javascript
+## Other
 
 Feedback widget
 

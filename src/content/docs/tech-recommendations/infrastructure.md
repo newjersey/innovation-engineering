@@ -7,6 +7,8 @@ wip: true
 
 Amplify
 
+EC2
+
 Lambda
 
 ## Infrastructure as Code
@@ -17,9 +19,4 @@ If Terraform, use OpenTofu
 
 Serverless is deprecated
 
-## Analytics
-
-Google Analytics with Looker Studio
-
-## Monitoring
 
