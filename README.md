@@ -15,11 +15,8 @@ All engineers are encouraged to contribute and make improvements to existing doc
 - [Add a new reference doc](https://github.com/newjersey/innovation-engineering/new/main/src/content/docs/reference)
 
 ### Process
-1. Create a branch
-2. Migrate your document to a `.md`/`.mdx` file in `src/content/docs`
-3. Commit and push, create a PR. Post the PR to `#engineering-all` and tag an engineering director and a fellow engineer for review 
-4. Rebase and merge to main
-5. When you merge to main, GitHub Pages will automatically re-deploy the site.
+
+See the [adding docs](https://newjersey.github.io/innovation-engineering/meta/adding-docs/) page for all info!
 
 ## Commands
 
