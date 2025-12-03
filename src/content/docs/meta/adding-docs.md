@@ -3,14 +3,21 @@ title: Adding and updating docs
 description: Process for adding and requesting
 ---
 
+## General contribution process
+
+1. Create a branch
+2. Add or update a document as an .md/.mdx file in `src/content/docs`
+3. Commit and push, create a PR. 
+4. Follow our [code review guidelines](/innovation-engineering/reference/code-review/) to request review in `#engineering-all` and tag an engineering director and a fellow engineer for review
+5. Squash and merge to main
+6. When you merge to main, GitHub Pages will automatically re-deploy the site.
+
 ## Updating documents
 
 Clone the [GitHub repo](https://github.com/newjersey/innovation-engineering) and edit the Markdown files to make changes to a doc. All docs also have a direct "Edit page" link at the bottom, which takes you directly to the editor on GitHub.
 
-- **Make a PR when making a substantial change** such as significant rewording, reorganizing, or adding content to a doc.
+- **Make a PR when making a substantial change** such as significant rewording, reorganizing, or adding/changing doc content.
 - **Make a direct edit to `main` when making minor changes** such as editing for grammar, spelling, or clarity. 
-
-When making a PR, follow our [code review guidelines](/innovation-engineering/reference/code-review/) to request review from 2 reviewers. Post review requests in the `#engineering-all` channel on Slack.
 
 ## Adding new documents
 
@@ -20,10 +27,9 @@ The same guidelines for PRs as above apply when adding new documents.
 
 **We always prefer a stub or work-in-progress (WIP) document over tracking issues or to-do items.** This is a living wiki. We want to surface incomplete documents to note what is being searched for and encourage filling in gaps.
 
-
 A stub or WIP document can be as empty or thorough as you need it to be. It is perfectly appropriate to have an empty document with just a header. This documents a gap or need and serves as a living reminder to follow through on document creation.
 
-The more content you can add to a WIP, the better. If possible, leave an outline (such as h2 and h3 headers) to indicate the type of content you'd like to see covered.
+The more content you can add to stub out a WIP, the better. If possible, leave an outline (such as h2 and h3 headers) to indicate the type of content you'd like to see covered. This will help future editors best move the WIP into a full-fledged document. We will assess and clean up orphaned WIPs on a regular basis to keep things clean.
 
 Use the `wip` tag in a document front-matter to add a work-in-progress indicator to a document. For example: 
 
