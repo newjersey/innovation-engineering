@@ -13,6 +13,7 @@ title: Principles
 
 - Document all processes with 3+ steps
 - Document anything you’ve repeated 3+ times
+- Transfer any Google Doc you've referenced 3+ times
 
 ### Document types
 
