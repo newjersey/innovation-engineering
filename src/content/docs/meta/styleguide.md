@@ -17,7 +17,7 @@ description: Styles for docs
 
 Per [our default-to-open principle](/innovation-engineering/onboarding/2-principles/#openpublic-by-default-closedprivate-when-necessary), this wiki is publicly accessible. For any information that should not be publicly visible, create a wiki entry here, and provide a link to a Google doc instead. In the wiki markdown file, include a list of several keywords. This will facilitate maximum searchability within the wiki as a source-of-truth for finding content even when private. 
 
-TODO: provide an example page following this pattern
+An example of this pattern of keywords + link to Google Doc is our [Cloud usage policy](/innovation-engineering/reference/cloud-usage-policy).
 
 Bear in mind the following guidelines for public information:
 - Avoid using team member names specifically. We recommend referencing by team/role instead ("the engineering directors", "the tech ops team", "the CCM team")

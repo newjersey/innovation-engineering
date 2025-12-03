@@ -79,7 +79,7 @@ As a note: part of this principle is also embracing that it's okay to say "I don
 
 We want to be open source & a model for other governments / organizations / etc.
 
-For more information on how to implement this principle effectively, see our resources on [making repos public](/innovation-engineering/guides/public-private-repo) and [cybersecurity](/innovation-engineering/guides/cybersecurity).
+For more information on how to implement this principle effectively, see our resources on [making repos public](/innovation-engineering/guides/public-private-repo) and [cybersecurity](/innovation-engineering/reference/cybersecurity).
 
 ## Sustainable pace
 

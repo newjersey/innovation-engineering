@@ -1,5 +1,5 @@
 ---
-title: Pairing
+title: Pairing techniques
 description: Pair programming techniques and tips
 wip: true
 ---
