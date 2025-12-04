@@ -72,7 +72,7 @@ jobs:
         secrets: inherit
 ```
 
-### References for the Slack Notification workflow
+### References for the Slack notification workflow
 
 - [Slack notification workflow](https://github.com/newjersey/innovation-shared-actions/blob/main/.github/workflows/slack.yml)
 - [Example notification implementation](https://github.com/newjersey/njwds/blob/main/.github/workflows/pr-review.yml#L13)
