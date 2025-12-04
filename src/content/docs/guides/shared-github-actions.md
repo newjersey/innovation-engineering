@@ -26,7 +26,7 @@ It calls Slack’s chat.postMessage API method under the hood. Read more at the 
 
 This workflow consumes an organization-level secret. GitHub only allows access to shared workflow secrets if the calling repository is in the same GitHub org.
 
-#### Add the Slack Notification Bot to Your Slack Channel
+#### Add the Slack notification bot to your Slack channel
 
 Slack will block messages unless the bot is a member of the channel.
 
