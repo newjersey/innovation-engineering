@@ -3,7 +3,7 @@ title: Shared GitHub Action workflows
 description: A collection of documentation for our shared workflows
 ---
 
-We have a group of shared Github Actions unsed to host commonly used workflows to improve the efficiency of your projects.
+We have a group of shared GitHub Actions unsed to host commonly used workflows to improve the efficiency of your projects.
 
 View the [innovation-shared-actions repository (internal)](https://github.com/newjersey/innovation-shared-actions).
 
