@@ -1,5 +1,5 @@
 ---
-title: Shared Github Action Workflows
+title: Shared GitHub Action workflows
 description: A collection of documentation for our shared workflows
 ---
 
