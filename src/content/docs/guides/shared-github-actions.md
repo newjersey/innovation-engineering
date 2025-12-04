@@ -7,7 +7,7 @@ We have a group of shared Github Actions unsed to host commonly used workflows t
 
 View the [innovation-shared-actions repository (internal)](https://github.com/newjersey/innovation-shared-actions).
 
-## Slack Notification
+## Slack notification
 
 This is a GitHub Actions workflow that sends notifications to Slack channels. It supports posting a primary message and an optional threaded follow-up message. Repositories within the same GitHub organization can call this workflow to standardize Slack notifications across teams.
 
