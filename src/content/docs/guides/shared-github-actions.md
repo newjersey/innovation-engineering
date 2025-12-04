@@ -38,7 +38,7 @@ To add the bot:
 
 If you need to make changes to the Skack bot or need to access the key directly, reach out to Tech Ops so you can be added as a collaborator.
 
-#### Required Secret: SLACK_OAUTH_TOKEN
+#### Required secret: SLACK_OAUTH_TOKEN
 
 The workflow expects a secret named: `SLACK_OAUTH_TOKEN` (this is already installed)
 
