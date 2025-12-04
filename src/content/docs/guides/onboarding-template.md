@@ -52,6 +52,7 @@ Use this section to make a plan/schedule of actions for the team and the new tea
 Basically, everything here should plan for when the new team member should pick up a ticket independently. What do they need to do before they might feel prepared to take something on? Be clear who is the responsible party for each item to make it happen!
 
 ## 👉 Examples
+- [CCM Onboarding Playbook](https://docs.google.com/document/d/17Ey1z39tkJOzbJhRg38brsyO1nLXhTWg5y4Mb37We0Y/edit?tab=t.0#heading=h.asdvv087v4au)
 - [IVR Onboarding Guide](https://docs.google.com/document/d/1cdO_4kyyEy2jHHLuhj7tDmPzWM647E7HP4jzafaX2cI/edit?usp=drive_link)
 - [BizX Engineering Onboarding Checklist](https://docs.google.com/document/d/1lzqURlF5-bl9KiwIKSYjOgLYf-cOLHxCK7osp8LTqVU/edit?usp=sharing)
 - [HomeX Home Experience (HomeX): Onboarding Guide](https://docs.google.com/document/d/1T9qTT2wocV9KB1yx5vMQT2cv_Lp59AqkbKYLIz9uv3s/edit?usp=sharing)
