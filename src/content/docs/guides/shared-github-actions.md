@@ -52,7 +52,7 @@ This is configured as an organization secret, accessible to any repo using the w
 | `message`        | Yes      | string | Main message posted to the channel.  |
 | `thread_message` | No       | string | Optional threaded message.           |
 
-### Using This Workflow in Your Repository
+### Using this workflow in your repository
 
 Create a new workflow file, e.g. `.github/workflows/notify.yml`:
 
