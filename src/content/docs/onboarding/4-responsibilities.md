@@ -1,7 +1,6 @@
 ---
 title: Responsibilities
 description: What we do as engineers
-wip: true
 ---
 
 As a software engineer on a cross-functional team, you are responsible for:
