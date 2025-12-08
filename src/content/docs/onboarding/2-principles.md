@@ -84,3 +84,21 @@ For more information on how to implement this principle effectively, see our res
 ## Sustainable pace
 
 We believe in work-life balance for our team members. This means that you are not expected to work nights and weekends, etc. We avoid “fixed-time, fixed-scope” pain by redefining deliverables, dates, and requirements in collaboration with our Agency partners.
+
+## Version control & automation over process
+
+We believe in the value of version control. It provides us the ability to iterate incrementally by building off of what worked in the past. While this obviously includes checking in and pushing code to our Git repository, we also believe in prioritizing version control for configuration and infrastructure when appropriate.
+
+We strive to recognize when the complexity of what we are doing should be recorded in code, rather than kept in the mind of one person. 
+
+> “If you find yourself writing down a series of commands in a google doc...maybe there's a better way!”
+
+We suggest implementing this principle by scripting commonly used processes, valuing infrastructure-as-code, and beyond.
+
+We refer to the [principles of this wiki](/innovation-engineering/meta/0-principles): 
+
+> - Document all processes with 3+ steps
+> - Document anything you’ve repeated 3+ times
+> - Transfer any Google Doc you've referenced 3+ times
+
+This applies not just to docs on this wiki, but to recommend automating any process with manual or repeatable steps.
