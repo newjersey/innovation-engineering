@@ -36,7 +36,7 @@ To add the bot:
 2. Add "Notification Bot" to the channel
 3. Ensure the bot appears in the channel’s integrations list
 
-If you need to make changes to the Skack bot or need to access the key directly, reach out to Tech Ops so you can be added as a collaborator.
+If you need to make changes to the Slack bot or need to access the key directly, reach out to Tech Ops so you can be added as a collaborator.
 
 #### Required secret: SLACK_OAUTH_TOKEN
 
