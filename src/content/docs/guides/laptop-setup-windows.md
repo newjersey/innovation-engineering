@@ -1,5 +1,5 @@
 ---
-title: Setting at a state Windows laptop
+title: Setting up a state Windows laptop
 description: to access the Linux subsystem
 wip: true
 ---
