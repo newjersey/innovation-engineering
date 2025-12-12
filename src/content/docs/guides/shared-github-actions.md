@@ -46,30 +46,30 @@ This is configured as an organization secret, accessible to any repo using the w
 
 ### Inputs
 
-| Name             | Required | Type   | Description                          |
-|------------------|----------|--------|--------------------------------------|
-| `channel_id`     | Yes      | string | Slack channel ID (ex: `C09Q34G9HMX`).|
-| `message`        | Yes      | string | Main message posted to the channel.  |
-| `thread_message` | No       | string | Optional threaded message.           |
+| Name             | Required | Type   | Description                           |
+| ---------------- | -------- | ------ | ------------------------------------- |
+| `channel_id`     | Yes      | string | Slack channel ID (ex: `C09Q34G9HMX`). |
+| `message`        | Yes      | string | Main message posted to the channel.   |
+| `thread_message` | No       | string | Optional threaded message.            |
 
 ### Using this workflow in your repository
 
 Create a new workflow file, e.g. `.github/workflows/notify.yml`:
 
 ```yaml
-name: 'Notify Slack'
+name: "Notify Slack"
 
 on:
-    workflow_dispatch: ## replace this with how you want to trigger the notification
+  workflow_dispatch: ## replace this with how you want to trigger the notification
 
 jobs:
-    request-pr-review:
-        uses: newjersey/innovation-shared-actions/.github/workflows/slack.yml@main
-        with:
-            channel_id: C09Q34G9HMX
-            message: "Something cool happened!"
-            thread_message: "And everything is great!" # optional
-        secrets: inherit
+  request-pr-review:
+    uses: newjersey/innovation-shared-actions/.github/workflows/slack.yml@main
+    with:
+      channel_id: C09Q34G9HMX
+      message: "Something cool happened!"
+      thread_message: "And everything is great!" # optional
+    secrets: inherit
 ```
 
 ### References for the Slack notification workflow
@@ -78,3 +78,64 @@ jobs:
 - [Example notification implementation](https://github.com/newjersey/njwds/blob/main/.github/workflows/pr-review.yml#L13)
 - [Example Slack notification](https://njcio.slack.com/archives/C09Q36G9HMX/p1763758012713669)
 - [Slack app (access required)](https://api.slack.com/apps/A09QJADPX32/general)
+
+## Pickaroo Auto Request Reviewers
+
+A common workflow at the office is to request a couple random reviews from engineers that are part of the broader initiative (i.e. ResX or BizX), but are external to the given project. You can use this action to accomplish this!
+
+### How it Works
+
+This GitHub Action selects and assigns PR reviewers from GitHub groups.
+
+The Pickaroo action at `.github/actions/pickaroo/action.yml` will randomly select reviewers from the included team(s) who are collaborators on the repository, ignoring anyone in the excluded team(s). It will not pick the PR author, and will not pick anyone who has already been requested for review.
+
+It might, however, pick people who have already submitted a review (this is an edge case to polish).
+
+### Requirements
+
+- Install the [OOI Pull Request Github App](https://github.com/apps/ooi-pull-request-app) in your repository. This might require creating a [Tech-Ops ticket](https://github.com/newjersey/internal-ops/issues/new/choose)!
+
+### Inputs and Secrets
+
+| Name                  | Required | Type   | Description                                                                                                                           |
+| --------------------- | -------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `include-teams`       | Yes      | string | The github teams to pick reviewers from (space delimited) Must be a [New Jersey GitHub Team](https://github.com/orgs/newjersey/teams) |
+| `exclude-teams`       | No       | string | The github teams to exclude reviewers from (space delimited)                                                                          |
+| `number-of-reviewers` | No       | string | The number of reviewers to select, defaults to 1                                                                                      |
+| `token`               | Yes      | string | Github token with org:teams:read and repo:pull_requests:write permissions.                                                            |
+
+### Using this workflow in your repository
+
+Create a new workflow file, e.g. `.github/workflows/request-reviewers.yml`. You likely don't want to auto-request reviewers for _every_ pull request, so you'll want to create a workflow separate from your primary 'CI' workflow, and trigger it based on labels:
+
+```yaml
+name: Pickaroo Reviewers
+
+on:
+  pull_request:
+    types: ["labeled"]
+
+jobs:
+  request-review:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    if: contains(github.event.pull_request.labels.*.name, 'request-review')
+
+    steps:
+      - uses: actions/checkout@v6
+        # you need this action to create a token using a Github App
+      - name: Generate GitHub App Token
+        id: generate_token
+        uses: actions/create-github-app-token@29824e69f54612133e76f7eaac726eef6c875baf # v2.2.1
+        with:
+          app-id: "2454947"
+          private-key: ${{ secrets.OOI_PULL_REQUEST_APP }}
+      - name: Pickaroo Reviewers
+        uses: newjersey/innovation-shared-actions/.github/actions/pickaroo@pickaroo-action
+        with:
+          include-teams: "innovation-engineering"
+          exclude-teams: "my-project-team some-other-team" # multiple teams are space-delimited
+          number-of-reviewers: 2
+          token: ${{ steps.generate_token.outputs.token }}
+```
