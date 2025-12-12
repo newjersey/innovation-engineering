@@ -132,7 +132,7 @@ jobs:
           app-id: "2454947"
           private-key: ${{ secrets.OOI_PULL_REQUEST_APP }}
       - name: Pickaroo Reviewers
-        uses: newjersey/innovation-shared-actions/.github/actions/pickaroo@pickaroo-action
+        uses: newjersey/innovation-shared-actions/.github/actions/pickaroo@main
         with:
           include-teams: "innovation-engineering"
           exclude-teams: "my-project-team some-other-team" # multiple teams are space-delimited
