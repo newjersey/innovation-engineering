@@ -1,0 +1,29 @@
+# This workflow will auto-pick reviewers to assign to a PR when a 'request-review' label is applied
+
+name: Pickaroo Reviewers
+
+on:
+  pull_request:
+    types: ["labeled"]
+
+jobs:
+  request-review:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    if: contains(github.event.pull_request.labels.*.name, 'request-review')
+
+    steps:
+      - uses: actions/checkout@v6
+      - name: Generate GitHub App Token
+        id: generate_token
+        uses: actions/create-github-app-token@29824e69f54612133e76f7eaac726eef6c875baf # v2.2.1
+        with:
+          app-id: "2454947"
+          private-key: ${{ secrets.OOI_PULL_REQUEST_APP }}
+      - name: Pickaroo Reviewers
+        uses: newjersey/innovation-shared-actions/.github/actions/pickaroo@pickaroo-action
+        with:
+          include-teams: "innovation-engineering"
+          number-of-reviewers: 2
+          token: ${{ steps.generate_token.outputs.token }}
