@@ -1,5 +1,5 @@
 ---
-title: Using GitHub Actions to automate tagged releases & changelogs
+title: GH Action - Automate tagged releases & changelogs
 wip: true
 ---
 
