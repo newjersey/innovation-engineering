@@ -7,7 +7,6 @@ We have a collection of GitHub Actions that can be used to implement common Work
 
 View the [innovation-shared-actions repository (internal)](https://github.com/newjersey/innovation-shared-actions).
 
-
 ## Pickaroo reviewers workflow
 
 A common workflow at the office is to request a couple random reviews from engineers that are part of the broader initiative (i.e. ResX or BizX), but are external to the given project. This workflow automates that process and sends a Slack notification to a given channel, tagging the selected reviewers.
@@ -16,7 +15,7 @@ A common workflow at the office is to request a couple random reviews from engin
 
 The Pickaroo Reviewers workflow provides a complete solution for automated PR review assignment:
 
-1. Randomly selects reviewers from specified GitHub teams and/or individual users and assigns them to the PR.
+1. Randomly selects reviewers from specified [GitHub Teams](https://github.com/orgs/newjersey/teams) and/or individual users and assigns them to the PR.
 2. Looks up Slack user IDs for the selected reviewers
 3. Sends a formatted Slack message of the PR details, and mentions the reviewers in a threaded message.
 
@@ -51,14 +50,14 @@ The workflow expects these secrets (already configured at the organization level
 
 ### Inputs
 
-| Name                  | Required | Type   | Description                                                                                                                           |
-| --------------------- | -------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------- |
-| `include_teams`       | No       | string | The github teams to pick reviewers from (space delimited) Must be a [New Jersey GitHub Team](https://github.com/orgs/newjersey/teams) |
-| `exclude_teams`       | No       | string | The github teams to exclude reviewers from (space delimited)                                                                          |
-| `include_users`       | No       | string | Individual GitHub usernames to include (space delimited)                                                                              |
-| `exclude_users`       | No       | string | Individual GitHub usernames to exclude (space delimited)                                                                              |
-| `number_of_reviewers` | No       | number | The number of reviewers to select, defaults to 1                                                                                      |
-| `channel_id`          | Yes      | string | The Slack Channel ID to notify                                                                                                        |
+| Name                  | Required | Type   | Description                                                                                                                            |
+| --------------------- | -------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `include_teams`       | No       | string | The github teams to pick reviewers from (space delimited). Must be a [New Jersey GitHub Team](https://github.com/orgs/newjersey/teams) |
+| `exclude_teams`       | No       | string | The github teams to exclude reviewers from (space delimited)                                                                           |
+| `include_users`       | No       | string | Individual GitHub usernames to include (space delimited)                                                                               |
+| `exclude_users`       | No       | string | Individual GitHub usernames to exclude (space delimited)                                                                               |
+| `number_of_reviewers` | No       | number | The number of reviewers to select, defaults to 1                                                                                       |
+| `channel_id`          | Yes      | string | The Slack Channel ID to notify                                                                                                         |
 
 ### Using this workflow in your repository
 
@@ -84,15 +83,23 @@ jobs:
     secrets: inherit
 ```
 
-## Pickaroo action
+With this configuration, new PRs will only auto-assign and notify random reviewers when you add the label `request-review`. The notifications will look something like this:
 
-For more complex workflows or custom integrations, you can use the underlying Pickaroo action directly. This gives you control over the reviewer selection process without the automatic Slack notifications.
+![An example slack notification from the Pickaroo Workflow](../../../assets/pickaroo-example.png)
+
+:::tip
+In order to directly mention Slack users based on their GitHub usernames, Office members need to update their Slack profile to populate the `GitHub Username` field, else we'll fallback to just the plain-text GitHub username in the notification, as you can see above with `@casewalker`.
+:::
+
+## Building your own Workflow from the Action
+
+For more complex workflows or custom integrations, you can use the underlying Github Action directly. This gives you finer control over the reviewer selection process without the automatic Slack notifications. You may desire to do this if you want to have multiple rounds of reviewer selection before sending a slack notification, or if you want to customize the slack message, or perhaps a third, mysterious thing.
 
 ### How it works
 
-The Pickaroo action handles the core reviewer selection logic:
+The Pickaroo Action handles the core reviewer selection logic:
 
-1. It creates a combined list of potential reviewers that are members of the included teams / users, and omits users that are part of the excluded teams/members, authored the PR, or have already had a review requested.
+1. It creates a combined list of potential reviewers that are members of the included teams / users, and omits those that are part of the excluded teams/members, authored the PR, or have already had a review requested.
 2. Randomly selects the specified number of reviewers
 3. Adds them as requested reviewers to the pull request
 4. Outputs the selected reviewers for use in subsequent workflow steps
@@ -183,6 +190,6 @@ jobs:
 
 ### References
 
-- [Pickaroo workflow](https://github.com/newjersey/innovation-shared-actions/blob/main/.github/workflows/pickaroo.yml)
-- [Pickaroo action](https://github.com/newjersey/innovation-shared-actions/blob/main/.github/actions/pickaroo/action.yml)
+- [Pickaroo Workflow](https://github.com/newjersey/innovation-shared-actions/blob/main/.github/workflows/pickaroo.yml)
+- [Pickaroo Action](https://github.com/newjersey/innovation-shared-actions/blob/main/.github/actions/pickaroo/action.yml)
 - [OOI Pull Request GitHub App](https://github.com/apps/ooi-pull-request-app)
