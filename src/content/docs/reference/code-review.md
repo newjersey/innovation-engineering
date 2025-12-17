@@ -3,8 +3,6 @@ title: Code review guidelines
 description: How we do code reviews
 ---
 
-TODO: Collect PR templates across projects and standardize in template repo
-
 ## 🥅 Goals
 
 This document outlines our practices when reviewing code via pull requests. The goals of code review is to:
@@ -22,7 +20,7 @@ _Note: There are other useful ways of getting feedback on your work, such as des
 - Humility & open to feedback. Don’t take it personally - we are all working to make the best possible code as our primary goal.
 - You are responsible for the changes you’re making. You should have confidence in the “what” and “why” behind a change. Don’t make a change simply because it was suggested; ensure you understand the “why” that the reviewer is presenting.
 - Bring conversations to the larger team if more discussion is necessary.
-- Use the PR template to outline your approach. If there’s a specific line of code that’s an odd or unusual pattern, leave a GitHub comment on that line preemptively to shorten the feedback loop (so a reviewer doesn’t have to ask).
+- Use the [PR template](https://github.com/newjersey/innovation-repo-template/blob/main/.github/pull_request_template.md) to outline your approach. If there’s a specific line of code that’s an odd or unusual pattern, leave a GitHub comment on that line preemptively to shorten the feedback loop (so a reviewer doesn’t have to ask).
 
 ### When to request a review
 
@@ -84,7 +82,7 @@ Every PR should be a independently-deployable, green chunk of work.
 
 If your next step of work depends on this commit, you can branch off the PR branch and work on the next piece while the code is in review.
 
-Use our PR template to outline your approach
+Use our [PR template](https://github.com/newjersey/innovation-repo-template/blob/main/.github/pull_request_template.md) to outline your approach
 
 If there’s a specific line of code that’s an odd or unusual pattern, leave a GitHub comment on that line preemptively to shorten the feedback loop (so a reviewer doesn’t have to ask)
 For PRs that edit visual elements, provide before and after visuals (use your judgment to pick representative screenshots or videos)
