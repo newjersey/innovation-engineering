@@ -1,9 +1,14 @@
 ---
-title: Request Reviewers with Pickaroo
+title: GH Action - Request reviewers with Pickaroo
 description: Using either a workflow or an action to automate pull request reviewers with Slack notifications
 ---
 
-## Pickaroo Reviewers Workflow
+We have a collection of GitHub Actions that can be used to implement common Workflows to improve the efficiency of your projects. Alongside these Actions are also pre-configured Workflows that implement the most common of these, for your convenience.
+
+View the [innovation-shared-actions repository (internal)](https://github.com/newjersey/innovation-shared-actions).
+
+
+## Pickaroo reviewers workflow
 
 A common workflow at the office is to request a couple random reviews from engineers that are part of the broader initiative (i.e. ResX or BizX), but are external to the given project. This workflow automates that process and sends a Slack notification to a given channel, tagging the selected reviewers.
 
@@ -79,7 +84,7 @@ jobs:
     secrets: inherit
 ```
 
-## Pickaroo Action
+## Pickaroo action
 
 For more complex workflows or custom integrations, you can use the underlying Pickaroo action directly. This gives you control over the reviewer selection process without the automatic Slack notifications.
 
