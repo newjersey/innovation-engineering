@@ -4,11 +4,11 @@ title: Setup
 
 ## Slack
 
-Read our [Slack channel reference](/innovation-engineering/6-slack/slack) and ensure you are added to all appropriate channels
+Read our [Slack channel reference](/innovation-engineering/onboarding/6-slack) and ensure you are added to all appropriate channels
 
 ## Calendar
 
-Read our [engineering meeting reference](/innovation-engineering/7-meetings/meetings) and ensure you are added to all appropriate engineering meetings.
+Read our [engineering meeting reference](/innovation-engineering/onboarding/7-meetings) and ensure you are added to all appropriate engineering meetings.
 
 [Add the calendar](https://support.microsoft.com/en-us/office/open-another-person-s-exchange-calendar-2257f515-408f-48ea-9363-11d0d5848c77) for engineering@innovation.nj.gov.
 
