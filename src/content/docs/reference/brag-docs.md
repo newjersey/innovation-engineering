@@ -39,6 +39,8 @@ A lot of us work on fuzzy projects that can feel hard to quantify or invisible w
 
 This kind of work is especially important to put into your brag document because it’s the most likely to fall under the radar!
 
+For a longer presentation discussing this type of work, see Tanya Reilly's talk "Being Glue" ([slides](https://www.noidea.dog/glue) | [video](https://www.youtube.com/watch?v=KClAPipnKqw)).
+
 ### Encourage yourself and each other to celebrate accomplishments
 
 One nice side effect of having a shared idea that it’s normal/good to maintain a brag document at work is that we can create a culture of people encouraging each other to record and celebrate their accomplishments (“hey, you should put that in your brag doc, that was really good!”)
