@@ -24,7 +24,7 @@ description: Where we're talking
 
 ## Extensions
 
-- [GitHub Slack integration](https://github.com/settings/reminders): we expect all engineers to use this for notifications when you are assigned to PR reviews
+- [GitHub Slack integration](https://github.com/settings/reminders): we expect all engineers to use this for notifications. Check the box for **"Enable real-time alerts for pull requests"**
 - (optional) Install the [Outlook Calendar extension](https://slack.com/app-pages/outlook-calendar)
 
 ## Other
