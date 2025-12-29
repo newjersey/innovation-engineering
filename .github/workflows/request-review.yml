@@ -8,7 +8,7 @@ on:
 
 jobs:
   request-review:
-    if: contains(github.event.pull_request.labels.*.name, 'request-review')
+    if: contains(github.event.pull_request.labels.*.name, 'pr-review')
     uses: newjersey/innovation-shared-actions/.github/workflows/pickaroo.yml@main
     with:
       include_teams: "innovation-engineering"
