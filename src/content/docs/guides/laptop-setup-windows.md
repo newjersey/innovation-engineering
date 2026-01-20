@@ -80,7 +80,7 @@ wsl --install
 When Ubuntu launches for the first time, it will ask you to create a username and password. This is important:
 
 - **Username**: Choose a lowercase username with no spaces (it can be different from your Windows username). **Write it down** — it's very difficult to change later.
-- **Password**: Create a strong password (it can be different from your Windows password). You'll need this for sudo commands. **Write this down too.**
+- **Password**: Create a strong password (it can be different from your Windows password). You'll need this for sudo commands.
 
 **Pro tip**: This Ubuntu user will have full administrator rights within the Linux environment, so choose a password you'll remember but that's still secure.
 
