@@ -24,7 +24,7 @@ The Pickaroo Reviewers workflow provides a complete solution for automated PR re
 5. Supports a `show` parameter (see our guidance on [Ship/Show/Ask](/innovation-engineering/reference/code-review)) to simply notify the given channel and skip selecting reviewers.
 
 The results look something like this:
-![A slack message thread created by the Pickaroo Workflow to notify PR reviewers](/src/assets/pickaroo-example.webp)
+![A slack message thread created by the Pickaroo Workflow to notify PR reviewers](../../../assets/pickaroo-example.webp)
 
 ### Requirements
 
@@ -52,6 +52,10 @@ The workflow expects these secrets (already configured at the organization level
 
 - `OOI_PULL_REQUEST_APP` - Private key for the GitHub App
 - `SLACK_OAUTH_TOKEN` - Slack OAuth token for sending messages
+
+:::note
+When using the Pickaroo workflow in a workflow of your own, be sure to specify `secrets: inherit` for each job that uses Pickaroo. See the example below.
+:::
 
 ### Inputs
 
@@ -83,21 +87,21 @@ jobs:
   pr-review:
     if: contains(github.event.pull_request.labels.*.name, 'pr-review')
     uses: newjersey/innovation-shared-actions/.github/workflows/pickaroo.yml@main
+    secrets: inherit # required because the underlying workflow accesses org secrets
     with:
       include_teams: "innovation-engineering"
       exclude_teams: "my-project-team some-other-team" # multiple items are space-delimited
       include_users: "specific-user another-user"
-      exclude_users: "some_non-dev_user_included_in_the_above_teams"
+      exclude_users: "dhcole"
       number_of_reviewers: 2
-      channel_id: "C09Q34G9HMX"
-    secrets: inherit
+      channel_id: "C09Q34G9HMX" #required
   pr-show:
     if: contains(github.event.pull_request.labels.*.name, 'pr-show')
     uses: newjersey/innovation-shared-actions/.github/workflows/pickaroo.yml@main
+    secrets: inherit # required
     with:
       show: true
-      channel_id: "C09Q34G9HMX"
-    secrets: inherit
+      channel_id: "C09Q34G9HMX" # required
 ```
 
 ## Pickaroo action
