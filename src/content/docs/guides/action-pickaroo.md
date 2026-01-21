@@ -70,8 +70,6 @@ When using the Pickaroo workflow in a workflow of your own, be sure to specify `
 | `show`                | No       | boolean | If true, only post a Slack message without selecting reviewers                                                                        |
 | `channel_id`          | Yes      | string  | The Slack Channel ID to notify                                                                                                        |
 
-| `show`
-
 ### Using this workflow in your repository
 
 Create a new workflow file, e.g. `.github/workflows/request-reviewers.yml`. You likely don't want to auto-request reviewers for _every_ pull request, and especially not every update, so you'll want to create a workflow separate from your primary 'CI' workflow, and trigger it based on labels:
