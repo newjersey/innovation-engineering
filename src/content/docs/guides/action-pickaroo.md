@@ -23,6 +23,9 @@ The Pickaroo Reviewers workflow provides a complete solution for automated PR re
 4. Conveniently removes any labels that were added to the PR in in order to trigger the workflow run
 5. Supports a `show` parameter (see our guidance on [Ship/Show/Ask](/innovation-engineering/reference/code-review)) to simply notify the given channel and skip selecting reviewers.
 
+The results look something like this:
+![A slack message thread created by the Pickaroo Workflow to notify PR reviewers](/src/assets/pickaroo-example.webp)
+
 ### Requirements
 
 #### Install the OOI Pull Request GitHub App
