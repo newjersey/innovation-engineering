@@ -7,7 +7,6 @@ We have a collection of GitHub Actions that can be used to implement common Work
 
 View the [innovation-shared-actions repository (internal)](https://github.com/newjersey/innovation-shared-actions).
 
-
 ## Pickaroo reviewers workflow
 
 A common workflow at the office is to request a couple random reviews from engineers that are part of the broader initiative (i.e. ResX or BizX), but are external to the given project. This workflow automates that process and sends a Slack notification to a given channel, tagging the selected reviewers.
@@ -17,10 +16,12 @@ A common workflow at the office is to request a couple random reviews from engin
 The Pickaroo Reviewers workflow provides a complete solution for automated PR review assignment:
 
 1. Randomly selects reviewers from specified GitHub teams and/or individual users and assigns them to the PR.
-2. Looks up Slack user IDs for the selected reviewers
+   - in addition to the exclude filters, it filters out any potential reviewers whose slack status shows as Sick, OOO, or on leave.
+2. Maps the selected reviewers to their Slack user id's so they can be tagged in a Slack message.
 3. Sends a formatted Slack message of the PR details, and mentions the reviewers in a threaded message.
-
-The workflow only sends Slack notifications if reviewers were actually selected and assigned.
+   - supports re-selecting additional reviewers on subsequent runs and tagging new reviewers in the same thread.
+4. Conveniently removes any labels that were added to the PR in in order to trigger the workflow run
+5. Supports a `show` parameter (see our guidance on [Ship/Show/Ask](/innovation-engineering/reference/code-review)) to simply notify the given channel and skip selecting reviewers.
 
 ### Requirements
 
@@ -51,14 +52,18 @@ The workflow expects these secrets (already configured at the organization level
 
 ### Inputs
 
-| Name                  | Required | Type   | Description                                                                                                                           |
-| --------------------- | -------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------- |
-| `include_teams`       | No       | string | The github teams to pick reviewers from (space delimited) Must be a [New Jersey GitHub Team](https://github.com/orgs/newjersey/teams) |
-| `exclude_teams`       | No       | string | The github teams to exclude reviewers from (space delimited)                                                                          |
-| `include_users`       | No       | string | Individual GitHub usernames to include (space delimited)                                                                              |
-| `exclude_users`       | No       | string | Individual GitHub usernames to exclude (space delimited)                                                                              |
-| `number_of_reviewers` | No       | number | The number of reviewers to select, defaults to 1                                                                                      |
-| `channel_id`          | Yes      | string | The Slack Channel ID to notify                                                                                                        |
+| Name                  | Required | Type    | Description                                                                                                                           |
+| --------------------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `include_teams`       | No       | string  | The github teams to pick reviewers from (space delimited) Must be a [New Jersey GitHub Team](https://github.com/orgs/newjersey/teams) |
+| `exclude_teams`       | No       | string  | The github teams to exclude reviewers from (space delimited)                                                                          |
+| `include_users`       | No       | string  | Individual GitHub usernames to include (space delimited)                                                                              |
+| `exclude_users`       | No       | string  | Individual GitHub usernames to exclude (space delimited)                                                                              |
+| `number_of_reviewers` | No       | number  | The number of reviewers to select, defaults to 1                                                                                      |
+| `number_of_repicks`   | No       | number  | The number of reviewers to select on subsequent runs of pickaroo, defaults to 1                                                       |
+| `show`                | No       | boolean | If true, only post a Slack message without selecting reviewers                                                                        |
+| `channel_id`          | Yes      | string  | The Slack Channel ID to notify                                                                                                        |
+
+| `show`
 
 ### Using this workflow in your repository
 
@@ -72,30 +77,39 @@ on:
     types: ["labeled"]
 
 jobs:
-  request-review:
-    if: contains(github.event.pull_request.labels.*.name, 'request-review')
+  pr-review:
+    if: contains(github.event.pull_request.labels.*.name, 'pr-review')
     uses: newjersey/innovation-shared-actions/.github/workflows/pickaroo.yml@main
     with:
       include_teams: "innovation-engineering"
-      exclude_teams: "my-project-team some-other-team" # multiple teams are space-delimited
+      exclude_teams: "my-project-team some-other-team" # multiple items are space-delimited
       include_users: "specific-user another-user"
+      exclude_users: "some_non-dev_user_included_in_the_above_teams"
       number_of_reviewers: 2
+      channel_id: "C09Q34G9HMX"
+    secrets: inherit
+  pr-show:
+    if: contains(github.event.pull_request.labels.*.name, 'pr-show')
+    uses: newjersey/innovation-shared-actions/.github/workflows/pickaroo.yml@main
+    with:
+      show: true
       channel_id: "C09Q34G9HMX"
     secrets: inherit
 ```
 
 ## Pickaroo action
 
-For more complex workflows or custom integrations, you can use the underlying Pickaroo action directly. This gives you control over the reviewer selection process without the automatic Slack notifications.
+For more complex workflows or custom integrations, you can use the underlying Pickaroo action directly. This gives you control over the reviewer selection process, however this isn't recommended as there are many other features of the pickaroo workflow other than just review selection that you'll miss out on, and you'll be stuck with maintaining your own version. If the existing workflow doesn't fit your needs, suggest an improvement in #engineering-all!
 
 ### How it works
 
 The Pickaroo action handles the core reviewer selection logic:
 
 1. It creates a combined list of potential reviewers that are members of the included teams / users, and omits users that are part of the excluded teams/members, authored the PR, or have already had a review requested.
-2. Randomly selects the specified number of reviewers
-3. Adds them as requested reviewers to the pull request
-4. Outputs the selected reviewers for use in subsequent workflow steps
+2. Optionally also filters out users based on their slack statuses of OOO, sick, or on leave.
+3. Randomly selects the specified number of reviewers
+4. Adds them as requested reviewers to the pull request
+5. Outputs the selected reviewers for use in subsequent workflow steps
 
 ### Requirements
 
@@ -110,14 +124,16 @@ This is typically provided by the OOI Pull Request GitHub App which, just as wit
 
 ### Inputs
 
-| Name                  | Required | Type   | Description                                                               |
-| --------------------- | -------- | ------ | ------------------------------------------------------------------------- |
-| `include_teams`       | No       | string | The github teams to pick reviewers from (space delimited)                 |
-| `exclude_teams`       | No       | string | The github teams to exclude reviewers from (space delimited)              |
-| `include_users`       | No       | string | Individual GitHub usernames to include (space delimited)                  |
-| `exclude_users`       | No       | string | Individual GitHub usernames to exclude (space delimited)                  |
-| `number_of_reviewers` | No       | string | The number of reviewers to select, defaults to "1"                        |
-| `token`               | Yes      | string | Github token with org:teams:read and repo:pull_requests:write permissions |
+| Name                   | Required | Type   | Description                                                                                                             |
+| ---------------------- | -------- | ------ | ----------------------------------------------------------------------------------------------------------------------- |
+| `include_teams`        | No       | string | The github teams to pick reviewers from (space delimited)                                                               |
+| `exclude_teams`        | No       | string | The github teams to exclude reviewers from (space delimited)                                                            |
+| `include_users`        | No       | string | Individual GitHub usernames to include (space delimited)                                                                |
+| `exclude_users`        | No       | string | Individual GitHub usernames to exclude (space delimited)                                                                |
+| `number_of_reviewers`  | No       | string | The number of reviewers to select, defaults to "1"                                                                      |
+| `token`                | Yes      | string | Github token with org:teams:read and repo:pull_requests:write permissions                                               |
+| `github_slack_mapping` | No       | string | A JSON map of github usernames to Slack IDs. Used to filter out reviewers that are out of office based on Slack status. |
+| `slack_token`          | No       | string | Required if you provide a value to `github_slack_mapping`                                                               |
 
 ### Outputs
 
