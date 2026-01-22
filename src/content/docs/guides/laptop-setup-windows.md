@@ -26,7 +26,7 @@ Before we dive in, let's make sure you have everything you need. Don't worry if 
 
 ## 1. Windows Terminal: your new command line home
 
-The default Windows Command Prompt and even PowerShell are... well, let's say they weren't designed with developers in mind. Windows Terminal, however, is a modern, feature-rich terminal application that Microsoft actually got right. It supports multiple tabs, themes, and profiles—think of it as the terminal experience you've been missing on Windows.
+The default Windows Command Prompt and even PowerShell are... well, let's say they weren't designed with developers in mind. Windows Terminal, however, is a modern, feature-rich terminal application. It supports multiple tabs, themes, and profiles—think of it as the terminal experience you've been missing on Windows.
 
 ### Installing Windows Terminal
 
@@ -70,7 +70,7 @@ After your computer restarts, open PowerShell as Administrator again and run:
 
 ```shell
 wsl --set-default-version 2
-wsl --install
+wsl --install -d Ubuntu
 ```
 
 **What's happening here?** The first command tells WSL that any new Linux distributions should use WSL2 (the newer, better version). The second command downloads and installs Ubuntu, the default Linux distribution for WSL2.
