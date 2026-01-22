@@ -382,6 +382,14 @@ git config --global init.defaultBranch
 # Should show 'main'
 ```
 
+### Github desktop gotchas
+
+GitHub Desktop will use, by default, its own built-in version of git. GH Desktop paths will point to Windows, not WSL. You will not be able to find node.
+
+If you or your stakeholders want to use a GUI for git, consider:
+- use VSCode extensions within WSL2
+- install GH desktop in WSL2
+
 ### Global gitignore file
 
 Create a global `.gitignore` file to automatically ignore common files you never want to commit:
