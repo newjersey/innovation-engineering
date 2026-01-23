@@ -7,10 +7,32 @@ on:
     types: ["labeled"]
 
 jobs:
-  request-review:
-    if: contains(github.event.pull_request.labels.*.name, 'request-review')
+  request-director-reviewers:
+    if: ${{ github.event.label.name == 'pr-review' }}
     uses: newjersey/innovation-shared-actions/.github/workflows/pickaroo.yml@main
+    secrets: inherit
+    permissions: {}
+    with:
+      include_users: "timwright12 aloverso"
+      number_of_reviewers: 1
+      number_of_repicks: 0 # don't repick a director
+      channel_id: C03C7NHK9B4 # engineering-all
+  request-eng-reviewers:
+    if: ${{ github.event.label.name == 'pr-review' }}
+    needs: request-director-reviewers
+    uses: newjersey/innovation-shared-actions/.github/workflows/pickaroo.yml@main
+    secrets: inherit
+    permissions: {}
     with:
       include_teams: "innovation-engineering"
-      number_of_reviewers: 2
+      exclude_users: "dhcole gamorgana"
+      number_of_repicks: 1
+      channel_id: C03C7NHK9B4 # engineering-all
+  pr-show:
+    if: ${{ github.event.label.name == 'pr-show' }}
+    uses: newjersey/innovation-shared-actions/.github/workflows/pickaroo.yml@main
+    secrets: inherit
+    permissions: {}
+    with:
+      show: true
       channel_id: C03C7NHK9B4 # engineering-all
