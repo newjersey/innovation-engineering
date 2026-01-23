@@ -326,7 +326,7 @@ There are multiple ways to set up git and authenticate with GitHub. If you're no
 
 - Download github desktop: https://desktop.github.com/download/
 - Launch the application, and follow the instructions to log in
-- Select "Clone a repository from the internet", and select the first "Github.com" tab, if not already selected. For "Local path", change the path to `\\wsl$\Ubuntu\home\Developer\<your ubuntu username>\<name of the repository>`. Then, click clone
+- Select "Clone a repository from the internet", and select the first "Github.com" tab, if not already selected. For "Local path", change the path to `\\wsl$\Ubuntu\home\<your ubuntu username>\Developer\<name of the repository>`. Then, click clone
 - Select that you trust the repository are trying to download.
 
 **Note: incompatible with pre-commit hooks**: GitHub Desktop uses its own built-in version of git that doesn't run in the WSL2 environment. If you want to use pre-commit hooks, consider using VSCode as your git GUI instead. VSCode's git tools can be less intuitive than GitHub Desktop, and the [browser GitHub login](https://code.visualstudio.com/docs/sourcecontrol/github#_getting-started-with-github-pull-requests-and-issues) might not work/be hard to get working with WSL. There was a suggestion to try copy and pasting the URL in your browser on your computer and put in the code manually. If you can get the browser login working, or if you're okay using another auth method e.g. ssh keys, the WSL integration in the next step should enable the VSCode git GUI to work with git hooks.
