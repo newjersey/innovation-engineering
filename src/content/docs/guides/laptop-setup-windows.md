@@ -75,6 +75,8 @@ wsl --install -d Ubuntu
 
 **What's happening here?** The first command tells WSL that any new Linux distributions should use WSL2 (the newer, better version). The second command downloads and installs Ubuntu, the default Linux distribution for WSL2.
 
+Ubuntu might quit out, with the following error: `Error: 0x800701bc WSL 2 requires an update to its kernel component. For information please visit https://aka.ms/wsl2kernel`. If so, follow the link, and follow the note in the instructions to determine whether you have a x64 or ARM64 machine. Follow the instructions to install the kernel update package.
+
 If that doesn't work, try installing Ubuntu manually from the Microsoft Store.
 
 ### Initial Ubuntu setup
