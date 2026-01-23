@@ -75,6 +75,8 @@ wsl --install -d Ubuntu
 
 **What's happening here?** The first command tells WSL that any new Linux distributions should use WSL2 (the newer, better version). The second command downloads and installs Ubuntu, the default Linux distribution for WSL2.
 
+If that doesn't work, try installing Ubuntu manually from the Microsoft Store.
+
 ### Initial Ubuntu setup
 
 When Ubuntu launches for the first time, it will ask you to create a username and password. This is important:
@@ -84,7 +86,37 @@ When Ubuntu launches for the first time, it will ask you to create a username an
 
 **Pro tip**: This Ubuntu user will have full administrator rights within the Linux environment, so choose a password you'll remember but that's still secure.
 
-## 3. Understanding dotfiles
+### Setting Ubuntu as Default
+
+1. **Open Windows Terminal settings**: Click the dropdown arrow next to the "+" tab button and select "Settings"
+
+2. **Set Ubuntu as default:**
+
+- In the left sidebar, click "Startup"
+- Under "Default profile", select "Ubuntu"
+- Under "Default terminal application", select "Windows Terminal"
+
+## 3. Create your development directory structure
+
+Let's create a standard directory structure for your development work:
+
+```shell
+# Create a standard development directory structure
+mkdir -p ~/Developer
+cd ~/Developer
+```
+
+**Why `~/Developer`?** This creates a consistent, easy-to-find location for all your development projects. Having a standard structure makes it easier to navigate between projects and ensures good organization from the start.
+
+**Verify it worked:**
+
+```shell
+# Check that the directory was created
+ls -la ~/Developer
+# You should see an empty directory
+```
+
+## 4. Understanding dotfiles
 
 Before we start installing packages and configuring your environment, let's take a moment to understand dotfiles—they're crucial to how Linux (and your development environment) works, and you'll encounter them throughout this guide.
 
@@ -124,7 +156,7 @@ code ~/.bashrc    # Edit with VS Code (after we install it)
 
 Throughout this guide, we'll be creating and editing several dotfiles to customize your development environment. Understanding how they work will help you troubleshoot issues and personalize your setup. Don't worry if it seems abstract now—it'll make more sense as we use them!
 
-## 4. Essential Linux Packages
+## 5. Essential Linux Packages
 
 Now for the fun part—installing all the development tools you'll need. Think of this as setting up your Linux toolbox with all the essential utilities.
 
@@ -145,7 +177,7 @@ sudo apt install -y \
 **What did we install?** Let's break down the most important ones:
 
 - **curl & wget**: Tools for downloading files from the internet
-- **git**: Version control (you probably knew this one)
+- **git**: Version control
 - **build-essential**: Compilers and tools needed to build software from source
 - **gh**: GitHub's official command-line tool
 - **tree**: Displays directory structures in a tree format (surprisingly useful)
@@ -174,7 +206,7 @@ zsh --version
 # All commands should return version numbers without errors
 ```
 
-## 5. Switching to zsh: a better shell experience
+## 6. Switching to zsh: a better shell experience
 
 While bash is the default shell on Ubuntu, we'll switch to **zsh** (Z shell) for a more powerful and user-friendly experience. Zsh offers better autocompletion, command history, and customization options.
 
@@ -199,7 +231,7 @@ chsh -s $(which zsh)
 
 **Verify it worked**: Close and reopen your terminal. You should see a zsh prompt instead of the bash prompt.
 
-## 6. The dreaded Zscaler certificate (corporate network users)
+## 7. The dreaded Zscaler certificate (corporate network users)
 
 Ah, the infamous SSL certificate error. If you're on a corporate or state-issued laptop, you've probably already encountered this beast:
 
@@ -278,7 +310,214 @@ python3 -c "import requests; print(requests.get('https://ipinfo.io/ip').text)"
 
 You should see your public IP address if everything is working correctly.
 
-## 7. Installing Node.js with NVM and configuring it for Zscaler
+## 8. Standardize your project line endings
+
+Windows and Linux/MacOS use different characters to indicate the end of a line, and these are not compatible with each other. Fortunately, git can help standardize the line endings for a project. We want to set up this standardization before a Windows machine clones the repository.
+
+In the root of your project, create a `.gitattributes` file with the line `* text eol=lf`. This can be done on a Linux/MacOS machine, or on the GitHub website.
+
+## 9. Set up git and GitHub
+
+There are multiple ways to set up git and authenticate with GitHub. If you're not familiar with git, use Option 1: GitHub Desktop.
+
+### Option 1: GitHub Desktop
+
+- Download github desktop: https://desktop.github.com/download/
+- Launch the application, and follow the instructions to log in
+- Select "Clone a repository from the internet", and select the first "Github.com" tab, if not already selected. For "Local path", change the path to `\\wsl$\Ubuntu\home\Developer\<your ubuntu username>\<name of the repository>`. Then, click clone
+- Select that you trust the repository are trying to download.
+
+**Note: incompatible with pre-commit hooks**: GitHub Desktop uses its own built-in version of git that doesn't run in the WSL2 environment. If you want to use pre-commit hooks, consider using VSCode as your git GUI instead (with the WSL integration in the next step). VSCode's git tools can be less intuitive than GitHub Desktop, and an engineer had trouble getting the GitHub auth to work via browser login to work. If using the browser GitHub login (instead of ssh keys or another auth method) is important to you, make sure to try that out first.
+
+### Option 2: Command line
+
+First, let's set up Git with your identity and preferences:
+
+```shell
+# Set your name and email (use your real name and email attached to GitHub)
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+
+# Set the default branch name to 'main' (modern standard)
+git config --global init.defaultBranch main
+
+# Make Git output colorful and easier to read
+git config --global color.ui auto
+
+# Set up better diff and merge tools
+git config --global core.editor "code --wait --new-window"
+git config --global diff.tool vscode
+git config --global difftool.vscode.cmd 'code --wait --diff $LOCAL $REMOTE'
+git config --global merge.tool vscode
+git config --global mergetool.vscode.cmd 'code --wait $MERGED'
+```
+
+Verify it worked:
+
+```shell
+# Check your Git configuration
+git config --global --list | grep user
+# Should show your name and email
+
+git config --global init.defaultBranch
+# Should show 'main'
+```
+
+#### Global gitignore file
+
+Create a global `.gitignore` file to automatically ignore common files you never want to commit:
+
+```shell
+# Create the global gitignore file. Run the next three lines together
+cat > ~/.gitignore << 'EOF'
+.aider*
+EOF
+
+# Tell Git to use this global gitignore file
+git config --global core.excludesfile ~/.gitignore
+```
+
+**What's this doing?** This creates a global ignore file that applies to all your Git repositories. It includes common files that you never want to accidentally commit—like OS-generated files, editor temporary files, dependency directories, and environment files containing secrets. Add any additional files to this `.gitignore` file that wouldn't normally be included in project-specific `.gitignore` files.
+
+#### SSH key setup for GitHub
+
+While we'll use GitHub CLI for most operations, having SSH keys set up is still useful:
+
+```shell
+# Generate a new SSH key (replace with the email linked to your GitHub account)
+ssh-keygen -t ed25519 -C "your.email@example.com"
+
+# When prompted, press Enter to accept the default file location
+# Choose a strong passphrase when prompted
+
+# Start the SSH agent
+eval "$(ssh-agent -s)"
+
+# Add your SSH key to the agent
+ssh-add ~/.ssh/id_ed25519
+
+# Display your public key (you'll need to add this to GitHub)
+cat ~/.ssh/id_ed25519.pub
+```
+
+Copy the output of that last command and add it to your GitHub account under Settings → SSH and GPG keys.
+
+**Verify it worked:**
+
+```shell
+# Test SSH connection to GitHub (after adding key to GitHub)
+ssh -T git@github.com
+
+# Should show: "Hi <yourusername>! You've successfully authenticated..."
+
+# Sign your commits
+git config --global gpg.format ssh
+git config --global user.signingkey ~/.ssh/id_ed25519.pub
+```
+
+#### GitHub authentication
+
+Before we continue, let's authenticate with GitHub since you'll need this for most development work.
+
+Set up GitHub CLI for seamless repository management:
+
+```shell
+# Start the GitHub authentication process
+gh auth login
+```
+
+Follow the prompts:
+
+- Choose "GitHub.com" as your server
+- Choose "HTTPS" as your preferred protocol
+- Choose "Yes" to authenticate Git with GitHub credentials
+- Choose "Login with a web browser" for authentication
+
+The CLI will display a one-time code. Open your web browser to the address provided (WSL will not be able to open your browser for you), log into GitHub, and enter the code to complete authentication.
+
+**Verify it worked:**
+
+```shell
+gh auth status
+```
+
+**Why is this essential?** GitHub CLI provides:
+
+- Seamless authentication for Git operations
+- Repository management from the command line
+- Pull request and issue management without leaving your terminal
+- Integration with other tools that need GitHub access
+
+## 10. VSCode Integration: bridging Windows and Ubuntu
+
+Visual Studio Code is the secret sauce that makes Windows development with WSL truly shine. It bridges the gap between your familiar Windows desktop and your powerful Linux development environment.
+
+With the Remote – WSL extension, you get:
+
+- Edit and debug code directly inside your Linux environment
+- Run terminal commands and view output seamlessly within VS Code
+- Leverage Windows apps (like your web browser) alongside Linux development tools
+- Full IntelliSense and extension support that works with your Linux environment
+
+### Installing VSCode
+
+Install VSCode on your Windows system:
+
+```shell
+# From PowerShell (as Administrator)
+winget install -e --id Microsoft.VisualStudioCode
+```
+
+Alternatively, you can download it directly from [code.visualstudio.com](https://code.visualstudio.com/). However, we **strongly recommend** using package managers like `winget` and `apt` because they:
+
+- Simplify updates: One command updates all your software instead of checking each program individually
+- Handle dependencies: Automatically install required components
+- Provide security: Software comes from verified repositories
+- Save time: No hunting through websites for the correct download link
+- Ensure consistency: Standardized installation process across your entire system
+
+### Setting Up WSL Integration
+
+1. Open a project in WSL: From your WSL terminal, navigate to any project directory and run:
+
+```shell
+cd ~/Developer
+code .
+
+# That's the equivalent of:
+code ~/Developer
+```
+
+2. First-time setup: VSCode will automatically detect WSL and offer to install the "Remote - WSL" extension. Click "Install" when prompted.
+
+3. Verify the connection: Look at the bottom-left corner of VS Code. You should see **"WSL: Ubuntu"** in green, indicating you're connected to your Linux environment.
+
+#### Troubleshooting
+
+If VSCode shows connection errors or doesn't detect WSL,
+
+1. Restart both VSCode and your WSL terminal
+2. Uninstall and reinstall the "Remote - WSL" extension
+3. Run `code --list-extensions --show-versions` in WSL to verify extensions are installed
+
+### Why This Setup is Magical
+
+- Files: You're editing files that live in Linux, but using the familiar VSCode interface
+- Terminal: The integrated terminal runs zsh in your Linux environment
+- Extensions: Most VS Code extensions work seamlessly in the WSL environment
+- Performance: Everything runs at native Linux speed because the code execution happens in Linux
+
+### VSCode Extensions for Development
+
+Once you have VSCode connected to WSL, consider installing these extensions:
+
+- GitLens: Enhanced Git capabilities
+- Prettier: Code formatting
+- Thunder Client: API testing (alternative to Postman)
+
+**Pro tip**: Extensions installed in WSL are separate from extensions in regular Windows VS Code. This is actually a good thing—it keeps your development environment clean and specific to your Linux setup.
+
+## 11. Installing Node.js with NVM and configuring it for Zscaler
 
 For Node.js development, we'll use NVM (Node Version Manager) to install and manage Node.js versions. This is essential because different projects often require different Node.js versions.
 
@@ -298,7 +537,6 @@ nvm --version
 **Note**: If `nvm` command is not found, restart your terminal or run source ~/.zshrc.
 
 ```shell
-Installing Node.js
 # Install the latest LTS (Long Term Support) version of Node.js
 nvm install --lts
 
@@ -344,140 +582,7 @@ node -e "require('https').get('https://ipinfo.io/ip', res => res.on('data', d =>
 
 You should see your public IP address if everything is working correctly.
 
-## 8. Setting up your development environment
-
-Now that you have a working Linux environment, let's configure it properly for development work. This is where your environment starts to feel like home.
-
-### Git configuration
-
-First, let's set up Git with your identity and preferences:
-
-```shell
-# Set your name and email (use your real name and email attached to GitHub)
-git config --global user.name "Your Name"
-git config --global user.email "your.email@example.com"
-
-# Set the default branch name to 'main' (modern standard)
-git config --global init.defaultBranch main
-
-# Make Git output colorful and easier to read
-git config --global color.ui auto
-
-# Set up better diff and merge tools
-git config --global core.editor "code --wait --new-window"
-git config --global diff.tool vscode
-git config --global difftool.vscode.cmd 'code --wait --diff $LOCAL $REMOTE'
-git config --global merge.tool vscode
-git config --global mergetool.vscode.cmd 'code --wait $MERGED'
-```
-
-Verify it worked:
-
-```shell
-# Check your Git configuration
-git config --global --list | grep user
-# Should show your name and email
-
-git config --global init.defaultBranch
-# Should show 'main'
-```
-
-### Global gitignore file
-
-Create a global `.gitignore` file to automatically ignore common files you never want to commit:
-
-```shell
-# Create the global gitignore file. Run the next three lines together
-cat > ~/.gitignore << 'EOF'
-.aider*
-EOF
-
-# Tell Git to use this global gitignore file
-git config --global core.excludesfile ~/.gitignore
-```
-
-**What's this doing?** This creates a global ignore file that applies to all your Git repositories. It includes common files that you never want to accidentally commit—like OS-generated files, editor temporary files, dependency directories, and environment files containing secrets. Add any additional files to this `.gitignore` file that wouldn't normally be included in project-specific `.gitignore` files.
-
-### SSH key setup for GitHub
-
-While we'll use GitHub CLI for most operations, having SSH keys set up is still useful:
-
-```shell
-# Generate a new SSH key (replace with the email linked to your GitHub account)
-ssh-keygen -t ed25519 -C "your.email@example.com"
-
-# When prompted, press Enter to accept the default file location
-# Choose a strong passphrase when prompted
-
-# Start the SSH agent
-eval "$(ssh-agent -s)"
-
-# Add your SSH key to the agent
-ssh-add ~/.ssh/id_ed25519
-
-# Display your public key (you'll need to add this to GitHub)
-cat ~/.ssh/id_ed25519.pub
-```
-
-Copy the output of that last command and add it to your GitHub account under Settings → SSH and GPG keys.
-
-**Verify it worked:**
-
-```shell
-# Test SSH connection to GitHub (after adding key to GitHub)
-ssh -T git@github.com
-
-# Should show: "Hi <yourusername>! You've successfully authenticated..."
-
-# Sign your commits
-git config --global gpg.format ssh
-git config --global user.signingkey ~/.ssh/id_ed25519.pub
-```
-
-### Shell customization
-
-Let's make your shell more pleasant to use by adding some helpful aliases to your `.zshrc` file:
-
-```shell
-# Add useful aliases to your .zshrc . Copy everything below and run it in one go
-cat >> ~/.zshrc << 'EOF'
-
-# Development aliases
-alias myip='curl ipinfo.io/ip'
-
-# Safety aliases
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
-
-EOF
-```
-
-Reload your .zshrc to apply the changes: `source ~/.zshrc`
-
-**What did we do?** We added some convenient shortcuts to your shell configuration. These small conveniences add up to a much more pleasant development experience.
-
-### Creating your development directory structure
-
-Let's create a standard directory structure for your development work:
-
-```shell
-# Create a standard development directory structure
-mkdir -p ~/Developer
-cd ~/Developer
-```
-
-**Why `~/Developer`?** This creates a consistent, easy-to-find location for all your development projects. Having a standard structure makes it easier to navigate between projects and ensures good organization from the start.
-
-**Verify it worked:**
-
-```shell
-# Check that the directory was created
-ls -la ~/Developer
-# You should see an empty directory
-```
-
-## 9. Python virtual environments: keeping your projects clean
+## 12. Python virtual environments: keeping your projects clean
 
 Let's set up Python virtual environments. **Why use virtual environments?** When you install Python packages globally (with pip3 install package-name), they can conflict with each other when different projects need different versions of the same package. Virtual environments solve this by creating isolated Python installations for each project.
 
@@ -547,7 +652,7 @@ pip freeze > requirements.txt
 
 **Why this matters**: This approach prevents dependency conflicts, makes your projects reproducible, and keeps your system Python installation clean.
 
-## 10. Docker CLI: container management without Docker Desktop (optional)
+## 13. Docker CLI: container management without Docker Desktop (optional)
 
 For containerized development, we'll install the Docker CLI without Docker Desktop. This gives you access to Docker commands while keeping your system lightweight.
 
@@ -583,7 +688,7 @@ docker compose version
 # These should show version information
 ```
 
-## 11. AWS CLI: cloud development essentials
+## 14. AWS CLI: cloud development essentials
 
 The AWS CLI is essential for cloud development. Let's install it and configure it to work with multiple AWS accounts and profiles.
 
@@ -674,40 +779,7 @@ aws configure --profile work-staging
 aws configure --profile work-production
 ```
 
-## 12. GitHub authentication: essential for development
-
-Before we continue, let's authenticate with GitHub since you'll need this for most development work.
-
-Set up GitHub CLI for seamless repository management:
-
-```shell
-# Start the GitHub authentication process
-gh auth login
-```
-
-Follow the prompts:
-
-- Choose "GitHub.com" as your server
-- Choose "HTTPS" as your preferred protocol
-- Choose "Yes" to authenticate Git with GitHub credentials
-- Choose "Login with a web browser" for authentication
-
-The CLI will display a one-time code. Open your web browser to the address provided (WSL will not be able to open your browser for you), log into GitHub, and enter the code to complete authentication.
-
-**Verify it worked:**
-
-```shell
-gh auth status
-```
-
-**Why is this essential?** GitHub CLI provides:
-
-- Seamless authentication for Git operations
-- Repository management from the command line
-- Pull request and issue management without leaving your terminal
-- Integration with other tools that need GitHub access
-
-## 13. Installing the Aider CLI
+## 15. Installing the Aider CLI
 
 If you're part of the Aider AI assistant pilot program, you can now install it:
 
@@ -723,7 +795,7 @@ aider --help
 
 **What is Aider?** Aider is an AI-powered coding assistant that can help you write and edit code directly in your terminal. It's particularly useful for code refactoring, bug fixes, and implementing new features. Talk to the tech ops team if you'd like to join this pilot.
 
-## 14. Understanding the file system: where your code lives
+## 16. Understanding the file system: where your code lives
 
 One of the most confusing aspects of WSL for newcomers is understanding where files live and how to access them. Let's clear this up once and for all.
 
@@ -768,106 +840,9 @@ In File Explorer, navigate to: `\\wsl$\Ubuntu\home\<yourusername>\`
 
 **Pro tip**: You can bookmark this location in Windows File Explorer for quick access.
 
-## 15. VSCode Integration: The Best of Both Worlds
-
-Visual Studio Code is the secret sauce that makes Windows development with WSL truly shine. It bridges the gap between your familiar Windows desktop and your powerful Linux development environment.
-
-With the Remote – WSL extension, you get:
-
-- Edit and debug code directly inside your Linux environment
-- Run terminal commands and view output seamlessly within VS Code
-- Leverage Windows apps (like your web browser) alongside Linux development tools
-- Full IntelliSense and extension support that works with your Linux environment
-
-### Installing VSCode
-
-Install VSCode on your Windows system:
-
-```shell
-# From PowerShell (as Administrator)
-winget install -e --id Microsoft.VisualStudioCode
-```
-
-Alternatively, you can download it directly from [code.visualstudio.com](https://code.visualstudio.com/). However, we **strongly recommend** using package managers like `winget` and `apt` because they:
-
-- Simplify updates: One command updates all your software instead of checking each program individually
-- Handle dependencies: Automatically install required components
-- Provide security: Software comes from verified repositories
-- Save time: No hunting through websites for the correct download link
-- Ensure consistency: Standardized installation process across your entire system
-
-### Setting Up WSL Integration
-
-1. Open a project in WSL: From your WSL terminal, navigate to any project directory and run:
-
-```shell
-cd ~/Developer
-code .
-
-# That's the equivalent of:
-code ~/Developer
-```
-
-2. First-time setup: VSCode will automatically detect WSL and offer to install the "Remote - WSL" extension. Click "Install" when prompted.
-
-3. Verify the connection: Look at the bottom-left corner of VS Code. You should see **"WSL: Ubuntu"** in green, indicating you're connected to your Linux environment.
-
-### Why This Setup is Magical
-
-- Files: You're editing files that live in Linux, but using the familiar VSCode interface
-- Terminal: The integrated terminal runs zsh in your Linux environment
-- Extensions: Most VS Code extensions work seamlessly in the WSL environment
-- Performance: Everything runs at native Linux speed because the code execution happens in Linux
-
-### Essential VSCode Extensions for Development
-
-Once you have VSCode connected to WSL, consider installing these extensions:
-
-- GitLens: Enhanced Git capabilities
-- Prettier: Code formatting
-- Thunder Client: API testing (alternative to Postman)
-
-**Pro tip**: Extensions installed in WSL are separate from extensions in regular Windows VS Code. This is actually a good thing—it keeps your development environment clean and specific to your Linux setup.
-
-## 16. Configuring Windows Terminal
-
-Remember Windows Terminal that we installed at the beginning? Now it's time to configure it properly so it becomes your primary development interface.
-
-### Setting Ubuntu as Default
-
-1. **Open Windows Terminal settings**: Click the dropdown arrow next to the "+" tab button and select "Settings"
-
-2. **Set Ubuntu as default:**
-
-  - In the left sidebar, click "Startup"
-  - Under "Default profile", select "Ubuntu"
-  - Under "Default terminal application", select "Windows Terminal"
-
-3. **Customize your Ubuntu profile:**
-
-  - In the left sidebar, under "Profiles", click "Ubuntu"
-  - Here you can customize:
-    - Font: We recommend "Cascadia Code" or "Fira Code" for better coding experience
-    - Color scheme: Try "Campbell Powershell" or "Solarized Dark"
-  - Starting directory: Set to `~`
-
-4. **Save your settings**: Click "Save" at the bottom
-
-**Pro tip**: You can create custom key bindings, set background images, and even adjust transparency. Windows Terminal is surprisingly customizable once you dig into the settings!
-
 ## 17. Quality of life tools
 
 These aren't strictly necessary, but they'll make your Windows development experience much more pleasant:
-
-### Essential Windows tools
-
-- [PowerToys](https://learn.microsoft.com/windows/powertoys/): A collection of Windows utilities that add functionality Microsoft should have included by default. Particularly useful features:
-
-  - PowerToys Run: Launch applications and files quickly (like macOS Spotlight)
-  - FancyZones: Snap windows into custom layouts
-  - File Locksmith: See what's using a locked file
-
-- [ScreenToGif](https://www.screentogif.com/): Lightweight screen recorder perfect for creating quick demos or bug reports. Great for sharing your work with team members.
 
 ### Oh My Zsh (enhanced shell experience)
 
@@ -887,6 +862,41 @@ Oh My Zsh provides themes, plugins, and sensible defaults that make zsh even mor
 
 **Verify it worked**: Your prompt should change to a more colorful, informative display showing your current directory and git status.
 
+### Shell customization
+
+Let's make your shell more pleasant to use by adding some helpful aliases to your `.zshrc` file:
+
+```shell
+# Add useful aliases to your .zshrc . Copy everything below and run it in one go
+cat >> ~/.zshrc << 'EOF'
+
+# Development aliases
+alias myip='curl ipinfo.io/ip'
+
+# Safety aliases
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+EOF
+```
+
+Reload your .zshrc to apply the changes: `source ~/.zshrc`
+
+**What did we do?** We added some convenient shortcuts to your shell configuration. `-i` asks for for confirmation before removing, copying, or moving a file.
+
+### Customize your Windows Terminal Ubuntu profile
+
+- Open Windows Terminal. Click the dropdown arrow next to the "+" tab button and select "Settings"
+- In the left sidebar, under "Profiles", click "Ubuntu"
+- Here you can customize:
+  - Font: We recommend "Cascadia Code" or "Fira Code" for better coding experience
+  - Color scheme: Try "Campbell Powershell" or "Solarized Dark"
+- Starting directory: Set to `~`
+- Click "Save" at the bottom
+
+**Pro tip**: You can create custom key bindings, set background images, and even adjust transparency. Windows Terminal is surprisingly customizable once you dig into the settings!
+
 ### Environment variables for development
 
 Add commonly needed environment variables to your `~/.zshrc`:
@@ -901,29 +911,16 @@ export NODE_ENV=development
 export PATH="$HOME/.local/bin:$PATH"
 ```
 
+### Useful Windows tools
+
+- [PowerToys](https://learn.microsoft.com/windows/powertoys/): A collection of Windows utilities that add functionality Microsoft should have included by default. Particularly useful features:
+  - PowerToys Run: Launch applications and files quickly (like macOS Spotlight)
+  - FancyZones: Snap windows into custom layouts
+  - File Locksmith: See what's using a locked file
+
+- [ScreenToGif](https://www.screentogif.com/): Lightweight screen recorder perfect for creating quick demos or bug reports. Great for sharing your work with team members.
+
 ## Troubleshooting Common Issues
-
-### "Windows Subsystem for Linux has no installed distributions"
-
-**Problem**: You get this error when trying to run `wsl` commands.
-
-**Solution**:
-
-```shell
-wsl --install -d Ubuntu
-```
-
-If that doesn't work, try installing Ubuntu manually from the Microsoft Store.
-
-### VSCode can't connect to WSL
-
-**Problem**: VSCode shows connection errors or doesn't detect WSL.
-
-**Solutions**:
-
-1. Restart both VSCode and your WSL terminal
-2. Uninstall and reinstall the "Remote - WSL" extension
-3. Run `code --list-extensions --show-versions` in WSL to verify extensions are installed
 
 ### Permission denied errors
 
@@ -961,6 +958,7 @@ npm config set cafile /etc/ssl/certs/ca-certificates.crt
 - Consider using the [WSL 2 performance tuning guide](https://learn.microsoft.com/windows/wsl/compare-versions#performance-across-os-file-systems)
 
 ## References and further reading
+
 - [WSL Documentation](https://learn.microsoft.com/windows/wsl/install)
 - [Windows Terminal](https://github.com/microsoft/terminal)
 - [VSCode Remote – WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)
