@@ -46,6 +46,15 @@ To add the bot:
 2. Add "Notification Bot" to the channel
 3. Ensure the bot appears in the channel's integrations list
 
+#### Adding your GitHub username to your Slack profile
+
+In order to mention the author and any assigned reviewers in a Slack message, Pickaroo needs to be able to map a Slack user to a GitHub user. This is achieved by everyone either:
+
+- Populating the `GitHub Username` field of your Slack profile with your username
+- Adding your GitHub username with a prefix to the `Name Pronunciation` field of your Slack Profile (this is a workaround for Multi-Channel guests) e.g.
+  - `"JAYN DOH" gh: jane-doe`
+  - `Github: superman99 "klahrk kent"`
+
 #### Required secrets
 
 The workflow expects these secrets (already configured at the organization level):
@@ -86,6 +95,7 @@ jobs:
     if: contains(github.event.pull_request.labels.*.name, 'pr-review')
     uses: newjersey/innovation-shared-actions/.github/workflows/pickaroo.yml@main
     secrets: inherit # required because the underlying workflow accesses org secrets
+    permissions: {} # we're not using the default GITHUB_TOKEN
     with:
       include_teams: "innovation-engineering"
       exclude_teams: "my-project-team some-other-team" # multiple items are space-delimited
@@ -97,14 +107,85 @@ jobs:
     if: contains(github.event.pull_request.labels.*.name, 'pr-show')
     uses: newjersey/innovation-shared-actions/.github/workflows/pickaroo.yml@main
     secrets: inherit # required
+    permissions: {}
     with:
       show: true
       channel_id: "C09Q34G9HMX" # required
 ```
 
+In the above example, when a PR receives a `pr-review` label, it will use Pickaroo to select 2 random reviewers and notify the given Slack channel. When a PR receives a `pr-show` label, Pickaroo will just notify the Slack channel and skip selecting reviewers thanks to the `show` parameter.
+
+### Other Recipes
+
+#### Multiple rounds of picking
+
+A common workflow is selecting one random reviewer from a project's team and an additional reviewer from a broader cross-project group. You can achieve this by composing two separate Pickaroo jobs together and leveraging the `number_of_repicks` parameter.
+
+```yaml
+jobs:
+  request-project-reviewers:
+    if: ${{ github.event.label.name == 'pr-review' }}
+    uses: newjersey/innovation-shared-actions/.github/workflows/pickaroo.yml@main
+    secrets: inherit
+    permissions: {}
+    with:
+      include_users: "timwright12 jviall aloverso"
+      number_of_reviewers: 1
+      number_of_repicks: 0 # never repick
+      channel_id: C03C7NHK9B4 # engineering-all
+
+  request-initiative-reviewers:
+    if: ${{ github.event.label.name == 'pr-review' }} # second job, same label
+    needs: request-project-reviewers # avoid a race between jobs
+    uses: newjersey/innovation-shared-actions/.github/workflows/pickaroo.yml@main
+    secrets: inherit
+    permissions: {}
+    with:
+      include_teams: "innovation-engineering" exclude_users: "dhcole gamorgana"
+      # number_of_reviewers: 2 -- has no effect, see below
+      number_of_repicks: 2 # since this always runs second, it's always a re-pick
+      channel_id: C03C7NHK9B4 # engineering-all
+```
+
+#### Always picking the same reviewers
+
+Some times you don't want to randomly select reviewers be it from an internal or external team--you want the same reviewers every single time. Some teams achieve this by using [CODEOWNERS](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners), but depending on what's ideal for your team you may prefer using Pickaroo to also benefit from the Slack notification. This can be done by simply specifying a `number_of_reviewers` that is equal to or greater than the number of people there is to pick from:
+
+```yaml
+jobs:
+  request-project-reviewers:
+    if: ${{ github.event.label.name == 'pr-review' }}
+    uses: newjersey/innovation-shared-actions/.github/workflows/pickaroo.yml@main
+    secrets: inherit
+    permissions: {}
+    with:
+      include_users: "timwright12 jviall aloverso"
+      number_of_reviewers: 3 # always assign these three users
+      channel_id: C03C7NHK9B4
+```
+
+Or if you're using `include_teams`
+
+```yaml
+jobs:
+  request-project-reviewers:
+    if: ${{ github.event.label.name == 'pr-review' }}
+    uses: newjersey/innovation-shared-actions/.github/workflows/pickaroo.yml@main
+    secrets: inherit
+    permissions: {}
+    with:
+      include_teams: "innovation-ccm"
+      number_of_reviewers: 5 # there are 5 users on the innovation-ccm team
+      channel_id: C03C7NHK9B4
+```
+
+#### Additional PR labels
+
+You can always create as many additional jobs triggered on different PR labels to run Pickaroo with different parameters if your team so desires!
+
 ## Pickaroo action
 
-For more complex workflows or custom integrations, you can use the underlying Pickaroo action directly. This gives you control over the reviewer selection process, however this isn't recommended as there are many other features of the pickaroo workflow other than just review selection that you'll miss out on, and you'll be stuck with maintaining your own version. If the existing workflow doesn't fit your needs, suggest an improvement in #engineering-all!
+For more complex workflows or custom integrations, you can use the underlying Pickaroo action directly. This gives you control over the reviewer selection process, however this isn't recommended as there are many other features of the Pickaroo workflow other than just review selection that you'll miss out on and will have to setup manually, and then you'll be stuck with maintaining your own implementation. If none of the above recipe's fit your needs, suggest an improvement in `#engineering-all`!
 
 ### How it works
 
