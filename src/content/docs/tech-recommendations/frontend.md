@@ -30,6 +30,7 @@ Use React Testing Library and install the following:
 ### End-to-end tests
 
 - Cypress is recommended, or more commonly used
+    - Make sure to add an [upload-artifact step](https://github.com/actions/upload-artifact?tab=readme-ov-file#upload-an-entire-directory) with `path: cypress/screenshots`, so that you can at least view screenshots if the CI fails in ways that you can't reproduce. 
 - Some folks have used Playwright
 
 ## Other
