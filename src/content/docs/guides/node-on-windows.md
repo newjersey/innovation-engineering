@@ -89,3 +89,5 @@ To verify that Node.js is configured correctly:
    ```
 
 If everything is set up correctly, you should see your public IP address output in the console.
+
+If VSCode still has SSL errors, close and re-open it (not just a new terminal session).
