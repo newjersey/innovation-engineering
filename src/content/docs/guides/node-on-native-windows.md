@@ -65,7 +65,7 @@ Follow [the Microsoft guide](https://learn.microsoft.com/en-us/windows/dev-envir
 
    ```powershell
    [System.Environment]::SetEnvironmentVariable('NODE_TLS_REJECT_UNAUTHORIZED', '0', [System.EnvironmentVariableTarget]::Machine)
-   [System.Environment]::SetEnvironmentVariable('NODE_EXTRA_CA_CERTS', `C:\path\to\your\ca-certificates.crt`, [System.EnvironmentVariableTarget]::Machine)
+   [System.Environment]::SetEnvironmentVariable('NODE_EXTRA_CA_CERTS', 'C:\path\to\your\ca-certificates.crt', [System.EnvironmentVariableTarget]::Machine)
    [System.Environment]::SetEnvironmentVariable('NODE_OPTIONS', '--use-openssl-ca', [System.EnvironmentVariableTarget]::Machine)
    ```
 
