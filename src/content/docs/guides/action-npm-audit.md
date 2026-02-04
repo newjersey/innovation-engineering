@@ -3,8 +3,6 @@ title: GH Action - npm vulnerability audit
 description: A reusable workflow to easily check for vulnerabilities in npm packages
 ---
 
-# npm audit – Reusable Workflow
-
 This reusable GitHub Actions workflow runs npm audit and fails the job when vulnerabilities at or above a configured severity level are detected. It is intended to be used as a shared CI security check across repositories.
 
 ## What this workflow does
@@ -89,6 +87,9 @@ jobs:
     needs: dependency-check
     if: ${{ needs.dependency-check.outputs.audit_failed == 'failure' }}
     uses: newjersey/innovation-shared-actions/.github/workflows/npm-audit.yml@main
+      with:
+        node-version: ".nvmrc"
+        audit-level: "high"
 ```
 
 ## Failure behavior
