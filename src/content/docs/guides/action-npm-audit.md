@@ -72,10 +72,10 @@ with:
 
 ## Outputs
 
-### `audit_failed`
+### `audit_status`
 
 - Description: Indicates whether the npm audit step failed
-- Values: success or failure
+- Values: success, failure, skipped
 
 This output can be used to trigger downstream jobs, such as Slack notifications.
 
@@ -85,7 +85,7 @@ This output can be used to trigger downstream jobs, such as Slack notifications.
 jobs:
   slack-alert:
     needs: dependency-check
-    if: ${{ needs.dependency-check.outputs.audit_failed == 'failure' }}
+    if: ${{ needs.dependency-check.outputs.audit_status == 'failure' }}
     uses: newjersey/innovation-shared-actions/.github/workflows/npm-audit.yml@main
       with:
         node-version: ".nvmrc"
