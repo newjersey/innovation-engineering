@@ -52,7 +52,7 @@ Host github-department
 
 - Ensure the SSH agent is running: `eval "$(ssh-agent -s)"`.
 - Add your private key to the agent: `ssh-add ~/.ssh/id_rsa_department`
-- Verify the keys currently managed by the agent with `ssh-add -l.`
+- Verify the keys currently managed by the agent with `ssh-add -l`
 
 ## Step 5: Test and use the keys 
 
@@ -60,7 +60,7 @@ To test the configuration, reference the host alias you created: `ssh -T git@git
 
 When cloning, you can use the alias in the repo URL if needed, though in many cases Git may automatically select the correct key.
 
-## (If using SSO) Step 6: Authorize SSO on your key
+## Step 6: Authorize SSO on your key (if using SSO)
 
 Return to your [SSH and GPG keys](https://github.com/settings/keys) section and [authorize the SSH key for SSO](https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating-with-single-sign-on/authorizing-an-ssh-key-for-use-with-single-sign-on).
 
