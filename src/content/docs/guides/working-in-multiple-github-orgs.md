@@ -42,6 +42,7 @@ Host github-department
   User git
   IdentityFile ~/.ssh/id_rsa_department
   IdentitiesOnly yes
+  UseKeychain yes # Mac only if you're using keychain
 ```
 
 - HostName: The actual domain (e.g., github.com).
@@ -53,12 +54,15 @@ Host github-department
 - Ensure the SSH agent is running: `eval "$(ssh-agent -s)"`.
 - Add your private key to the agent: `ssh-add ~/.ssh/id_rsa_department`
 - Verify the keys currently managed by the agent with `ssh-add -l`
+- Optional for Macs: add to keychain: `ssh-add --apple-use-keychain ~/.ssh/id_rsa_department`
 
 ## Step 5: Test and use the keys 
 
 To test the configuration, reference the host alias you created: `ssh -T git@github-department`
 
 When cloning, you can use the alias in the repo URL if needed, though in many cases Git may automatically select the correct key.
+
+To clone with your alias: `git clone git@github-department:org_name/repo_name.git`
 
 ## Step 6: Authorize SSO on your key (if using SSO)
 
