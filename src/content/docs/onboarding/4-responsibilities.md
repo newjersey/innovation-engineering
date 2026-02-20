@@ -25,7 +25,9 @@ The [cybersecurity page](/innovation-engineering/reference/cybersecurity) is you
 
 ## Accessibility
 
-State and local governments are required by the ADA to conform to WCAG 2.1 level AA standards. You can find the [NJ-specific accessibility rules for websites here](https://nj.gov/it/wphub/accessibility/).
+State and local governments are required by the ADA to conform to WCAG 2.2 level AA standards. You can find the [NJ-specific accessibility rules for websites here](https://legiscan.com/NJ/text/S1016/2024).
+
+> The Web Content Accessibility Guidelines (WCAG) 2.0 Level AA, or the most up-to-date version of the guidelines, shall be the accessibility standard for the web pages, sites, and services of all State agencies.  Each web page, site, and service shall be configured in such a way that it can be navigated, viewed, and accessed on a smartphone, tablet computer, or similar mobile device. 
 
 - Automated a11y testing should be used on any project with a frontend that we can change. (If it’s a vendor frontend, we should manually test and report issues to the vendor.) Many OOI teams use Deque’s axe tool or a library based on it in integration or e2e tests
 - Automated tools [can only catch ~70% of issues](https://accessibility.blog.gov.uk/2017/02/24/what-we-found-when-we-tested-tools-on-the-worlds-least-accessible-webpage/). They cannot detect usability problems (nonsensical headers, alt text that is too long, etc). Therefore:
