@@ -11,6 +11,8 @@ EC2
 
 Lambda
 
+Hosting on a subdomain (e.g. projectname.nj.gov) is waaay easier than hosting on a subpath of nj.gov (e.g. nj.gov/agencyname/projectname)
+
 ## Containerization
 
 We do not have licenses for Docker Desktop, which [requires licenses for government entities](https://docs.docker.com/subscription/desktop-license/). We don’t need the GUI, but Docker Engine is [difficult to install on MacOS without Docker Desktop](https://njcio.slack.com/archives/C03C7NHK9B4/p1760712833246849?thread_ts=1756330087.017419&cid=C03C7NHK9B4). We instead use these open source tools:
