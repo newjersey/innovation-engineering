@@ -55,7 +55,7 @@ If you have large/complex PR that you’d like to first share context about, fee
 We expect each PR to have **2 reviewers total**. You can choose whether these are random or chosen for your team/subteam.
 
 - **Chosen reviewer(s)**: do this if there’s someone specific to request a review from to give you the most confidence in your code. For example, someone on your subteam or someone who has specific context
-- **Random reviewer(s)**: use the [Pickaroo GitHub Workflow](/innovation-engineering/guides/action-pickaroo) to randomly select reviewers from your project team and/or the broader initiative engineering team to build shared context, spread responsibility, and improve our reviewing skills if less experienced.
+- **Random reviewer(s)**: use the [Pickaroo GitHub Workflow](/innovation-engineering/guides/github-actions/action-pickaroo) to randomly select reviewers from your project team and/or the broader initiative engineering team to build shared context, spread responsibility, and improve our reviewing skills if less experienced.
 
 If you are the randomly assigned reviewer and don’t feel comfortable with this code, use this as an opportunity to learn from the chosen reviewer or the reviewee, by pairing or other methods. Either way, remember that your feedback will still be valuable regardless of whether you have the domain context.
 
@@ -65,7 +65,7 @@ Only 1 approval is required to merge your code, but you must still address the c
 
 ### How to request a review
 
-1. If your project's repository hasn't already done so, configure a GitHub Action to run the [Pickaroo Workflow](/innovation-engineering/guides/action-pickaroo) configured to your team's preferences.
+1. If your project's repository hasn't already done so, configure a GitHub Action to run the [Pickaroo Workflow](/innovation-engineering/guides/github-actions/action-pickaroo) configured to your team's preferences.
 
 2. Trigger Pickaroo to run by adding the appropriate label to your PR, e.g. `pr-review`. It will randomly select the number of reviewers your workflow specifies from the given teams and/or users, assign them as reviewers to the PR, and notify them in the given Slack channel.
 
@@ -168,7 +168,7 @@ It allows you to see all the various Pull Requests across every repository that 
 
 ### Pickaroo bot GitHub workflow
 
-As mentioned above, many teams use the [Pickaroo Bot](/innovation-engineering/guides/action-pickaroo) to tag assigned reviewers in Slack messages:
+As mentioned above, many teams use the [Pickaroo Bot](/innovation-engineering/guides/github-actions/action-pickaroo) to tag assigned reviewers in Slack messages:
 ![](../../../assets/pickaroo-slack-example.webp)
 You might take advantage of Slack's _Save for later_ or _Remind Me_ functionalities to manage multiple review requests over several days if you're not able to respond immediately.
 

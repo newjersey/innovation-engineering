@@ -14,7 +14,7 @@ Pair programming supports the principles of [shared context and shared responsib
 
 We have no particular rules about pair programming cadence - in conjunction with our principle of [developer trust & autonomy](https://newjersey.github.io/innovation-engineering/onboarding/2-principles/#developer-trust--autonomy), we trust developers to pair when it makes sense and solo when it makes sense. Join the `#engineering-pairing-is-caring` channel in Slack to join in for fortnightly (that’s every two weeks!) sessions to encourage pairing across projects.
 
-Read our guide on [pairing techniques](/innovation-engineering/guides/pairing) for more tips.
+Read our guide on [pairing techniques](/innovation-engineering/guides/development/pairing) for more tips.
 
 ## Test-Driven Development (TDD)
 

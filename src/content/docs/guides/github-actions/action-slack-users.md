@@ -13,7 +13,7 @@ This github action can be used to find the Slack users associated with a list of
 
 ### How it works
 
-The action simply receives a list of github usernames and for any matches inside the provided mapping, returns a correctly formatted slack mention for use in another action, such as the [Send Slack Message](/innovation-engineering/guides/action-slack-message). For any usernames that it doesn't find a match for, it returns them separately, untouched. For convenience it also outputs all matched and unmatched usernames as a formatted, comma-delimited string.
+The action simply receives a list of github usernames and for any matches inside the provided mapping, returns a correctly formatted slack mention for use in another action, such as the [Send Slack Message](/innovation-engineering/guides/github-actions/action-slack-message). For any usernames that it doesn't find a match for, it returns them separately, untouched. For convenience it also outputs all matched and unmatched usernames as a formatted, comma-delimited string.
 
 ### Inputs
 
