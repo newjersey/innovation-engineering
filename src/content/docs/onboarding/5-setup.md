@@ -23,7 +23,7 @@ Read our [engineering meeting reference](/innovation-engineering/onboarding/7-me
 
 ## Laptop & development setup
 
-Reference our guides to setup an [OOI macbook](/innovation-engineering/guides/laptop-setup) or a [state Windows laptop](/innovation-engineering/guides/laptop-setup-windows)
+Reference our guides to setup an [OOI macbook](/innovation-engineering/guides/getting-started/laptop-setup) or a [state Windows laptop](/innovation-engineering/guides/getting-started/laptop-setup-windows)
 
 
 ## Development tools

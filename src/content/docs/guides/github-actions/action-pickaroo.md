@@ -1,5 +1,5 @@
 ---
-title: GH Action - Request reviewers with Pickaroo
+title: Request reviewers with Pickaroo
 description: Using either a workflow or an action to automate pull request reviewers with Slack notifications
 ---
 
@@ -24,7 +24,7 @@ The Pickaroo Reviewers workflow provides a complete solution for automated PR re
 5. Supports a `show` parameter (see our guidance on [Ship/Show/Ask](/innovation-engineering/reference/code-review)) to simply notify the given channel and skip selecting reviewers.
 
 The results look something like this:
-![A slack message thread created by the Pickaroo Workflow to notify PR reviewers](../../../assets/pickaroo-example.webp)
+![A slack message thread created by the Pickaroo Workflow to notify PR reviewers](../../../../assets/pickaroo-example.webp)
 
 ### Requirements
 
