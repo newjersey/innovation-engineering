@@ -1,0 +1,279 @@
+---
+title: Configure Claude Code
+description: Use Amazon Bedrock as the Claude Code backend so credentials stay in your AWS account (SSO/IAM) instead of using an Anthropic API key.
+---
+
+This guide shows you how to use Amazon Bedrock as the Claude Code backend so credentials stay in your AWS account (SSO/IAM), instead of using an Anthropic API key.
+
+## Before you begin
+
+Confirm:
+
+- Claude Code is installed (`claude --version`)
+  - Install via Homebrew if not installed (`brew install --cask claude-code`)
+- Your AWS identity can authenticate (SSO or IAM credentials)
+- AWS CLI is installed (required for the recommended SSO path)
+  - Install via Homebrew if not installed (`brew install awscli`)
+
+For a full list of supported environment variables and settings keys, see [Amazon Bedrock configuration reference](https://docs.anthropic.com/en/docs/claude-code/bedrock).
+
+---
+
+## Step 1 — Set required variables
+
+Claude Code needs:
+
+- `CLAUDE_CODE_USE_BEDROCK=1`
+- `AWS_REGION` (do not rely on `~/.aws/config` defaults)
+
+### Recommended: `~/.claude/settings.json`
+
+Create or edit `~/.claude/settings.json`:
+
+```json
+{
+  "env": {
+    "CLAUDE_CODE_USE_BEDROCK": "1",
+    "AWS_REGION": "us-east-1"
+  }
+}
+```
+
+Expected result: after restarting Claude Code, Bedrock is enabled and region errors are avoided.
+
+### Quick test: shell env (zsh)
+
+```zsh
+export CLAUDE_CODE_USE_BEDROCK=1
+export AWS_REGION=us-east-1
+```
+
+Expected result: new `claude` processes inherit these variables.
+
+## Step 2 — Authenticate to AWS (choose one)
+
+:::note
+**Credential precedence:** If `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY` are set in your environment, they typically override profile-based credentials (`AWS_PROFILE`). Unset them if you want `AWS_PROFILE` to take effect.
+:::
+
+### Recommended: AWS CLI SSO profile (IAM Identity Center)
+
+1. Create an SSO profile:
+
+   ```zsh
+   aws configure sso
+   ```
+
+2. Verify the profile was written to `~/.aws/config`:
+
+   ```ini
+   [profile bedrock-sso]
+   sso_start_url = https://example.awsapps.com/start
+   sso_region = us-east-1
+   sso_account_id = 123456789012
+   sso_role_name = BedrockDeveloper
+   region = us-east-1
+   ```
+
+3. Log in:
+
+   ```zsh
+   aws sso login --profile bedrock-sso
+   ```
+
+4. Point Claude Code at the profile by adding `AWS_PROFILE`:
+
+   ```json
+   {
+     "env": {
+       "CLAUDE_CODE_USE_BEDROCK": "1",
+       "AWS_REGION": "us-east-1",
+       "AWS_PROFILE": "bedrock-sso"
+     }
+   }
+   ```
+
+5. (Optional) Add an auth refresh command to automatically re-authenticate when the session expires:
+
+   ```json
+   {
+     "env": {
+       "CLAUDE_CODE_USE_BEDROCK": "1",
+       "AWS_REGION": "us-east-1",
+       "AWS_PROFILE": "bedrock-sso"
+     },
+     "awsAuthRefresh": "aws sso login --profile bedrock-sso"
+   }
+   ```
+
+   If you still see `ExpiredTokenException`, run the `aws sso login ...` command manually and retry.
+
+6. Verify AWS auth:
+
+   ```zsh
+   aws sts get-caller-identity --profile bedrock-sso
+   ```
+
+Expected result: `aws sts get-caller-identity` returns your role ARN, and Claude Code can make Bedrock requests without auth errors.
+
+---
+
+### Alternative: Static IAM credentials (service user / CI)
+
+Use this when you can't do interactive SSO.
+
+:::note
+Prefer short-lived role credentials in CI when possible.
+:::
+
+1. Create an IAM policy (example starting point):
+
+   ```json
+   {
+     "Version": "2012-10-17",
+     "Statement": [
+       {
+         "Sid": "AllowInvoke",
+         "Effect": "Allow",
+         "Action": [
+           "bedrock:InvokeModel",
+           "bedrock:InvokeModelWithResponseStream"
+         ],
+         "Resource": [
+           "arn:aws:bedrock:*:*:foundation-model/*",
+           "arn:aws:bedrock:*:*:inference-profile/*",
+           "arn:aws:bedrock:*:*:application-inference-profile/*"
+         ]
+       }
+     ]
+   }
+   ```
+
+   Tighten `Resource` (and optionally add conditions) for least privilege.
+
+2. Create credentials and store them in `~/.aws/credentials`:
+
+   ```ini
+   [bedrock-claude]
+   aws_access_key_id = AKIA...
+   aws_secret_access_key = ...
+   ```
+
+3. Reference the profile from Claude Code:
+
+   ```json
+   {
+     "env": {
+       "CLAUDE_CODE_USE_BEDROCK": "1",
+       "AWS_REGION": "us-east-1",
+       "AWS_PROFILE": "bedrock-claude"
+     }
+   }
+   ```
+
+4. Verify:
+
+   ```zsh
+   aws sts get-caller-identity --profile bedrock-claude
+   ```
+
+Expected result: STS works for the profile you configured, and Claude Code can invoke Bedrock.
+
+---
+
+### Fallback: Temporary session credentials from the AWS access portal (copy/paste)
+
+Use this for a quick start without configuring the AWS CLI.
+
+1. Sign in to your AWS access portal start URL (example: `https://example.awsapps.com/start`).
+2. Select an account + role, then find the short-term access keys.
+3. Export them in your current shell:
+
+   ```zsh
+   export AWS_ACCESS_KEY_ID=ASIA...
+   export AWS_SECRET_ACCESS_KEY=...
+   export AWS_SESSION_TOKEN=...
+   ```
+
+4. Verify:
+
+   ```zsh
+   aws sts get-caller-identity
+   ```
+
+:::note
+Session lifetime varies by organization settings (commonly 1–12 hours). When it expires, re-copy credentials or switch to the SSO profile path.
+:::
+
+Expected result: STS succeeds, and Claude Code can authenticate until the session expires.
+
+---
+
+### Optional: Bedrock API key (if enabled in your org)
+
+Use this only if your organization has enabled Bedrock API keys and you understand the tradeoffs vs IAM.
+
+1. In the AWS console, go to **Amazon Bedrock → API keys** and create a key (it's typically shown only once).
+2. Set `AWS_BEARER_TOKEN_BEDROCK`:
+
+   ```json
+   {
+     "env": {
+       "CLAUDE_CODE_USE_BEDROCK": "1",
+       "AWS_REGION": "us-east-1",
+       "AWS_BEARER_TOKEN_BEDROCK": "your-api-key"
+     }
+   }
+   ```
+
+:::caution
+Avoid storing bearer tokens in shared dotfiles or version-controlled repos.
+:::
+
+Expected result: Claude Code can authenticate using the bearer token.
+
+---
+
+## Step 3 — Confirm Claude Code works
+
+1. Restart Claude Code (required after changing `~/.claude/settings.json`).
+2. Launch `claude` and send a test message (any short prompt).
+
+Expected result: you receive a normal model response (no region/auth/access errors).
+
+---
+
+## Step 4 (optional) — Pin a specific model
+
+By default, Claude Code may pick a model automatically. If you want to pin one:
+
+1. In the Bedrock console, locate the model you want to use and note its `us.` cross-region inference profile ID, for example: `us.anthropic.claude-sonnet-4-6`.
+
+   :::note
+   The `us.` prefix selects the US cross-region inference profile. Even with `AWS_REGION=us-east-1` set, Bedrock may route requests to other US regions to balance load. If your data residency requirements restrict traffic to a single region, confirm cross-region inference is acceptable with your AWS account team before using these profiles.
+   :::
+
+2. Set `ANTHROPIC_MODEL` to that value:
+
+   ```json
+   {
+     "env": {
+       "ANTHROPIC_MODEL": "us.anthropic.claude-sonnet-4-6"
+     }
+   }
+   ```
+
+Expected result: Claude Code consistently uses the pinned model.
+
+---
+
+## Troubleshooting
+
+| Symptom                                         | Likely cause                                                              | Fix                                                                                                                                        |
+| ----------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| Region error on startup                         | `AWS_REGION` isn't set (or isn't being picked up)                         | Set `AWS_REGION` in `~/.claude/settings.json` or your shell env; restart `claude`                                                          |
+| `ExpiredTokenException`                         | Your SSO session or temporary credentials expired                         | Run `aws sso login --profile …` again, or re-copy portal credentials                                                                       |
+| `AccessDeniedException` invoking a model        | Missing IAM permission and/or model access not granted in Bedrock console | Confirm IAM includes `bedrock:InvokeModel` (and streaming if needed); check Bedrock console model access/approvals for your account/region |
+| `AWS_PROFILE` seems ignored                     | Explicit access-key env vars are taking precedence                        | `unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN` and relaunch `claude`                                                    |
+| Every message fails immediately                 | Incorrect `ANTHROPIC_MODEL` value or mismatched region/model              | Remove `ANTHROPIC_MODEL` to test; then re-add using a cross-region inference profile ID (e.g. `us.anthropic.claude-sonnet-4-6`)            |
+| `/login` / `/logout` doesn't behave as expected | Bedrock uses AWS auth, not an Anthropic API key login flow                | Use AWS auth (`aws sso login`, profiles, IAM creds) instead                                                                                |
