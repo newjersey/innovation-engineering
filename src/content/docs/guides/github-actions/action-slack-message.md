@@ -1,5 +1,5 @@
 ---
-title: GH Action - Send a Slack message
+title: Send a Slack message
 description: Using either a workflow or an action to send Slack messages from GitHub Actions
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: GH Action - npm vulnerability audit
+title: npm vulnerability audit
 description: A reusable workflow to easily check for vulnerabilities in npm packages
 ---
 

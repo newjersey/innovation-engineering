@@ -1,5 +1,5 @@
 ---
-title: GH Action - Automate tagged releases & changelogs
+title: Automate tagged releases & changelogs
 wip: true
 ---
 

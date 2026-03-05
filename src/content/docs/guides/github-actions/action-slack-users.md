@@ -1,5 +1,5 @@
 ---
-title: GH Action - Lookup Slack users by Github username
+title: Lookup Slack users by Github username
 description: Using an action to find the NJIA slack users associated with the given github usernames
 ---
 

@@ -1,6 +1,8 @@
 ---
 title: Onboarding a new team member
 description: What to include in an onboarding guide
+sidebar:
+  order: 1
 ---
 
 Use the following template to build out an onboarding doc and checklist for new team members. The purpose of this is to help guide teams on ensuring they cover context most effectively and provide a consistent, well-structured onboarding experience across teams when new engineers join.

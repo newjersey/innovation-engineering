@@ -108,7 +108,7 @@ Once you are back on the Dashboard screen, you should see your new Logs Table wi
 
 🎀 Be sure to save your new dashboard by selecting **Save** in the top right corner. If you have unsaved changes, this button will change to the primary button style (in most cases, a bright orange button).
 
-![a screenshot of a working dashboard](../../../assets/working-cloudwatch-dashboard.png)
+![a screenshot of a working dashboard](../../../../assets/working-cloudwatch-dashboard.png)
 
 ## Fancy Stuff
 

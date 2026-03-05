@@ -35,7 +35,43 @@ export default defineConfig({
 				},
 				{
 					label: 'Guides',
-					autogenerate: { directory: 'guides' },
+					items: [
+						{
+							label: 'Getting Started',
+							collapsed: false,
+							autogenerate: { 
+								directory: 'guides/getting-started',
+							},
+						},
+						{
+							label: 'Communication',
+							collapsed: true,
+							autogenerate: { 
+								directory: 'guides/communication',
+							},
+						},
+						{
+							label: 'Development',
+							collapsed: true,
+							autogenerate: { 
+								directory: 'guides/development',
+							},
+						},
+						{
+							label: 'Github Actions',
+							collapsed: true,
+							autogenerate: { 
+								directory: 'guides/github-actions',
+							},
+						},
+						{
+							label: 'Monitoring & Analytics',
+							collapsed: true,
+							autogenerate: {
+								directory: 'guides/monitoring',
+							},
+						},
+					],
 				},
 				{
 					label: 'Reference',
