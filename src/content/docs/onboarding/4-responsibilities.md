@@ -56,10 +56,9 @@ The [accessibility page](/innovation-engineering/reference/accessibility) is you
 - You will need to communicate with a variety of stakeholders across various practices, from government agencies to partners to vendors, and more. You are responsible for communicating our needs (whole team or engineering team) and our objectives clearly and succinctly, and without technical jargon. You will need to be able to communicate the what and why of what you’re building, not just the how. 
 
 ## Working with state agency partners
-- We are privileged as an office to be able to work fully remotely, and the majority of our agency partners do not have the same privilege. **Do not flaunt your remote work-from-home status.**
-    - Don’t bring up that you live in another state unless you are explicitly asked (obviously, don’t lie)
-    - [Not Required] Consider blurring your video background when on a Teams call with agency stakeholders.
-    - When on a call with external/agency stakeholders, consider dressing business-casual (wear a nice shirt).
+
+- [Not Required] Consider blurring your video background when on a Teams call with agency stakeholders.
+- When on a call with external/agency stakeholders, consider dressing business-casual (wear a nice shirt).
 - We have access to several tools and collaboration cloud platforms that agency partners cannot and do not use. Again, we want to maximize collaboration and de-emphasize our unique status when working with agency partners.
     - Partners do not have/use Google. Do not link them to Google Drive documents - copy the contents into a Microsoft Office365 document instead if you need them to have access. (It’s okay to show Google docs and decks when screensharing)
     - Partners do not have/use Zoom. Use Microsoft Teams for calls with agency stakeholders.
