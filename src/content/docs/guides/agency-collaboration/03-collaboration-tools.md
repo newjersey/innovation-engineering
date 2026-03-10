@@ -2,19 +2,38 @@
 title: Cross-agency collaboration tools
 ---
 
-There can be technical and tooling barriers when collaborating with other agencies
+There can be technical and tooling barriers when collaborating with other agencies. For instance, agencies might be on a different Microsoft tenant. Here are some solutions we found for working around these.
 
-We do have some entirely unsolved tooling limitations, namely:
-
-- Unable to @-mention people on shared Microsoft Online documents
-
-See [this thread for conversation and considerations](https://njcio.slack.com/archives/C081SRUNN2U/p1765564663581579).
+See [this thread for additional conversation and considerations](https://njcio.slack.com/archives/C081SRUNN2U/p1765564663581579).
 
 ## Outlook calendar availability
 
+You may not be able to add the calendars of "external" users. However, you should be able to view their calendar availability via the "Scheduler" / "Scheduling Assistant" view.
+
+1. Create a new meeting, and add your desired attendees
+2. In the expanded meeting dialog, there should either be
+   - A button next to the time input that says "Schedule"
+   - Or, a tab near the top left that says "Scheduling Assistant"
+     ![location of "Schedule" / "Scheduling Assistant"](../../../../assets/outlook-calender-availability.png)
+3. Click on "Schedule" / "Scheduling Assistant". The view should show availability the people invited to the meeting.
+
 ## Microsoft Teams group chat
 
+Live chat communication can be a lot smoother than emailing back and forth. Agency partners do not have Slack access, and use Microsoft Teams instead.
+
+Creating a Teams meeting creates a chat, but these chats can get clogged with meeting chatter. Additionally, access to the chat can get messed up when attendees decline the meeting invite. Instead, we recommend creating group chat(s) with agency partners, as follows:
+
+1. Follow these [instructions to create a group chat](https://support.microsoft.com/en-us/office/create-a-group-chat-in-microsoft-teams-free-556d9323-75f4-4cbe-ba49-e65d7d8d53a8#id0ejd=desktop)
+   - When adding agency partners, make sure to add the account tagged as `External`, and _not_ the one tagged as `Guest`
+     ![invite the "External" account, not "Guest"](../../../../assets/teams-invite-external-user.png)
+2. Follow the [same instructions page](https://support.microsoft.com/en-us/office/create-a-group-chat-in-microsoft-teams-free-556d9323-75f4-4cbe-ba49-e65d7d8d53a8#id0ejd=desktop) to name the group
+3. You can [create a section in Teams](https://support.microsoft.com/en-us/office/reorder-the-chat-and-channels-list-in-microsoft-teams-964d8358-53c3-4200-8cb1-5e9c5091031e) to organize these chats above any meeting chats
+
+Make sure to configure notifications as desired for messages on Teams.
+
 ## Sharing documents
+
+Agency partners do not have Google accounts, and do not have access to Google Drive or Google Workspace.
 
 ### Sharepoint
 
@@ -81,4 +100,6 @@ integrations with extensions
 
 Less likely for engineers, but the presence of local copies means that heavy edits to a word doc can cause the file to branch into two copies
 
-### Screen annotations on Teams
+### Teams calls do not allow screen annotations while controlling the shared screen
+
+Microsoft teams has a tool to enable people to draw and annotate on a shared screen.
