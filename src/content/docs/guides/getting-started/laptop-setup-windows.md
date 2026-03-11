@@ -6,6 +6,8 @@ sidebar:
 
 _TODO: extract the non-Windows development instructions (like zsh, python, nvm, AWS CLI setup) into shared setup documentation_
 
+Note: This guide is for setting up WSL2 on your laptop, so that you can use a UNIX environment that you may be more familiar with. If you're looking to set up agency partners who do not have admin access, consider [developing on native Windows instead](https://newjersey.github.io/innovation-engineering/guides/development/node-on-native-windows/).
+
 Or: "How I Got `npm install` to Work on My State-Issued Dell Laptop"
 
 If you're a developer who's been handed a Windows machine from your organization and you're staring at PowerShell wondering how you're going to get your Node.js projects running, this guide is for you. We've all been there—trying to run `npm install` only to be greeted by cryptic SSL certificate errors thanks to corporate network security tools like Zscaler.
