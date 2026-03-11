@@ -4,8 +4,6 @@ title: Cross-agency collaboration tools
 
 There can be technical and tooling barriers when collaborating with other agencies. For instance, agencies might be on a different Microsoft tenant. Here are some solutions we found for working around these.
 
-See [this thread for additional conversation and considerations](https://njcio.slack.com/archives/C081SRUNN2U/p1765564663581579).
-
 ## Outlook calendar availability
 
 You may not be able to add the calendars of "external" users. However, you should be able to view their calendar availability via the "Scheduler" / "Scheduling Assistant" view.
@@ -45,23 +43,37 @@ Understanding permissions has been difficult
 
 ## Github
 
-Agencies often have separate GH instances. Getting access to the agency GH instance may require getting agency email accounts.
+### Joint access to a repository
 
-In the long term, the repo should definitely live in the agency instance.
+Agencies often have separate GitHub instances. Some may use GitHub Enterprise accounts that are accessed via Microsoft SSO and partitioned from the public GitHub space. For instance, it is likely not possible to add your public-GitHub Innovation account to an agency repository, or to add an agency GitHub Enterprise user to a repository in https://github.com/newjersey.
 
-- If migrating later in the project
-  - It can be harder to migrate the repo fully including PRs and issues (see [https://github.com/newjersey/dol-gh-enterprise-migration-scripts](https://github.com/newjersey/dol-gh-enterprise-migration-scripts) and [https://github.com/github/gh-gei](https://github.com/github/gh-gei)). There is the work of running the scripts and commands, but also the permissions work of getting the necessary access requirements on both repos for the migration.
-  - GH Actions and GH “Apps” may need to be re-permissioned and reconfigured
-- If using the agency GH instance earlier in the project,
-  - Any GH admin things (e.g. setting up branch protection, adding renovatebot) will need to go through the agency GH admin
-  - If the repo is private, not sure how to do PR reviews with OOI engineers in general
-  - Not sure if an agency GH instance can connect to the OOI AWS Innov-Res-Dev account. As of writing, see [\[DRAFT\] AWS Amplify Usage Policy](https://docs.google.com/document/d/1dN5EZtw0ndEsn6xfQTSNd4iAr_aRIaqOYMVLxJPLsu8/edit?tab=t.0#heading=h.6v367cjsmrxh) for agency account amplify restrictions.
+However, an agency with GitHub Enterprise SSO accounts should be able to add your @oit.nj.gov accounts as guest users to their GitHub instance. (Note that for some people, their @oit.nj.gov is different from their @innovation.nj.gov email). If the agency is unable to add your OIT accounts, you may have to get an agency email accounts.
 
-Github collaboration with agencies is an open question being explored by Doula and HR1 Medicaid projects.
+We also suggest requesting repository read access to engineers who would do PR reviews.
 
-### Setting up ssh keys for two GitHub accounts
+### When should the repository be in the agency GitHub
+
+In the long term, the repository should definitely live in the agency GitHub instance, so that the agency partner has ownership over the project.
+
+In the short term, there are some benefits to having a repository under https://github.com/newjersey:
+
+1. Making it easier for other people at NJIA to find your project repository, and making your code available when engineers search within the `https://github.com/newjersey` project
+1. Being able to [request reviews via Pickaroo](https://newjersey.github.io/innovation-engineering/guides/action-pickaroo/)
+1. If agency-owned AWS accounts for the project have not yet been provisioned, or you would prefer to try thing out in NJIA's AWS account, it might be easier/make more sense to use NJIA's AWS accounts if the repo also lives in https://github.com/newjersey.
+1. We have an engineering principle of being [open/public by default and closed/private when necessary](https://docs.google.com/document/d/1G3Vx0J5zwTqrKF7iyej_KtBHF__rf7wrL_5RZ6rnJgw/edit?tab=t.0#heading=h.b0umhm4n3ckq), in the interest of transparency and knowledge sharing. We thus prefer keeping repositories open source. However, some agencies may have a blanket policy of keeping all repositories private.
+1. GitHub configurations that require organizational admins (e.g. adding apps like renovatebot, AWS integration) will have to go through the agency's GitHub admin(s), instead of NJIA Tech Ops. Depending on the permissions granted for the repository, configurations that require repository admin (e.g. setting up branch protection) may also have to go throuh the agency's GitHub admins.
+
+However, migrating a repository later in a project can come with some downsides:
+
+1. Needing to do the migration at all
+2. Need to re-premission reconfigure any applications, e.g. renovatebot, AWS integrations
+3. Most engineers don't have admin access to repositories in https://github.com/newjersey. However, you might be granted admin access to your repository in the agency account. So you might actually have more control and permissions on the agency repository, e.g. to add branch protections, change settings, or adjust access levels without having to go through NJIA Tech Ops.
 
 ### Migrating a Gihub repo to a different organization
+
+### Setting up ssh keys for two GitHub organizations
+
+See [working in multiple Github Orgs](https://newjersey.github.io/innovation-engineering/guides/development/working-in-multiple-github-orgs/).
 
 ### Limitations
 
@@ -84,11 +96,11 @@ e.g. "can't @ people in a doc" vs "i have two calendars t
 
 ## Other limitations that have yet to be solved
 
+See [this thread for additional conversation and considerations](https://njcio.slack.com/archives/C081SRUNN2U/p1765564663581579).
+
 ### We have not figured out how to @-mention people on shared Microsoft Online documents
 
-hmm yeah i think the "get a DHS email" solution really depends on the tradeoffs between frustrations then, it sounds like?
-
-e.g. "can't @ people in a doc" vs "i have two calendars that are not synced up" (the latter honestly sounds worse given how many meetings we have)
+One option is to get an agency email account. However, a separate account means a separate calendar that is not synced with your NJIA calendar.
 
 ### Microsoft Online is not as online-first as Google Workspace
 
