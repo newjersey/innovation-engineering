@@ -38,7 +38,7 @@ Will your problem space likely require **access to agency-controlled data**, suc
 
 - Is there a cloud-based API available? Can you build a proof-of-concept connection between your application and the API?
 
-- Is there an API available only with the Garden State Network (GSN)? If so, can you build a proof-of-concept connection leveraging a firewall (or similar) between the agency and our deployment environment?
+- Is there an API available only with the state or agency intranet? If so, can you build a proof-of-concept connection leveraging a firewall (or similar) between the agency and our deployment environment?
 
 - Is the data available only in a certain agency cloud environment? If so, can we deploy on the same environment to set up access, and can you prove this connection?
 
