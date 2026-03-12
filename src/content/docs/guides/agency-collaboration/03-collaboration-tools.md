@@ -9,14 +9,7 @@ There can be technical and tooling barriers when collaborating with other agenci
 
 ## Outlook calendar availability
 
-You may not be able to add the calendars of external users. However, you should be able to view their calendar availability via the "Scheduler" / "Scheduling Assistant" view.
-
-1. Create a new meeting, and add your desired attendees
-2. In the expanded meeting dialog, there should either be
-   - A button next to the time input that says "Schedule"
-   - Or, a tab near the top left that says "Scheduling Assistant"
-     ![location of "Schedule" / "Scheduling Assistant"](../../../../assets/outlook-calender-availability.png)
-3. Click on "Schedule" / "Scheduling Assistant". The view should show availability the people invited to the meeting.
+You may not be able to add the calendars of external users. However, you should be able to view their calendar availability via the ["Scheduler" / "Scheduling Assistant" view](https://support.microsoft.com/en-us/office/schedule-a-meeting-or-event-in-outlook-5c9877bc-ab91-4a7c-99fb-b0b68d7ea94f#picktab=outlook_on_the_web)"].
 
 ## Microsoft Teams group chat
 
