@@ -44,10 +44,10 @@ export default defineConfig({
 							},
 						},
 						{
-							label: 'Communication',
+							label: 'Agency Collaboration',
 							collapsed: true,
 							autogenerate: { 
-								directory: 'guides/communication',
+								directory: 'guides/agency-collaboration',
 							},
 						},
 						{
