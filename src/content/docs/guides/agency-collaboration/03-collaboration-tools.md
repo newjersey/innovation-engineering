@@ -40,8 +40,8 @@ Pros of Sharepoint/Cons of OneDrive:
 Pros of OneDrive/Cons of Sharepoint:
 
 1. Potential Sharepoint restrictions on moving files
-   - The Sharepoint for the Doula Medicaid project does not have the option to move a file between folders. The menu option is simply not there. The project has had to download and re-upload files to move them between folders.
-   - Not sure of this is specific to the Doula Medicaid Sharepoint. [Microsoft docs](https://support.microsoft.com/en-us/office/move-or-copy-files-in-sharepoint-00e2f483-4df3-46be-a861-1f5f0c1a87bc) suggest that moving should be possible.
+   - [Microsoft docs](https://support.microsoft.com/en-us/office/move-or-copy-files-in-sharepoint-00e2f483-4df3-46be-a861-1f5f0c1a87bc) suggest that moving files should be possible. However, at least one project has not been able to do this, the move option is simply not there.
+   - The Doula Medicaid project experienced this, and had to download and re-upload files to move them between folders.
 1. Direct links to Sharepoint files cannot be accessed by users who are external to the Microsoft tenant that owns the Sharepoint
    - This is the case even if the external user has sitewide, "Site owners - full control" access to the Sharepoint
    - This means that if the Sharepoint is owned by NJIA, and an agency partner is external, you need to remember not to send or hyperlink direct links to files.
@@ -96,7 +96,7 @@ In the short term, there are some benefits to having a repository under https://
 However, migrating a repository later in a project can come with some downsides:
 
 1. Needing to do the migration at all
-2. Need to re-premission and reconfigure applications, e.g. renovatebot, AWS integrations
+2. Need to re-permission and reconfigure applications, e.g. renovatebot, AWS integrations
 3. Most engineers don't have admin access to repositories in https://github.com/newjersey. However, you might be granted admin access to your repository in the agency account. So you might actually have more control and permissions on the agency repository, e.g. to add branch protections, change settings, or adjust access levels, without having to go through NJIA Tech Ops.
 
 ### Migrating a GitHub repo to a different organization
