@@ -245,14 +245,19 @@ Expected result: you receive a normal model response (no region/auth/access erro
 
 ## Step 4 (optional) — Pin a specific model
 
-By default, Claude Code may pick a model automatically. If you want to pin one:
+By default, Claude Code will pick a model automatically. Anthropic [recommends model pinning](https://code.claude.com/docs/en/amazon-bedrock#4-pin-model-versions) when using Bedrock, because Claude may attempt to use models that aren't yet available in Bedrock.
 
-1. In the Bedrock console, locate the model you want to use and note its `us.` cross-region inference profile ID, for example: `us.anthropic.claude-sonnet-4-6`.
+### Recommended: Pin requests to a specific model
 
+1. Find the model you'd like to use, using the following command:
+    ```zsh
+    aws bedrock list-inference-profiles \
+       --query "inferenceProfileSummaries[?contains(inferenceProfileId, 'us.anthropic')].inferenceProfileId" \
+       --output table
+    ```
    :::note
    The `us.` prefix selects the US cross-region inference profile. Even with `AWS_REGION=us-east-1` set, Bedrock may route requests to other US regions to balance load. If your data residency requirements restrict traffic to a single region, confirm cross-region inference is acceptable with your AWS account team before using these profiles.
    :::
-
 2. Set `ANTHROPIC_MODEL` to that value:
 
    ```json
@@ -264,6 +269,21 @@ By default, Claude Code may pick a model automatically. If you want to pin one:
    ```
 
 Expected result: Claude Code consistently uses the pinned model.
+
+### Alternative: Override specific model versions for different tool calls
+
+You can also pin specific model versions. This can be useful because Claude uses specific models for some tool calls - for example, Web Fetch uses Haiku, so you may wish to tell Claude to use a specific Haiku version for those calls, while using a different Sonnet version for regular chat completions. For example:
+
+```json
+{
+ "env": {
+   "ANTHROPIC_DEFAULT_SONNET_MODEL": "us.anthropic.claude-sonnet-4-6",
+   "ANTHROPIC_DEFAULT_HAIKU_MODEL": "us.anthropic.claude-haiku-4-5"
+ }
+}
+```
+
+Expected result: Claude Code uses the specified models for their respective calls.
 
 ---
 
