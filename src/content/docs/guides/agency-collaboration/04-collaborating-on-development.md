@@ -60,6 +60,8 @@ Agency partners may have restrictions on their machines, such as:
 - Not having admin access
 - Not being able to install applications
 - Not being able to install extensions
+- Only having write permissions to the local OneDrive folder, without write permissions to other local directories
+  - This might mean that the repo needs to be checked into and synced via OneDrive, including all `.git` and `node_module` files. This can work, we're not sure how much this slows down the machine.
 
 Software such as VSCode, git, nvm, Cypress, NVDA, or the WAVE extension may need to be provisioned by the agency's IT admins.
 
