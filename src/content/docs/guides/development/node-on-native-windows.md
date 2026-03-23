@@ -8,7 +8,6 @@ E.g., you might have agency partners working on Windows machines, and want to ha
 
 Overall, [the Microsoft guide](https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows#install-nvm-windows-nodejs-and-npm) is what we want to follow for setting up the node project on native Windows
 
-
 ## ZScaler things
 
 If you have Zscaler on your machine, you might encounter errors about SSL certificates. The problem is that OIT's network security tool (Zscaler) intercepts and decrypts all HTTPS traffic to scan it for security threats. While this keeps the network secure, it means that development tools like `npm`, `pip`, AWS CLI tools, and Azure CLI tools don't trust the connection because they don't recognize Zscaler's certificate.
@@ -90,3 +89,9 @@ To verify that Node.js is configured correctly:
 If everything is set up correctly, you should see your public IP address output in the console.
 
 If VSCode still has SSL errors, close and re-open it (not just a new terminal session).
+
+## Repository set up
+
+If the project will be developed on both UNIX and native Windows, you may want to:
+- Add a `.gitattributes` file with `* text=auto eol=lf` to [standardize the repository line endings](https://docs.github.com/en/get-started/git-basics/configuring-git-to-handle-line-endings) to UNIX line endings (assuming that the production enviroment is UNIX).
+- Ensure that there are no bash scripts, e.g. by running all scripts in the project language environment (e.g. Node, Python)
