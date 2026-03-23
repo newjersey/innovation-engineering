@@ -10,7 +10,7 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			plugins: [starlightLinksValidator()],
-			title: 'OOI Engineering',
+			title: 'NJIA Engineering',
 			logo: {
 				src: './src/assets/robot.png',
 			},

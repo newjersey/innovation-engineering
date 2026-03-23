@@ -1,8 +1,8 @@
-# NJ OOI Engineering Wiki
+# NJ Innovation Authority Engineering Wiki
 
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
 
-This site is the document hub for the NJ OOI Engineering Wiki
+This site is the document hub for the NJ Innovation Authority Engineering Wiki
 
 Deployed at: https://newjersey.github.io/innovation-engineering/
 
