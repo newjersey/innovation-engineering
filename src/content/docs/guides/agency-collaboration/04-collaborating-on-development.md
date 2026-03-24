@@ -78,3 +78,5 @@ Some examples of onboarding sessions might be:
   - Practicing the flow by doing tickets
 - Evaluating and merging dependency updates
 - Accessibility considerations, and how to use a screen reader
+
+As an example, see [this internal blog post](https://scaling-adventure-v9318vm.pages.github.io/blog/2026-03-23-agency-partner-dev/) for development onboarding experiences on the Doula Medicaid project.
