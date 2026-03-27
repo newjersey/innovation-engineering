@@ -6,7 +6,7 @@ sidebar:
 
 _TODO: extract the non-Windows development instructions (like zsh, python, nvm, AWS CLI setup) into shared setup documentation_
 
-Note: This guide is for setting up WSL2 on your laptop, so that you can use a UNIX environment that you may be more familiar with. If you're looking to set up agency partners who do not have admin access, consider [developing on native Windows instead](https://newjersey.github.io/innovation-engineering/guides/development/node-on-native-windows/).
+Note: This guide is for setting up WSL2 on your laptop, so that you can use a UNIX environment that you may be more familiar with. If you're looking to set up agency partners who do not have admin access, consider [developing on native Windows instead](/innovation-engineering/guides/development/node-on-native-windows/).
 
 Or: "How I Got `npm install` to Work on My State-Issued Dell Laptop"
 
