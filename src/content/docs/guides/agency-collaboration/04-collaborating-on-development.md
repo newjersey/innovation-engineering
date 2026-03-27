@@ -25,7 +25,7 @@ If the agency has a GitHub instance, in the long term the repository should defi
 In the short term, there are some benefits to having a repository under https://github.com/newjersey :
 
 1. Integrating with our Slack, so that you and reviewers can get live slack notifications on pull request conversations
-1. Being able to [request reviews via Pickaroo](https://newjersey.github.io/innovation-engineering/guides/action-pickaroo/)
+1. Being able to [request reviews via Pickaroo](/innovation-engineering/guides/github-actions/action-pickaroo/)
 1. Making your project code discoverable for people at NJIA, and making your code available when engineers search within the `https://github.com/newjersey` project
 1. If agency-owned AWS accounts for the project have not yet been provisioned, or you would prefer to try thing out in NJIA's AWS account, it might make more sense if the repo is also owned by NJIA.
 1. We have an engineering principle of being [open/public by default and closed/private when necessary](https://docs.google.com/document/d/1G3Vx0J5zwTqrKF7iyej_KtBHF__rf7wrL_5RZ6rnJgw/edit?tab=t.0#heading=h.b0umhm4n3ckq), in the interest of transparency and knowledge sharing. We thus prefer keeping repositories open source. However, some agencies may have a blanket policy to not enable public repositories.
@@ -49,7 +49,7 @@ However, migrating a repository later in a project can come with some downsides:
 
 ### Setting up ssh keys for two GitHub organizations
 
-See [working in multiple Github Orgs](https://newjersey.github.io/innovation-engineering/guides/development/working-in-multiple-github-orgs/).
+See [working in multiple Github Orgs](/innovation-engineering/guides/development/working-in-multiple-github-orgs/).
 
 ## Development set up and installation on agency machines
 
@@ -65,7 +65,7 @@ Agency partners may have restrictions on their machines, such as:
 
 Software such as VSCode, git, nvm, Cypress, NVDA, or the WAVE extension may need to be provisioned by the agency's IT admins.
 
-For installing a Node.js application on an agency machine without admin access, see the [running a Node project on native Windows](https://newjersey.github.io/innovation-engineering/guides/development/node-on-native-windows/) guide.
+For installing a Node.js application on an agency machine without admin access, see the [running a Node project on native Windows](/innovation-engineering/guides/development/node-on-native-windows/) guide.
 
 ## Development onboarding and upskilling
 

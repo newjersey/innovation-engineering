@@ -11,12 +11,13 @@ Deployed at: https://newjersey.github.io/innovation-engineering/
 All engineers are encouraged to contribute and make improvements to existing documentation as they see fit.
 
 ### QUICK LINKS
+
 - [Add a new guide](https://github.com/newjersey/innovation-engineering/new/main/src/content/docs/guides)
 - [Add a new reference doc](https://github.com/newjersey/innovation-engineering/new/main/src/content/docs/reference)
 
 ### Process
 
-See the [adding docs](https://newjersey.github.io/innovation-engineering/meta/adding-docs/) page for all info!
+See the [adding docs](https://github.com/newjersey/innovation-engineering/meta/adding-docs/) page for all info!
 
 ## Commands
 
@@ -30,4 +31,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
-
