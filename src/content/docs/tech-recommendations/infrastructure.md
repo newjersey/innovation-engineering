@@ -41,7 +41,7 @@ For Debian/Ubuntu and [WSL](https://docs.google.com/document/d/1q5InFbTTOrY_lZ5U
 curl -fsSL https://get.docker.com/ | sh
 ```
 
-Docker Engine can still be easily installed on Linux without Docker Desktop. For Windows machines (e.g. agency stakeholders), we suggest using WSL (see [Setting up a state Windows laptop](https://newjersey.github.io/innovation-engineering/guides/laptop-setup-windows/)), which can be harangued into running containers using the Docker engine on Linux.
+Docker Engine can still be easily installed on Linux without Docker Desktop. For Windows machines (e.g. agency stakeholders), we suggest using WSL (see [Setting up a state Windows laptop](/innovation-engineering/guides/development/windows-wsl2-setup/)), which can be harangued into running containers using the Docker engine on Linux.
 
 ## Infrastructure as Code
 

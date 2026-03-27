@@ -6,7 +6,7 @@ title: Setup
 
 Read our [Slack channel reference](/innovation-engineering/onboarding/6-slack) and ensure you are added to all appropriate channels.
 
-In the [GitHub Slack integration](https://github.com/settings/reminders), check the box for **"Enable real-time alerts for pull requests"**. This will give you notifications when assigned to a PR or when someone replies to your comment, and is necessary for our GH Action PR workflow. 
+In the [GitHub Slack integration](https://github.com/settings/reminders), check the box for **"Enable real-time alerts for pull requests"**. This will give you notifications when assigned to a PR or when someone replies to your comment, and is necessary for our GH Action PR workflow.
 
 ## Calendar
 
@@ -23,8 +23,7 @@ Read our [engineering meeting reference](/innovation-engineering/onboarding/7-me
 
 ## Laptop & development setup
 
-Reference our guides to setup an [OOI macbook](/innovation-engineering/guides/getting-started/laptop-setup) or a [state Windows laptop](/innovation-engineering/guides/getting-started/laptop-setup-windows)
-
+Reference our guides to setup an [OOI macbook](/innovation-engineering/guides/getting-started/laptop-setup) or a [state Windows laptop](/innovation-engineering/guides/development/windows-wsl2-setup)
 
 ## Development tools
 
