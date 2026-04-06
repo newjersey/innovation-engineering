@@ -5,13 +5,37 @@ wip: true
 
 ## Hosting
 
-Amplify
+Hosting on a subdomain (e.g. projectname.nj.gov) is way easier than hosting on a subpath of nj.gov (e.g. nj.gov/agencyname/projectname)
 
-EC2
+### Amplify
 
-Lambda
+**Your go-to option for most projects**
 
-Hosting on a subdomain (e.g. projectname.nj.gov) is waaay easier than hosting on a subpath of nj.gov (e.g. nj.gov/agencyname/projectname)
+Think of Amplify as the "easy button" for hosting full-stack apps. You've got a React frontend and Node.js backend? Amplify handles it all. Just connect your GitHub repo and it automatically deploys your app, sets up SSL, distributes it via CDN, and even creates preview environments for your pull requests. It's basically zero DevOps work.
+
+**Use Amplify when**: You're building a normal web app and don't have weird requirements. Start here unless you have a specific reason not to.
+
+**Skip Amplify when**: You need to tinker with server configurations, have complex networking stuff like VPCs, or you're not actually building a web app (like if you're doing batch processing or background jobs).
+
+### Lambda
+
+**The "run code without servers" option**
+
+Lambda runs your code only when it's needed, then shuts down. You're not managing any servers, you just upload functions and AWS runs them when triggered. Perfect for APIs and background tasks.
+
+**Use Lambda when**: You're building an API that doesn't need to be always-on, you have sporadic traffic (so you only pay when it's used), or you need to respond to events like file uploads or scheduled jobs. Great for microservices too.
+
+**Skip Lambda when**: You have a traditional React app with server-side rendering (just use Amplify), you need long-running requests over 15 minutes, or you need persistent WebSocket connections.
+
+### EC2
+
+**When you need the keys to the kingdom**
+
+EC2 is a virtual server that you control completely. Think of it like renting a computer in the cloud; you get to install whatever you want, configure it however you want, but you're also responsible for keeping it running and secure.
+
+**Use EC2 when**: You need full control because you're running something specialized, you have strict networking requirements, or you're moving an existing app that needs its exact environment. Also good for long-running processes that need to keep state.
+
+**Skip EC2 when**: Amplify would work fine. Managing servers is real work (don't sign up for it unless you need to). You'll be handling updates, security patches, and scaling yourself.
 
 ## Containerization
 
