@@ -125,7 +125,7 @@ to take effect. :::
        "AWS_REGION": "us-east-1",
        "AWS_PROFILE": <AWS_PROFILE NAME> // default, if you follow the example
      },
-     "awsAuthRefresh": "aws sso login --profile default"
+     "awsAuthRefresh": "aws sso login --profile $AWS_PROFILE"
    }
    ```
 
