@@ -12,6 +12,7 @@ And by “differently”, we mean: **using participatory, evidence-based, and da
 The following values are shared Office-wide (not just within the engineering practice). They are defined on our website and you can expect all your team members to subscribe and adhere to these values.
 
 As the Office of Innovation, we are:
+
 - **human-centered**: we put the user at the center of our problem-solving process, and we design with New Jerseyans, not just for New Jerseyans
 - **agile**: we solve problems iteratively to allow us to measure results, learn fast, and deliver impact as soon as possible
 - **data-driven and research-backed**: we use data and research to guide what we do, and how we do it

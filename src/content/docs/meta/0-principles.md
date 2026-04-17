@@ -19,13 +19,14 @@ title: Principles
 
 Our wiki structure is based on the [Diátaxis framework](https://diataxis.fr/). Specifically, because our wiki is geared towards docs with a clear **application** (not general knowledge acquisition), we use two of their four doc types: How-To Guides and Reference. These are stored in their respective folders.
 
-**Reference docs** should be something that is _consulted_ and act as a source-of-truth for a piece of information. 
+**Reference docs** should be something that is _consulted_ and act as a source-of-truth for a piece of information.
 
 **How-To guides** should outline the steps of a process. It is action-oriented: focused on a single task and how to acheive it. Digressions or explanations should be extracted into reference documents.
 
 ### Examples
 
 Things that belong in our wiki:
+
 - Synthesized notes, such as a working agreement (reference)
 - Static resources, like onboarding docs and code review guides (reference)
 - Solidified outcomes that came from decision docs (reference)
@@ -33,6 +34,7 @@ Things that belong in our wiki:
 - Technical documentation on specific tools we use (guide)
 
 Things that do not belong in our wiki:
+
 - Meeting notes, agendas, or transcripts
 - Real time collaboration like note-taking or comments
 - Working documents

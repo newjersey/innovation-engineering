@@ -5,7 +5,7 @@ description: How to give (and receive) feedback effectively
 
 ## 📤 Giving Feedback
 
-### Frame feedback as plus and delta not plus and minus.
+### Frame feedback as plus and delta not plus and minus
 
 **Plus** is something that the person is doing well
 
@@ -27,6 +27,7 @@ You have to truly and honestly understand that you may be wrong. Or, you might b
 There’s no such thing as an objective truth. You are speaking from what you’ve observed, and how you interpreted it, and your _opinions_ of what could be better.
 
 Try to tease these apart when giving feedback:
+
 - What did you observe?
 - What was the impact on you and the team?
 
@@ -58,7 +59,6 @@ Another feedback framework that gives more guidance on being specific is the [ST
 |---|---|
 | You tend to back down in meetings and not hold to your opinion. I’d like to see you stand up for yourself more often. | I noticed in estimation this week, you changed your pointing without discussing it, when it was different from everyone else. I’d like to see you defend it so that the team can benefit from your opinion. |
 
-
 #### Kind
 
 This should be obvious. Delivering good feedback requires empathy. Even if it’s the most crucial feedback in the world, if it isn’t delivered kindly, they might just ignore it.
@@ -66,7 +66,6 @@ This should be obvious. Delivering good feedback requires empathy. Even if it’
 | Not Kind | Kind |
 |---|---|
 | That’s a bad method name. | It’s important to make sure that variable names are clear. Calling this method `meow` doesn’t do a good job of showing intent to the next developer who reads this code. |
-
 
 ### Giving praise
 
@@ -86,7 +85,6 @@ Notice when you’re using subjective labels in your feedback, and replace it wi
 **Example**
 > “Let me describe what I mean by confident, and you can ask me questions to see if I’m making sense.”
 
-
 ## 📥 Receiving Feedback
 
 ### Seek to understand
@@ -96,6 +94,7 @@ Receiving constructive feedback is hard. Even harder is receiving constructive f
 Look, they probably are “wrong” about something because they can’t possibly understand your entire being and your entire context. But they are speaking from their understanding and their context. **Your job is to shift from “that’s wrong” to “tell me more”.**
 
 There’s two options most people might take when they receive feedback they feel is wrong. **Avoid doing either of these.**
+
 - _Defend yourself._ Don't say “Hang on, well, what about that time when I…” and attempt to debate and prove their feedback wrong.
 - _Hold your tongue._ Don't say “thank you for the feedback” and then ignore their feedback because they clearly have no idea what they’re talking about.
 
@@ -106,6 +105,7 @@ The better option is to be inquisitive and curious and **seek to understand** ev
 **Provide data** about your own intentions and interpretations of the situation. This is not to defend yourself, this is because the goal of the conversation is for **you and the feedback giver to come to a shared higher understanding of the situation together.**
 
 The feedback giver may or may not be good at giving actionable, specific, kind feedback. Their feedback may be caught up in their emotions or interpretations about it. Your job is to ask questions to tease apart:
+
 - What did they **observe**? (objective)
 - What **meaning** did it have to them? (subjective interpretation)
 - What do they want you to **do**?
@@ -122,6 +122,6 @@ There’s a common psychological distortion that convinces a brain that construc
 Remember to respond to the **feedback given**, _not_ your distorted perception of it.
 
 Tips for this are to:
+
 - Identify what triggers your defense mechanisms and actively work against that conditioning.
 - Practice viewing your traits as flexible and always growing. Feedback is **not** a verdict on who you are as a person. It is an **opportunity** to evolve yourself. Maintaining a **growth mindset** allows you to find feedback constructive instead of devastating.
-

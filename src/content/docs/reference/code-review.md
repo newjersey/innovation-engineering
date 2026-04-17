@@ -162,14 +162,14 @@ Be you the author or a reviewer on a pull request, it's often difficult to keep 
 
 ### GitHub's pull request page
 
-A bookmark you might keep for daily review is the global Pull Request page in GitHub: https://github.com/pulls
+A bookmark you might keep for daily review is the global Pull Request page in GitHub: <https://github.com/pulls>
 
 It allows you to see all the various Pull Requests across every repository that you've created, been assigned to, etc. with search and filter capabilities.
 
 ### Pickaroo bot GitHub workflow
 
 As mentioned above, many teams use the [Pickaroo Bot](/innovation-engineering/guides/github-actions/action-pickaroo) to tag assigned reviewers in Slack messages:
-![](../../../assets/pickaroo-slack-example.webp)
+![Pickaroo bot Slack message example showing a pull request review request](../../../assets/pickaroo-slack-example.webp)
 You might take advantage of Slack's _Save for later_ or _Remind Me_ functionalities to manage multiple review requests over several days if you're not able to respond immediately.
 
 ### GitHub <> Slack app scheduled and real-time alerts

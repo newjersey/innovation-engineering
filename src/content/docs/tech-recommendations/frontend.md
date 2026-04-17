@@ -5,7 +5,7 @@ wip: true
 
 ## Language
 
-React - Unless there’s a very good reason, we use React on our team over other frontend frameworks (Angular, Vue, etc). There may sometimes be a reason to use pure vanilla JS and not use a frontend framework at all; that’s fine. 
+React - Unless there’s a very good reason, we use React on our team over other frontend frameworks (Angular, Vue, etc). There may sometimes be a reason to use pure vanilla JS and not use a frontend framework at all; that’s fine.
 
 TypeScript - Static typing can be philosophically considered a form of testing - it provides immediate, useful feedback as to whether the code written satisfies the defined constraints. We have a strong preference that TypeScript is used over plain JavaScript.
 
@@ -32,7 +32,8 @@ Use React Testing Library and install the following:
 - Cypress is recommended, or more commonly used
 - Some folks have used Playwright
 - Add an [upload-artifact step](https://github.com/actions/upload-artifact?tab=readme-ov-file#upload-an-entire-directory), so that you can view screenshots if the CI fails in ways that you can't reproduce
-    - ```yaml
+
+  - ```yaml
       - name: Upload screenshots
         uses: actions/upload-artifact@v6
         if: failure()

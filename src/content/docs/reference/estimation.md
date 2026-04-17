@@ -21,7 +21,7 @@ There are a few reasons for estimating work:
   discussion seems to call for it) and leave them attached to the story, to better achieve this
   goal.
 
-3. **Open a dialogue between product and engineering about story complexity.** If a story receives a
+1. **Open a dialogue between product and engineering about story complexity.** If a story receives a
    higher estimation than the product folks expected, it’s a signal to start a conversation about
    whether the story could be simplified or split to still achieve value for the user.
 
@@ -90,7 +90,6 @@ of similar tasks can vary at different points of the project. For example, addin
 support to a page can have higher complexity the first time we do it and lower complexity if we did
 the same thing to a different page later on in the project.
 
-
 Different teams are free to make their own decisions about story point tiers. The below references current sizing guides in use by different teams currently.
 
 ### BizX chore sizing
@@ -135,7 +134,7 @@ How: needs a little thinking or experimentation to figure out how to do it
 What: we mostly understand what needs to be done
 How: we kind of understand how to do it (unless we’re way off base)
 
-| Points | Definition | 
+| Points | Definition |
 | ------ | ---------- |
 | 1 point | <ul><li><b>What</b>: we understand exactly what needs to be done</li><li><b>How</b>: we understand exactly how to do it</li></ul> |
 | 2 points | <ul><li><b>What</b>: we understand exactly what needs to be done</li><li><b>How</b>: needs a little thinking or experimentation to figure out how to do it</li></ul> |

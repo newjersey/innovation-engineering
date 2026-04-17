@@ -8,7 +8,7 @@ Primary acronym and initialism reference is in the [office-wide glossary doc](ht
 
 Here are some engineering-specific terms we might use in this documentation that should be explained. Please keep this list in alphabetical order.
 
-- **Bucket Brigade** 
-- **Speedback** 
-- **Techtro** 
-- **Red-Green-Refactor** 
+- **Bucket Brigade**
+- **Speedback**
+- **Techtro**
+- **Red-Green-Refactor**

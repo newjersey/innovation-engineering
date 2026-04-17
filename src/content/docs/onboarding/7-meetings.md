@@ -8,6 +8,7 @@ Many of these meetings have a designated or rotating facilitator, and will “ru
 Send your engineering directors a message if you are interested in hosting, or if you need a calendar invite to these meetings.
 
 ## Innovation Engineering Weekly
+
 _Weekly: Wednesdays 3:30–4:15pm_
 
 For all engineers (including contractors) - we typically switch every other week between a “Spreadsheet Day” (context-sharing what projects are working on and need help with), and deep-dive sessions where someone facilitates a topic of interest.
@@ -73,11 +74,10 @@ As the host, you’re not responsible for running the workshop, you are responsi
   - Facilitate something yourself!
   - Come up with ideas based on prior conversations or deep-dives and solicit a facilitator
   - Reach out to individuals who you know has been doing interesting thinking or work in a certain interest area to see if they want to facilitate
-  - Solicit workshop ideas from the group at large 
+  - Solicit workshop ideas from the group at large
 - Ensure the facilitator has ample time and opportunity to plan and design their workshop by checking in with them regularly over the weeks leading up to the workshop
 - If needed, work with the Weekly Sync host so that a Wednesday meeting can be used to prep the workshop
 - The day before the workshop, send an agenda in Slack so that people know what to expect when they show up (and can plan around their lunch breaks!)
-
 
 ## Onboarding Doc Sessions
 

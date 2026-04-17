@@ -15,16 +15,17 @@ description: Styles for docs
 
 ## 🔐 Private content
 
-Per [our default-to-open principle](/innovation-engineering/onboarding/2-principles/#openpublic-by-default-closedprivate-when-necessary), this wiki is publicly accessible. For any information that should not be publicly visible, create a wiki entry here, and provide a link to a Google doc instead. In the wiki markdown file, include a list of several keywords. This will facilitate maximum searchability within the wiki as a source-of-truth for finding content even when private. 
+Per [our default-to-open principle](/innovation-engineering/onboarding/2-principles/#openpublic-by-default-closedprivate-when-necessary), this wiki is publicly accessible. For any information that should not be publicly visible, create a wiki entry here, and provide a link to a Google doc instead. In the wiki markdown file, include a list of several keywords. This will facilitate maximum searchability within the wiki as a source-of-truth for finding content even when private.
 
 An example of this pattern of keywords + link to Google Doc is our [Cloud usage policy](/innovation-engineering/reference/cloud-usage-policy).
 
 Bear in mind the following guidelines for public information:
+
 - Avoid using team member names specifically. We recommend referencing by team/role instead ("the engineering directors", "the tech ops team", "the CCM team")
 - Do not expose information about NJ internal systems or the operations of the state IT department
 - When in doubt, ask your engineering directors!
 
-## 📁 Folders 
+## 📁 Folders
 
 We do not nest folders. We only use top-level folders with no subfolders. Heavily nested structures make information more difficult to find, make nesting inconsistent, and introduce more cognitive overhead in deciding where to place a doc.
 

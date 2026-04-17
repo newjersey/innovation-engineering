@@ -57,7 +57,7 @@ If you have Zscaler on your machine, you might encounter errors about SSL certif
 ### Configuring Node.js for Zscaler
 
 1. **Install nvm and node**: Follow [the Microsoft guide](https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows#install-nvm-windows-nodejs-and-npm).
-2. **Install yarn**: Sorry, how to do so without npm is a little unclear. This was done via a downloadable installer for an old version of yarn https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable. However, https://yarnpkg.com/corepack with corepark is probably the right way to do it - just not sure if that itself runs into SSL issues.
+2. **Install yarn**: Sorry, how to do so without npm is a little unclear. This was done via a downloadable installer for an old version of yarn <https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable>. However, <https://yarnpkg.com/corepack> with corepark is probably the right way to do it - just not sure if that itself runs into SSL issues.
 3. **Set Environment Variables**:
 5
    Open PowerShell as Administrator and run the following commands, replacing `C:\path\to\your\ca-certificates.crt` with the actual path to your certificate file:
@@ -68,7 +68,7 @@ If you have Zscaler on your machine, you might encounter errors about SSL certif
    [System.Environment]::SetEnvironmentVariable('NODE_OPTIONS', '--use-openssl-ca', [System.EnvironmentVariableTarget]::Machine)
    ```
 
-2. **Disable strict SSL in Yarn**:
+4. **Disable strict SSL in Yarn**:
 
    ```powershell
    corepack enable
@@ -93,5 +93,6 @@ If VSCode still has SSL errors, close and re-open it (not just a new terminal se
 ## Repository set up
 
 If the project will be developed on both UNIX and native Windows, you may want to:
+
 - Add a `.gitattributes` file with `* text=auto eol=lf` to [standardize the repository line endings](https://docs.github.com/en/get-started/git-basics/configuring-git-to-handle-line-endings) to UNIX line endings (assuming that the production enviroment is UNIX).
 - Ensure that there are no bash scripts, e.g. by running all scripts in the project language environment (e.g. Node, Python)

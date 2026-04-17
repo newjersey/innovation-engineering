@@ -241,7 +241,7 @@ chsh -s $(which zsh)
 
 Ah, the infamous SSL certificate error. If you're on a corporate or state-issued laptop, you've probably already encountered this beast:
 
-```
+```text
 SSL Error: unable to get local issuer certificate
 ```
 
@@ -260,13 +260,13 @@ cd /mnt/c/Users/<your_windows_username>/Downloads
 sudo cp node_awscli_zscaler_ca.crt /usr/local/share/ca-certificates/zscaler.crt
 ```
 
-3. **Update the certificate store**:
+1. **Update the certificate store**:
 
 ```shell
 sudo update-ca-certificates
 ```
 
-4. **Verify it worked**:
+1. **Verify it worked**:
 
 ```shell
 sudo update-ca-certificates --fresh
@@ -328,7 +328,7 @@ There are multiple ways to set up git and authenticate with GitHub. If you're no
 
 ### Option 1: GitHub Desktop
 
-- Download github desktop: https://desktop.github.com/download/
+- Download github desktop: <https://desktop.github.com/download/>
 - Launch the application, and follow the instructions to log in
 - Select "Clone a repository from the internet", and select the first "Github.com" tab, if not already selected. For "Local path", change the path to `\\wsl$\Ubuntu\home\<your ubuntu username>\Developer\<name of the repository>`. Then, click clone
 - Select that you trust the repository are trying to download.
@@ -494,9 +494,9 @@ code .
 code ~/Developer
 ```
 
-2. First-time setup: VSCode will automatically detect WSL and offer to install the "Remote - WSL" extension. Click "Install" when prompted.
+1. First-time setup: VSCode will automatically detect WSL and offer to install the "Remote - WSL" extension. Click "Install" when prompted.
 
-3. Verify the connection: Look at the bottom-left corner of VS Code. You should see **"WSL: Ubuntu"** in green, indicating you're connected to your Linux environment.
+2. Verify the connection: Look at the bottom-left corner of VS Code. You should see **"WSL: Ubuntu"** in green, indicating you're connected to your Linux environment.
 
 #### Troubleshooting
 

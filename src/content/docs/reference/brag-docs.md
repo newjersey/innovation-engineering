@@ -6,6 +6,7 @@ description: What is a brag doc, and how to make one
 _Citation: This idea and content taken and adapted from Julia Evans. [Find her original blog post here](https://jvns.ca/blog/brag-documents/)._
 
 ## What is it?
+
 It is a document bragging about all the awesome accomplishments you achieved, big or small! It’s your way to have visibility for yourself (and to show others) what you do and why you’re so awesome.
 
 ## Why do it?
@@ -13,6 +14,7 @@ It is a document bragging about all the awesome accomplishments you achieved, bi
 ### Memory
 
 Instead of trying to remember everything you did with your brain, only at a point in the future when it comes up, maintain a “brag document” that lists everything so you can refer to it!
+
 - When you’re demonstrating your skills with your manager
 - When you’re applying for a new internal role
 - When you are making a resume for another role
@@ -20,6 +22,7 @@ Instead of trying to remember everything you did with your brain, only at a poin
 ### Reflection
 
 The brag document is useful not just to hype accomplishments, but also to reflect on the work you’ve done. Some questions it can help with:
+
 - What work do I feel most proud of?
 - Are there themes in these projects I should be thinking about? What’s the big picture of what I’m working on? (am I working a lot on security? localization?).
 - What do I wish I was doing more / less of?
@@ -52,11 +55,13 @@ It additionally fosters a culture of pride and celebrating wins. You SHOULD feel
 Ideally it works best when done in-the moment or on a regular basis, not reflecting on the whole year. Hoping we can build a culture to make this second nature!
 
 Some ideas:
+
 - Collective brag doc quiet working session for 15-20min every 2-3 weeks
 - Individuals taking time ahead of monthly 1:1s with your manager to update your doc and share new accomplishments
 - Something else?
 
 ## Resources
+
 - [Brag Doc - TEMPLATE - COPY ME](https://docs.google.com/document/d/1arTd2xWg2kclyNrBWbNSxc2BAiOTnUloL-prXtwAro8/edit?usp=sharing)
 - [Brag Doc SAMPLE - Anne 2019](https://docs.google.com/document/d/1suJLq8HjtoYcPbBESFYYXmk0EtHD92cFM3EirGy7yCI/edit?usp=sharing)
 - [Brag Doc Workshop](https://docs.google.com/presentation/d/1fAHYkIvC597JcyKn_kMDfmo1beDbxMgv33k2ErfP5yQ/edit?usp=sharing)

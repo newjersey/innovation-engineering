@@ -6,7 +6,7 @@ title: Collaborating on development
 
 ### Joint access to a repository
 
-Agencies may have their own GitHub instance. Some may use GitHub Enterprise accounts that are accessed via Microsoft SSO and partitioned from the public GitHub space. For instance, may not be possible to add your public-GitHub Innovation account to an agency repository, or to add an agency GitHub Enterprise user to a repository in https://github.com/newjersey.
+Agencies may have their own GitHub instance. Some may use GitHub Enterprise accounts that are accessed via Microsoft SSO and partitioned from the public GitHub space. For instance, may not be possible to add your public-GitHub Innovation account to an agency repository, or to add an agency GitHub Enterprise user to a repository in <https://github.com/newjersey>.
 
 However, an agency with GitHub Enterprise SSO accounts should be able to add your @oit.nj.gov accounts as guest users to their GitHub instance. If the agency is unable to add your OIT accounts, you may have to get an agency email accounts.
 
@@ -22,7 +22,7 @@ We suggest:
 
 If the agency has a GitHub instance, in the long term the repository should definitely live in the agency instance so that the agency has ownership over the project.
 
-In the short term, there are some benefits to having a repository under https://github.com/newjersey :
+In the short term, there are some benefits to having a repository under <https://github.com/newjersey> :
 
 1. Integrating with our Slack, so that you and reviewers can get live slack notifications on pull request conversations
 1. Being able to [request reviews via Pickaroo](/innovation-engineering/guides/github-actions/action-pickaroo/)
@@ -35,14 +35,14 @@ However, migrating a repository later in a project can come with some downsides:
 
 1. Needing to do the migration at all
 2. Need to re-permission and reconfigure applications, e.g. renovatebot, AWS integrations
-3. Most engineers don't have admin access to repositories in https://github.com/newjersey. However, you might be granted admin access to your repository in the agency account. So you might actually have more control and permissions on the agency repository, e.g. to add branch protections, change settings, or adjust access levels, without having to go through NJIA Tech Ops.
+3. Most engineers don't have admin access to repositories in <https://github.com/newjersey>. However, you might be granted admin access to your repository in the agency account. So you might actually have more control and permissions on the agency repository, e.g. to add branch protections, change settings, or adjust access levels, without having to go through NJIA Tech Ops.
 
 ### Migrating a GitHub repo to a different organization
 
 1. Figure out who in the agency has GitHub admin access
-1. Create a Tech Ops ticket asking to migrate the repository. Include what repositories you want migrated, the agency admin contact, and any additional options you would like from https://github.com/timrogers/gh-migrate-project (such as configuring `assignee-mapping.csv`)
-   - Tech Ops will likely use https://github.com/timrogers/gh-migrate-project to migrate the repository
-   - We have also migrated projects using https://github.com/newjersey/dol-gh-enterprise-migration-scripts
+1. Create a Tech Ops ticket asking to migrate the repository. Include what repositories you want migrated, the agency admin contact, and any additional options you would like from <https://github.com/timrogers/gh-migrate-project> (such as configuring `assignee-mapping.csv`)
+   - Tech Ops will likely use <https://github.com/timrogers/gh-migrate-project> to migrate the repository
+   - We have also migrated projects using <https://github.com/newjersey/dol-gh-enterprise-migration-scripts>
 1. Request to add any GitHub applications, and reconfigure them
    - e.g., renovatebot
    - If you use GitHub projects as an issue tracker, you may want to [enable built-in workflows](https://docs.github.com/en/issues/planning-and-tracking-with-projects/automating-your-project/using-the-built-in-automations) to e.g. automatically close issues when the status is set to `Done`

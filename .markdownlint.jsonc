@@ -1,0 +1,27 @@
+{
+  // Starlight generates h1 from frontmatter `title`, so body starts at h2
+  "MD002": false, // first-heading-h1
+  "MD025": false, // single-h1
+  "MD041": false, // first-line-heading
+
+  // Prose doesn't need line length limits
+  "MD013": false,
+
+  // MDX components use HTML-like syntax (<Card>, <LinkButton>, etc.)
+  "MD033": false,
+
+  // Starlight admonitions (:::note) can trigger false positives
+  "MD028": false,
+
+  // Bold text is used intentionally as sub-labels in templates and step lists
+  "MD036": false,
+
+  // Table column alignment is cosmetic and not worth enforcing
+  "MD060": false,
+
+  // Allow duplicate headings under different parent sections (e.g., repeated "Example" or "Requirements")
+  "MD024": { "siblings_only": true },
+
+  // Allow trailing punctuation in headings (e.g., "Join the Office of Innovation!")
+  "MD026": false
+}

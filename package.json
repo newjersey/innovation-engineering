@@ -9,7 +9,13 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "biome format --write ./src"
+    "format": "biome format --write ./src",
+    "lint:md": "markdownlint-cli2 '**/*.{md,mdx}' '#node_modules'",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,mjs,astro,css}": ["biome check --write"],
+    "*.{md,mdx}": ["markdownlint-cli2"]
   },
   "dependencies": {
     "@astrojs/starlight": "0.38.3",
@@ -19,6 +25,9 @@
     "starlight-links-validator": "0.23.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.12"
+    "@biomejs/biome": "2.4.12",
+    "husky": "9.1.7",
+    "lint-staged": "16.4.0",
+    "markdownlint-cli2": "0.22.0"
   }
 }

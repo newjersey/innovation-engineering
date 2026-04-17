@@ -27,15 +27,17 @@ We aim to have an office where all engineers are at least familiar with the work
 
 We respect each other’s expertise and have courage to trust one another to make good decisions and take feedback. (That being said, as we mention in the shared responsibility above, nothing is your own problem, and you should be encouraged to reach out to others.)
 
-Some examples of how we trust-by-default would include: not _requiring_ PR reviews before merging code to a repo, and allowing developers to push directly to a main branch. (To learn more about this example, see our [code review guidelines](/innovation-engineering/reference/code-review) and our usage of the [ship/show/ask framework](https://martinfowler.com/articles/ship-show-ask.html)) 
+Some examples of how we trust-by-default would include: not _requiring_ PR reviews before merging code to a repo, and allowing developers to push directly to a main branch. (To learn more about this example, see our [code review guidelines](/innovation-engineering/reference/code-review) and our usage of the [ship/show/ask framework](https://martinfowler.com/articles/ship-show-ask.html))
 
 We are not saying that you should never enact such restrictions. But you should consider _why_ before simply defaulting to placing such restrictions. Many of us come from backgrounds at private companies, where large organizations will default towards a _lack_ of trust in developers, and we want to push back against this mindset which may be implicit in your attitude without realizing it. We want to instead create an environment where we trust developers to make decisions and know for themselves when it may or may not be appropriate to, say, push to main.
 
 Regarding **developer autonomy**: this is an _empowerment_ and a _responsibility_.
+
 - You are _empowered_ to be the decision-maker when it comes to technical choices. For example, you should decide when tech debt has accumulated such that you should spend time pausing feature development to do refactoring.
 - You are _responsible_ for the outcomes of this decision-making - ideally, you would work with a PM to communicate the implications of the tech debt. Neither you nor the PM is an autocrat. We respect autonomy between disciplines in harmony with our values of collaboration, communication, and feedback.
 
 ## Rapid feedback in all contexts
+
 We want **code feedback** (“does it work?”) - this comes in the form of testing. A unit test is immediate, tangible feedback that a piece of code does what I think it does. You also get code feedback from peer review answering the question “is my code high-quality?” As well, it is worth noting that we want the right granularity of feedback - we should have confidence that our code will work in production. We can get this with tests which fail if we change our code logic to break the intended functionality, we can get it by other means as well, including type systems and deployments to lower environments.
 
 We want **product feedback** (“does it solve the problem well?”) - this comes in the form of user testing, analytics, product testing, rapid deployments to production to continuously get feedback on new features. (Note: sometimes other principles like _Do the right thing_ are higher-priority than rapid production deployments. That is the judgment of the team to decide what’s most important. But without production deployments, we are not getting that critical rapid feedback.)
@@ -45,6 +47,7 @@ We want **interpersonal feedback** (“are we doing this well?”) - this comes 
 Regarding interpersonal feedback, while there is a formal structure across the office (approximately 3x/year, facilitated by the leadership team), it may still be your responsibility to request feedback from your teammates and stakeholders as applicable and aligned with your career goals. Some initiatives or individuals have avenues for feedback, such as 1:1s and [speedback](/innovation-engineering/reference/glossary). Additionally, you should feel empowered to ask for feedback, set up 1:1s, and organize feedback structures within your team.
 
 In all cases, we want **_rapid_** feedback, which is why:
+
 - We write tests as we go, so we immediately know if the software works - we don’t wait until days have passed implementing a huge feature to start testing it.
 - We deploy to production as often as possible - ideally one or more times a week - we don’t wait weeks or months between building a feature and discovering if it really solves our users’ problems or not.
 - We seek timely feedback from our teammates - if something I’m doing is hurting our team, I want to know _now_, when I am best suited to make a change. Or if not “now” - as rapidly as possible / makes sense. Late is better than never!
@@ -73,7 +76,7 @@ At all levels, we embrace the principle of **fail quickly; learn from it**. Fail
 
 We have strong opinions, and we believe in our expertise and our ability to make a strong recommendation and to defend it. Simultaneously, our opinions are loosely-held - we are capable of changing our mind when someone else’s strong opinion is persuasive and well-reasoned. We are experts, and we are always listening to others’ expertise.
 
-As a note: part of this principle is also embracing that it's okay to say "I don't know" when you don't know. 
+As a note: part of this principle is also embracing that it's okay to say "I don't know" when you don't know.
 
 ## Open/public by default, closed/private when necessary
 
@@ -89,13 +92,13 @@ We believe in work-life balance for our team members. This means that you are no
 
 We believe in the value of version control. It provides us the ability to iterate incrementally by building off of what worked in the past. While this obviously includes checking in and pushing code to our Git repository, we also believe in prioritizing version control for configuration and infrastructure when appropriate.
 
-We strive to recognize when the complexity of what we are doing should be recorded in code, rather than kept in the mind of one person. 
+We strive to recognize when the complexity of what we are doing should be recorded in code, rather than kept in the mind of one person.
 
 > “If you find yourself writing down a series of commands in a google doc...maybe there's a better way!”
 
 We suggest implementing this principle by scripting commonly used processes, valuing infrastructure-as-code, and beyond.
 
-We refer to the [principles of this wiki](/innovation-engineering/meta/0-principles): 
+We refer to the [principles of this wiki](/innovation-engineering/meta/0-principles):
 
 > - Document all processes with 3+ steps
 > - Document anything you’ve repeated 3+ times
