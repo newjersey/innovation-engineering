@@ -1,11 +1,15 @@
-You are reviewing a document in the NJIA Engineering Wiki for quality, Diataxis alignment, and adherence to team conventions.
+You are reviewing a document in the NJIA Engineering Wiki for quality, Diataxis alignment, and adherence to team conventions. For background on how our wiki applies Diataxis, see `src/content/docs/meta/0-principles.md`.
 
-## Diataxis rules for this wiki
+## Diataxis document types
 
-- **Guides** (`guides/`) are action-oriented: focused on a single task and how to achieve it. Digressions or explanations should be extracted into reference documents.
-- **Reference** docs (`reference/`) are consulted as a source of truth. They describe what something IS, not walk through steps.
-- If a guide contains long explanatory sections, recommend extracting them to a reference doc and cross-linking.
-- If a reference doc reads like a step-by-step tutorial, recommend converting it to a guide.
+The [Diataxis framework](https://diataxis.fr/) splits documentation into four types. Each has a distinct purpose, and content that drifts from its type becomes harder for readers to use.
+
+- **Tutorial** — learning-oriented. Walks a newcomer through a complete experience to build confidence. Guided, hand-holding, every step produces a visible result. *"Follow along and you'll have X working."*
+- **How-To Guide** — task-oriented. Practical steps to achieve a specific real-world goal. Assumes the reader knows what they want to do. Focused and free of digressions. *"How to deploy to staging."*
+- **Reference** — information-oriented. Consulted as a source of truth. Dry, accurate, structured by the subject matter. *"Code review policy", "Glossary."*
+- **Explanation** — understanding-oriented. Discusses the "why" — context, trade-offs, history. Helps the reader build a mental model. *"Why we chose Next.js over Remix."*
+
+Our wiki currently emphasizes How-To Guides (`guides/`) and Reference (`reference/`). Tutorial and Explanation are also valid types — they just don't have dedicated folders yet.
 
 ## Style rules
 
@@ -19,11 +23,15 @@ You are reviewing a document in the NJIA Engineering Wiki for quality, Diataxis 
 
 Read the document the user specifies (or the most recently modified doc if none specified). Then review it against this checklist:
 
-1. **Diataxis alignment**: Is it in the right folder for what it is? Does a guide actually walk through steps? Does a reference doc serve as a source of truth?
-2. **Digression detection**: Are there explanatory sections in a guide that should be a separate reference doc?
+1. **Diataxis alignment**: Is it in the right folder for what it is? Does the content match its type?
+   - A **guide** that spends paragraphs explaining *why* before getting to steps → extract the context into an explanation doc.
+   - A **reference** doc that reads like step-by-step instructions → it might be a guide.
+   - A **tutorial** that lists facts without guiding the reader through an experience → it's drifting into reference.
+   - An **explanation** that gives numbered steps to follow → it's drifting into a how-to guide.
+2. **Digression detection**: Are there sections that belong in a different doc type? Long "why" sections in a guide should be explanations; procedural steps in a reference should be guides.
 3. **Structure quality**: Are sections appropriate for the doc type? Is there a logical flow?
 4. **Link text quality**: Is link text meaningful and accessible, not just "not empty"?
-5. **Cross-linking opportunities**: Scan existing wiki pages for related content that should be linked.
+5. **Cross-linking opportunities**: Scan existing wiki pages for related content that should be linked. Cross-links between Diataxis types are especially valuable (a guide should link to the reference it draws on; an explanation should link to the guide that applies the concept).
 6. **Sensitive content check**: Names, internal systems, credentials, or details that should use the Google Doc pattern.
 7. **Header formatting**: Sentence case, no h1 in body, no skipped levels, proper hierarchy.
 8. **WIP status**: Should this doc have `wip: true`? Or should it be removed?
