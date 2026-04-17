@@ -1,7 +1,7 @@
 {
   "name": "innovation-engineering",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": "true",
   "scripts": {
     "dev": "astro dev",
@@ -14,8 +14,12 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.{ts,mjs,astro,css}": ["biome check --write"],
-    "*.{md,mdx}": ["markdownlint-cli2"]
+    "*.{ts,mjs,astro,css}": [
+      "biome check --write"
+    ],
+    "*.{md,mdx}": [
+      "markdownlint-cli2"
+    ]
   },
   "dependencies": {
     "@astrojs/starlight": "0.38.3",
