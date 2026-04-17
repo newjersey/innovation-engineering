@@ -7,6 +7,9 @@ import starlightLinksValidator from 'starlight-links-validator'
 export default defineConfig({
 	site: 'https://newjersey.github.io',
 	base: "/innovation-engineering",
+	redirects: {
+		'/guides/claude-code-bedrock/': '/guides/development/claude-code-bedrock/',
+	},
 	integrations: [
 		starlight({
 			plugins: [starlightLinksValidator()],

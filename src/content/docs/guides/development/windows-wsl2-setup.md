@@ -10,15 +10,15 @@ Note: This guide is for setting up WSL2 on your laptop, so that you can use a UN
 
 Or: "How I Got `npm install` to Work on My State-Issued Dell Laptop"
 
-If you're a developer who's been handed a Windows machine from your organization and you're staring at PowerShell wondering how you're going to get your Node.js projects running, this guide is for you. We've all been there—trying to run `npm install` only to be greeted by cryptic SSL certificate errors thanks to corporate network security tools like Zscaler.
+If you're a developer who's been handed a Windows machine from your organization and you're staring at PowerShell wondering how you're going to get your Node.js projects running, this guide is for you. We've all been there, trying to run `npm install` only to be greeted by cryptic SSL certificate errors thanks to corporate network security tools like Zscaler.
 
 This is a practical, battle-tested guide for setting up a modern Windows development environment using Windows Subsystem for Linux (WSL2), Windows Terminal, and Visual Studio Code. We recommend WSL2 over Git Bash for full Linux-kernel compatibility, better package management, and smoother tool integration. Why WSL2? Because it provides a complete Linux kernel running inside Windows, which means native Linux performance for development tools, better compatibility with the Node.js/Deno ecosystem, and easier package management with `apt`.
 
-**Quick reality check**: Developing on Windows used to be painful, but it doesn't have to be anymore. With the right setup, you'll have a development environment that rivals macOS and Linux systems—all while keeping your familiar Windows desktop experience.
+**Quick reality check**: Developing on Windows used to be painful, but it doesn't have to be anymore. With the right setup, you'll have a development environment that rivals macOS and Linux systems, all while keeping your familiar Windows desktop experience.
 
 ## Prerequisites
 
-Before we dive in, let's make sure you have everything you need. Don't worry if some of these sound intimidating — we'll walk through each step:
+Before we dive in, let's make sure you have everything you need. Don't worry if some of these sound intimidating; we'll walk through each step:
 
 - **A stable internet connection** for downloading packages and updates (this setup involves quite a bit of downloading)
 - **Windows 11**, fully updated (check your version by pressing `Windows + R`, typing `winver`, and hitting Enter)
@@ -30,7 +30,7 @@ Before we dive in, let's make sure you have everything you need. Don't worry if 
 
 ## 1. Windows Terminal: your new command line home
 
-The default Windows Command Prompt and even PowerShell are... well, let's say they weren't designed with developers in mind. Windows Terminal, however, is a modern, feature-rich terminal application. It supports multiple tabs, themes, and profiles—think of it as the terminal experience you've been missing on Windows.
+The default Windows Command Prompt and even PowerShell are... well, let's say they weren't designed with developers in mind. Windows Terminal, however, is a modern, feature-rich terminal application. It supports multiple tabs, themes, and profiles. Think of it as the terminal experience you've been missing on Windows.
 
 ### Installing Windows Terminal
 
@@ -53,11 +53,11 @@ Once installed, you'll want to make it your default terminal application. We'll 
 
 ## 2. Install and configure WSL2: your Linux environment
 
-This is where the magic happens. We're going to install a full Linux environment that runs seamlessly inside Windows. Think of it as having the best of both worlds—Windows for your familiar desktop experience and Linux for your development tools.
+This is where the magic happens. We're going to install a full Linux environment that runs seamlessly inside Windows. Think of it as having the best of both worlds: Windows for your familiar desktop experience and Linux for your development tools.
 
 ### Enable Required Windows Features
 
-First, we need to tell Windows to enable the subsystem for Linux and virtual machine capabilities. Open Windows PowerShell **as Administrator** (this is crucial — regular PowerShell won't work) and run these commands:
+First, we need to tell Windows to enable the subsystem for Linux and virtual machine capabilities. Open Windows PowerShell **as Administrator** (this is crucial; regular PowerShell won't work) and run these commands:
 
 ```shell
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
@@ -87,7 +87,7 @@ If that doesn't work, try installing Ubuntu manually from the Microsoft Store.
 
 When Ubuntu launches for the first time, it will ask you to create a username and password. This is important:
 
-- **Username**: Choose a lowercase username with no spaces (it can be different from your Windows username). **Write it down** — it's very difficult to change later.
+- **Username**: Choose a lowercase username with no spaces (it can be different from your Windows username). **Write it down.** It's very difficult to change later.
 - **Password**: Create a strong password (it can be different from your Windows password). You'll need this for sudo commands.
 
 **Pro tip**: This Ubuntu user will have full administrator rights within the Linux environment, so choose a password you'll remember but that's still secure.
@@ -124,7 +124,7 @@ ls -la ~/Developer
 
 ## 4. Understanding dotfiles
 
-Before we start installing packages and configuring your environment, let's take a moment to understand dotfiles—they're crucial to how Linux (and your development environment) works, and you'll encounter them throughout this guide.
+Before we start installing packages and configuring your environment, let's take a moment to understand dotfiles. They're crucial to how Linux (and your development environment) works, and you'll encounter them throughout this guide.
 
 ### What Are Dotfiles?
 
@@ -160,11 +160,11 @@ code ~/.bashrc    # Edit with VS Code (after we install it)
 
 ### Why This Matters
 
-Throughout this guide, we'll be creating and editing several dotfiles to customize your development environment. Understanding how they work will help you troubleshoot issues and personalize your setup. Don't worry if it seems abstract now—it'll make more sense as we use them!
+Throughout this guide, we'll be creating and editing several dotfiles to customize your development environment. Understanding how they work will help you troubleshoot issues and personalize your setup. Don't worry if it seems abstract now; it'll make more sense as we use them!
 
 ## 5. Essential Linux Packages
 
-Now for the fun part—installing all the development tools you'll need. Think of this as setting up your Linux toolbox with all the essential utilities.
+Now for the fun part: installing all the development tools you'll need. Think of this as setting up your Linux toolbox with all the essential utilities.
 
 In your WSL (Ubuntu) terminal, run:
 
@@ -383,7 +383,7 @@ EOF
 git config --global core.excludesfile ~/.gitignore
 ```
 
-**What's this doing?** This creates a global ignore file that applies to all your Git repositories. It includes common files that you never want to accidentally commit—like OS-generated files, editor temporary files, dependency directories, and environment files containing secrets. Add any additional files to this `.gitignore` file that wouldn't normally be included in project-specific `.gitignore` files.
+**What's this doing?** This creates a global ignore file that applies to all your Git repositories. It includes common files that you never want to accidentally commit, like OS-generated files, editor temporary files, dependency directories, and environment files containing secrets. Add any additional files to this `.gitignore` file that wouldn't normally be included in project-specific `.gitignore` files.
 
 #### SSH key setup for GitHub
 
@@ -521,7 +521,7 @@ Once you have VSCode connected to WSL, consider installing these extensions:
 - Prettier: Code formatting
 - Thunder Client: API testing (alternative to Postman)
 
-**Pro tip**: Extensions installed in WSL are separate from extensions in regular Windows VS Code. This is actually a good thing—it keeps your development environment clean and specific to your Linux setup.
+**Pro tip**: Extensions installed in WSL are separate from extensions in regular Windows VS Code. This is actually a good thing. It keeps your development environment clean and specific to your Linux setup.
 
 ## 11. Installing Node.js with NVM and configuring it for Zscaler
 

@@ -1,19 +1,24 @@
 {
   "name": "innovation-engineering",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.1.0",
+  "private": "true",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "biome format --write ./src"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.36.2",
-    "@fontsource/public-sans": "^5.2.7",
-    "astro": "^5.15.9",
-    "sharp": "^0.34.2",
-    "starlight-links-validator": "^0.19.1"
+    "@astrojs/starlight": "0.38.3",
+    "@fontsource/public-sans": "5.2.7",
+    "astro": "6.1.7",
+    "sharp": "0.34.5",
+    "starlight-links-validator": "0.23.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.12"
   }
 }
