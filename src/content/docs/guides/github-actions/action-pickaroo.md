@@ -20,9 +20,10 @@ The Pickaroo Reviewers workflow provides a complete solution for automated PR re
 3. Sends a formatted Slack message of the PR details, and mentions the selected reviewers in a threaded message.
 4. Conveniently removes any labels that were added to the PR in in order to trigger the workflow run
 5. Supports a `show` parameter (see our guidance on [Ship/Show/Ask](/innovation-engineering/reference/code-review)) to simply notify the given channel and skip selecting reviewers.
+6. Supports impersonating the PR author for a more personalized Slack notification.
 
 The results look something like this:
-![A slack message thread created by the Pickaroo Workflow to notify PR reviewers](../../../../assets/pickaroo-example.webp)
+![A slack message thread created by the Pickaroo Workflow to notify PR reviewers](../../../../assets/pickaroo-slack-example.webp)
 
 ### Requirements
 
@@ -77,6 +78,7 @@ When using the Pickaroo workflow in a workflow of your own, be sure to specify `
 | `number_of_repicks`   | No       | number  | **Deprecated.** Use `number_of_reviewers` instead.                                                                                           |
 | `show`                | No       | boolean | If true, only post a Slack message without selecting reviewers                                                                               |
 | `channel_id`          | Yes      | string  | The Slack Channel ID to notify                                                                                                               |
+| `slack_as_author`     | No       | boolean | Allow the Slack App integration to impersonate the PR's author when sending a message to the above channel.                                  |
 
 ### Using this workflow in your repository
 
@@ -114,7 +116,14 @@ jobs:
 
 In the above example, when a PR receives a `pr-review` label, it will use Pickaroo to select 2 random reviewers and notify the given Slack channel. When a PR receives a `pr-show` label, Pickaroo will just notify the Slack channel and skip selecting reviewers thanks to the `show` parameter.
 
-### Other recipes
+:::note
+
+The `slack_as_author` input is an _optional_ configuration. When set to true, the main slack message will appear to be sent by the PR's author. It will still have an indicator that discloses it as a Slack App, but nonetheless, make sure your project's participants are aware of this setting if you're going to use it.
+
+If you'd like the option for individuals to choose, you can always create separate labels to run Pickaroo with this setting on/off.
+:::
+
+### Other Recipes
 
 #### Multiple rounds of picking
 
@@ -141,7 +150,9 @@ jobs:
     permissions: {}
     with:
       include_teams: "innovation-engineering"
-      exclude_users: "dhcole gamorgana"
+      # exclude any users/teams that are included in the previous jobs,
+      # so Pickaroo doesn't count them towards this job's number_of_reviewers.
+      exclude_users: "dhcole timwright12 jviall aloverso"
       number_of_reviewers: 1
       channel_id: C03C7NHK9B4 # engineering-all
 ```

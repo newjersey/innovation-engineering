@@ -13,12 +13,12 @@ This is a GitHub Actions workflow that sends notifications to Slack channels. It
 
 ### How it works
 
-The Slack Notification workflow wraps the official `slackapi/slack-github-action@v2` integration. It sends:
+The Slack Notification workflow wraps our custom `slack-message` action, which calls the Slack API directly. It sends:
 
 1. A primary Slack message to a specified channel
 2. An optional threaded message using the timestamp of the first message
 
-It calls Slack's chat.postMessage API method under the hood. Read more at the [Slack action notification](https://docs.slack.dev/tools/slack-github-action/sending-techniques/sending-data-slack-api-method/).
+It calls Slack's `chat.postMessage` API method under the hood. Read more at the [Slack API docs](https://api.slack.com/methods/chat.postMessage).
 
 ### Requirements
 
@@ -46,11 +46,34 @@ This is configured as an organization secret, accessible to any repo using the w
 
 ### Inputs
 
-| Name             | Required | Type   | Description                           |
-| ---------------- | -------- | ------ | ------------------------------------- |
-| `channel_id`     | Yes      | string | Slack channel ID (ex: `C09Q34G9HMX`). |
-| `message`        | Yes      | string | Main message posted to the channel.   |
-| `thread_message` | No       | string | Optional threaded message.            |
+The workflow accepts all the same inputs as the action (see below), minus `token` which is handled automatically via the org secret.
+
+| Name                  | Required | Type   | Description                                                                           |
+| --------------------- | -------- | ------ | ------------------------------------------------------------------------------------- |
+| `channel_id`          | Yes      | string | Slack channel ID (ex: `C09Q34G9HMX`).                                                 |
+| `message`             | \*       | string | Main message posted to the channel. Required unless `message_ts` is provided.         |
+| `message_ts`          | No       | string | Timestamp of an existing message to update and/or reply to in thread.                 |
+| `thread_message`      | No       | string | Optional threaded message.                                                            |
+| `username`            | No       | string | Display name to post the main message as.                                             |
+| `avatar_url`          | No       | string | Avatar image URL for the main message. Takes priority over `avatar_emoji`.            |
+| `avatar_emoji`        | No       | string | Slack emoji for the main message avatar (e.g. `:kangaroo:`).                          |
+| `thread_username`     | No       | string | Display name to post the threaded message as.                                         |
+| `thread_avatar_url`   | No       | string | Avatar image URL for the threaded message. Takes priority over `thread_avatar_emoji`. |
+| `thread_avatar_emoji` | No       | string | Slack emoji for the threaded message avatar.                                          |
+
+:::note
+One or both of `message` or `message_ts` must be provided. When `message_ts` is provided without `message`, the action will thread a reply to the existing message instead of posting a new one. When both are provided, the main `message`'s content will be updated, and any provided `thread_message` will also be sent.
+:::
+
+:::caution
+The `username`, `avatar_url`, `thread_username` and `thread_avatar_url` parameters give the ability to impersonate _real_ users. This should only ever be done when the running of the workflow is triggered by the person themself--in other words, it should _never_ be a surprise to someone that a Slack App is sending a message on their behalf.
+:::
+
+### Outputs
+
+| Name         | Description                                                                                                                  |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------- |
+| `message_ts` | Timestamp of the main message sent. Can be used to send later messages in a thread and/or update the main message's content. |
 
 ### Using this workflow in your repository
 
@@ -78,11 +101,13 @@ If you find yourself limited by it, instead of using the above workflow you can 
 
 ### How it works
 
-Just like the workflow above, the action handles:
+The action handles:
 
 1. Sending a primary message to a Slack channel
-2. Optionally sending a threaded reply using the timestamp from the first message
-3. Returning the message timestamp for potential use in subsequent steps
+2. Updating an existing message (when `message_ts` is provided along with `message`)
+3. Optionally sending a threaded reply using the timestamp from the first message
+4. Returning the message timestamp for potential use in subsequent steps
+5. Optionally impersonating a user by overriding the bot's display name and avatar
 
 ### Requirements
 
@@ -96,18 +121,35 @@ Same requirement as the workflow - the Slack bot must be a member of the target 
 
 ### Inputs
 
-| Name             | Required | Type   | Description                           |
-| ---------------- | -------- | ------ | ------------------------------------- |
-| `channel_id`     | Yes      | string | Slack channel ID (ex: `C09Q34G9HMX`). |
-| `message`        | Yes      | string | Main message posted to the channel.   |
-| `thread_message` | No       | string | Optional threaded message.            |
-| `token`          | Yes      | string | Slack OAuth token.                    |
+All inputs can alternatively be provided as `CAPITAL_CASE` environment variables (e.g., `CHANNEL_ID`, `MESSAGE`). Environment variables take priority over action inputs, which makes this action flexible for use in multi-step workflows where values are computed in earlier steps and written to `$GITHUB_ENV`.
+
+| Name                  | Required | Type   | Description                                                                                    |
+| --------------------- | -------- | ------ | ---------------------------------------------------------------------------------------------- |
+| `channel_id`          | Yes      | string | Slack channel ID (ex: `C09Q34G9HMX`).                                                          |
+| `message`             | \*       | string | Main message posted to the channel. Required unless `message_ts` is provided.                  |
+| `message_ts`          | No       | string | Timestamp of an existing message to update and/or reply to in thread.                          |
+| `thread_message`      | No       | string | Optional threaded message.                                                                     |
+| `token`               | Yes      | string | Slack OAuth token.                                                                             |
+| `username`            | No       | string | Display name to post the main message as.                                                      |
+| `avatar_url`          | No       | string | Avatar image URL for the main message. Takes priority over `avatar_emoji`.                     |
+| `avatar_emoji`        | No       | string | Slack emoji for the main message avatar (e.g. `:kangaroo:`). Ignored when `avatar_url` is set. |
+| `thread_username`     | No       | string | Display name to post the threaded message as.                                                  |
+| `thread_avatar_url`   | No       | string | Avatar image URL for the threaded message. Takes priority over `thread_avatar_emoji`.          |
+| `thread_avatar_emoji` | No       | string | Slack emoji for the threaded message avatar. Ignored when `thread_avatar_url` is set.          |
+
+:::note
+One or both of `message` or `message_ts` must be provided. When `message_ts` is provided without `message`, `thread_message` must be provided and the action will thread a reply to the existing message instead of posting a new one. When both are provided, the main `message`'s content will be updated, and any provided `thread_message` will also be sent.
+:::
+
+:::caution
+The `username`, `avatar_url`, `thread_username` and `thread_avatar_url` parameters give the ability to impersonate _real_ users. This should only ever be done when the running of the workflow is triggered by the person themself--in other words, it should _never_ be a surprise to someone that a Slack App is sending a message on their behalf.
+:::
 
 ### Outputs
 
-| Name         | Description                         |
-| ------------ | ----------------------------------- |
-| `message_ts` | Timestamp of the main message sent. |
+| Name         | Description                                                                                                                  |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------- |
+| `message_ts` | Timestamp of the main message sent. Can be used to send later messages in a thread and/or update the main message's content. |
 
 ### Using this action in your repository
 
@@ -129,7 +171,7 @@ jobs:
         with:
           channel_id: C09Q34G9HMX
           message: "Build completed successfully!"
-          thread_message: "All tests passed ✅"
+          thread_message: "All tests passed"
           token: ${{ secrets.SLACK_OAUTH_TOKEN }}
 
       - name: Use message timestamp
@@ -137,10 +179,42 @@ jobs:
           echo "Message sent at: ${{ steps.slack.outputs.message_ts }}"
 ```
 
-### References for the Slack notification workflow
+#### Using environment variables instead of inputs
+
+When your message content is computed dynamically (e.g., from a previous step), you can set environment variables instead of passing inputs directly:
+
+```yaml
+- name: Build message
+  run: |
+    echo "MESSAGE=Deploy of ${{ github.sha }} succeeded" >> "$GITHUB_ENV"
+    echo "CHANNEL_ID=C09Q34G9HMX" >> "$GITHUB_ENV"
+    echo "TOKEN=${{ secrets.SLACK_OAUTH_TOKEN }}" >> "$GITHUB_ENV"
+
+- name: Send Slack message
+  uses: newjersey/innovation-shared-actions/.github/actions/slack-message@main
+```
+
+#### Impersonating a user
+
+```yaml
+- name: Send as deploy author
+  uses: newjersey/innovation-shared-actions/.github/actions/slack-message@main
+  with:
+    channel_id: C09Q34G9HMX
+    message: "I just deployed to production!"
+    username: "jviall"
+    avatar_url: "https://avatars.githubusercontent.com/u/12345"
+    thread_message: "Details in the thread"
+    thread_username: "Deploy Bot"
+    thread_avatar_emoji: ":rocket:"
+    token: ${{ secrets.SLACK_OAUTH_TOKEN }}
+```
+
+### References
 
 - [Slack notification workflow](https://github.com/newjersey/innovation-shared-actions/blob/main/.github/workflows/slack.yml)
 - [Slack message action](https://github.com/newjersey/innovation-shared-actions/blob/main/.github/actions/slack-message/action.yml)
 - [Example notification implementation](https://github.com/newjersey/njwds/blob/main/.github/workflows/pr-review.yml#L13)
 - [Example Slack notification](https://njcio.slack.com/archives/C09Q36G9HMX/p1763758012713669)
+- [Slack API: chat.postMessage](https://api.slack.com/methods/chat.postMessage)
 - [Slack app (access required)](https://api.slack.com/apps/A09QJADPX32/general)
