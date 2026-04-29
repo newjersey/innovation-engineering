@@ -29,9 +29,11 @@ Use React Testing Library and install the following:
 
 ### End-to-end tests
 
-- Cypress is recommended, or more commonly used
-- Some folks have used Playwright
-- Add an [upload-artifact step](https://github.com/actions/upload-artifact?tab=readme-ov-file#upload-an-entire-directory), so that you can view screenshots if the CI fails in ways that you can't reproduce
+We recommend **Playwright** for end-to-end testing. Visit the [ProfileNJ e2e testing decision doc](https://github.com/newjersey/profile-nj/blob/09d8afc3eca2c50451cdaefbf1e61048821a73df/docs/decisions/2026-02-10-e2e-testing-framework.md) for details on the justification.
+
+However, we used to use Cypress more commonly, and many older projects still use Cypress.
+
+If using Cypress, add an [upload-artifact step](https://github.com/actions/upload-artifact?tab=readme-ov-file#upload-an-entire-directory), so that you can view screenshots if the CI fails in ways that you can't reproduce
 
   - ```yaml
       - name: Upload screenshots
