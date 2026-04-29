@@ -10,3 +10,13 @@ When onboarding, we always start with Values, Principles, and Practices before g
 ## Process
 
 For onboarding a new team member, we recommend reading the onboarding guide aloud in small discussion panel. After each item, pause for discussion and to ask and answer questions. Edit the documents as you go, if suggestions are made. This is meant to be a living document that evolves with our discipline.
+
+## Table of contents
+
+1. [Values](/innovation-engineering/onboarding/1-values/)
+2. [Principles](/innovation-engineering/onboarding/2-principles/)
+3. [Practices](/innovation-engineering/onboarding/3-practices/)
+4. [Responsibilities](/innovation-engineering/onboarding/4-responsibilities/)
+5. [Setup](/innovation-engineering/onboarding/5-setup/)
+6. [Slack](/innovation-engineering/onboarding/6-slack/)
+7. [Meetings](/innovation-engineering/onboarding/7-meetings/)
