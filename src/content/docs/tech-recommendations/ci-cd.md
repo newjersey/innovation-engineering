@@ -3,4 +3,7 @@ title: CI/CD
 wip: true
 ---
 
-To Do
+We use GitHub Actions. The pipeline should
+- Runs tests
+- Deploy
+
