@@ -7,7 +7,7 @@ We have a collection of GitHub Actions that can be used to implement common Work
 
 View the [innovation-shared-actions repository (internal)](https://github.com/newjersey/innovation-shared-actions).
 
-## Slack User Lookup Action
+## Slack user lookup action
 
 This github action can be used to find the Slack users associated with a list of GitHub usernames. It's intended to utilize an org-level variable in GitHub that stores the mappings of GitHub usernames to Slack user IDs.
 

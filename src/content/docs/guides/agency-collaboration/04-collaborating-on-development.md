@@ -2,7 +2,7 @@
 title: Collaborating on development
 ---
 
-## Github
+## GitHub
 
 ### Joint access to a repository
 
@@ -47,7 +47,7 @@ However, migrating a repository later in a project can come with some downsides:
    - e.g., renovatebot
    - If you use GitHub projects as an issue tracker, you may want to [enable built-in workflows](https://docs.github.com/en/issues/planning-and-tracking-with-projects/automating-your-project/using-the-built-in-automations) to e.g. automatically close issues when the status is set to `Done`
 
-### Setting up ssh keys for two GitHub organizations
+### Setting up SSH keys for two GitHub organizations
 
 See [working in multiple Github Orgs](/innovation-engineering/guides/development/working-in-multiple-github-orgs/).
 

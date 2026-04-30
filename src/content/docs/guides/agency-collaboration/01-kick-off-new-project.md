@@ -8,7 +8,7 @@ The principle behind these suggestions is derived from employing a “deploy on 
 
 Note: Don’t worry too much about whether you feel you are starting too early on development work ahead of a validated product roadmap. These activities will not go to waste; if the team pivots or chooses not to engage, your work here can be reused for future projects or serve as valuable learning experience for you anyways.
 
-## Agency Technical Discovery
+## Agency technical discovery
 
 - **Identify technical stakeholders and build relationships.** Have your stakeholders introduce you to the necessary technical owners, and schedule introductory meetings.
   - NOTE: Ensure you are going through the correct channels when working with stakeholders, technical or otherwise. If you are ever uncertain, loop in your initiative director and/or your functional director to help gain context on any pre-existing relationships or context that may exist between NJIA and your stakeholders.
@@ -17,7 +17,7 @@ Note: Don’t worry too much about whether you feel you are starting too early o
 
 - **Get access to systems** within the agency, potentially looping in our Tech Ops team for help. Often this takes time, and kicking it off early can help drastically. The sooner you start, the better\!
 
-## Technical Exploration & Proof-of-Concept
+## Technical exploration & proof-of-concept
 
 What specific problems are unique to your domain and problem ecosystem? What potential technical solutions might you need to leverage to address these?
 
@@ -32,7 +32,7 @@ What specific problems are unique to your domain and problem ecosystem? What pot
 
 - **Develop proof-of-concept code** that leverages the explorations and demonstrates a basic flow that proves feasibility of a particular solution and allows you to learn more about how the unknowns will work.
 
-## Agency Data Integration
+## Agency data integration
 
 Will your problem space likely require **access to agency-controlled data**, such as on one of their internal servers or on-premise databases? How will you connect to this data?
 
@@ -52,7 +52,7 @@ You and your team should also be asking non-technical data questions, such as:
 
 - How can we find the line between discomfort / risk-aversion and true legal issues? Who at the agency can help us navigate this?
 
-## Agency Cloud Infrastructure
+## Agency cloud infrastructure
 
 - Work with technical stakeholders to **understand the cloud-based infrastructure** where any products / solutions developed are likely to live in the long term within the agency (Agency-controlled AWS tenant? OIT AWS tenant? Azure tenant?)
 

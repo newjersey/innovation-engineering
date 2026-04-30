@@ -13,7 +13,7 @@ _Weekly: Wednesdays 3:30–4:15pm_
 
 For all engineers (including contractors) - we typically switch every other week between a “Spreadsheet Day” (context-sharing what projects are working on and need help with), and deep-dive sessions where someone facilitates a topic of interest.
 
-### Host Responsibilities
+### Host responsibilities
 
 #### Spreadsheet Day
 
@@ -38,7 +38,7 @@ _Monthly: Thursdays 3–4pm_
 
 An optional session where we get together to watch a tech talk (like a recording of a conference talk) and discuss what we learn. Tech Talks have a rotating facilitator chosen for the following month who is responsible for picking the topic & finding content for the following meeting.
 
-### Host Responsibilities
+### Host responsibilities
 
 - Keep track of the next facilitator in the “Resources” tab on #engineering-all
 - On Monday the week of the Tech Talk, message the facilitator to confirm they will be prepared to facilitate and have content ready
@@ -50,7 +50,7 @@ _Monthly: Thursdays 3–4pm_
 
 An internal session where we have a rotating schedule for everyone to give a 15-minute lightning talk on a technical non-NJ topic of your choice.
 
-### Host Responsibilities
+### Host responsibilities
 
 - Track the upcoming rotation of lightning talks, which is an embedded Slack canvas in the “Resources” tab of #engineering-all
 - One full week before the lightning talks, message each upcoming presenter to remind them that lightning talks are next week and confirm that they will be good to present
@@ -66,7 +66,7 @@ _Bimestrial (every other month) Fridays 10am–2pm_
 
 We do a 4-hour workshop focusing on specific engineering skills (in the past, things like test-driven development, facilitation, or a hackathon) and getting a chance to pair with people who you don't usually get to work with on something fun.
 
-### Host Responsibilities
+### Host responsibilities
 
 As the host, you’re not responsible for running the workshop, you are responsible for ensuring that someone facilitates it!
 
@@ -85,7 +85,7 @@ _When we have a new team member_
 
 When a new engineering team member is hired, we try to complete onboarding doc sessions to read and discuss our onboarding doc within the first two weeks.
 
-### Host Responsibilities
+### Host responsibilities
 
 - Solicit a facilitator in #engineering-internal for the engineering doc sessions. Ideally someone who has never done it before, or who has not done it in a while.
 - Solicit 2–3 other participants for the meeting. Between these folks sitting in and the facilitator, there should be at least one BizX representative and at least one ResX representative.

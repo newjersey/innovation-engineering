@@ -55,7 +55,7 @@ Once installed, you'll want to make it your default terminal application. We'll 
 
 This is where the magic happens. We're going to install a full Linux environment that runs seamlessly inside Windows. Think of it as having the best of both worlds: Windows for your familiar desktop experience and Linux for your development tools.
 
-### Enable Required Windows Features
+### Enable required Windows features
 
 First, we need to tell Windows to enable the subsystem for Linux and virtual machine capabilities. Open Windows PowerShell **as Administrator** (this is crucial; regular PowerShell won't work) and run these commands:
 
@@ -92,7 +92,7 @@ When Ubuntu launches for the first time, it will ask you to create a username an
 
 **Pro tip**: This Ubuntu user will have full administrator rights within the Linux environment, so choose a password you'll remember but that's still secure.
 
-### Setting Ubuntu as Default
+### Setting Ubuntu as default
 
 1. **Open Windows Terminal settings**: Click the dropdown arrow next to the "+" tab button and select "Settings"
 
@@ -126,7 +126,7 @@ ls -la ~/Developer
 
 Before we start installing packages and configuring your environment, let's take a moment to understand dotfiles. They're crucial to how Linux (and your development environment) works, and you'll encounter them throughout this guide.
 
-### What Are Dotfiles?
+### What are dotfiles?
 
 Dotfiles are configuration files that start with a dot (`.`) character. In Unix-like systems (including your new Ubuntu environment), files that start with a dot are **hidden** by default. They're used to store configuration settings for various programs and your shell environment.
 
@@ -140,7 +140,7 @@ Dotfiles are configuration files that start with a dot (`.`) character. In Unix-
 - `.vimrc`: Configuration for the Vim text editor
 - `.profile`: General shell configuration that runs once when you log in
 
-### How to Work with Dotfiles
+### How to work with dotfiles
 
 To see hidden files (including dotfiles) in your terminal:
 
@@ -158,11 +158,11 @@ code ~/.bashrc    # Edit with VS Code (after we install it)
 
 **Important**: Some dotfiles get automatically loaded when you start your terminal or log in. After editing `.bashrc`, for example, you need to either restart your terminal or run source `~/.bashrc` to apply the changes.
 
-### Why This Matters
+### Why this matters
 
 Throughout this guide, we'll be creating and editing several dotfiles to customize your development environment. Understanding how they work will help you troubleshoot issues and personalize your setup. Don't worry if it seems abstract now; it'll make more sense as we use them!
 
-## 5. Essential Linux Packages
+## 5. Essential Linux packages
 
 Now for the fun part: installing all the development tools you'll need. Think of this as setting up your Linux toolbox with all the essential utilities.
 
@@ -216,7 +216,7 @@ zsh --version
 
 While bash is the default shell on Ubuntu, we'll switch to **zsh** (Z shell) for a more powerful and user-friendly experience. Zsh offers better autocompletion, command history, and customization options.
 
-### Installing and Configuring Zsh
+### Installing and configuring Zsh
 
 ```shell
 # Change your default shell to zsh
@@ -249,7 +249,7 @@ This error has tormented developers at the Office for years, but don't despair! 
 
 **The solution**: We need to tell your Linux environment to trust the Zscaler root certificate.
 
-### Installing the Zscaler Certificate
+### Installing the Zscaler certificate
 
 1. **Get the certificate file**: Download the [ZScaler CA certificate](https://njcio.slack.com/files/U06GURJCTSR/F06KBFR5PC7/node_awscli_zscaler_ca.crt) from Slack to your Downloads folder on Windows.
 
@@ -482,7 +482,7 @@ Alternatively, you can download it directly from [code.visualstudio.com](https:/
 - Save time: No hunting through websites for the correct download link
 - Ensure consistency: Standardized installation process across your entire system
 
-### Setting Up WSL Integration
+### Setting up WSL integration
 
 1. Open a project in WSL: From your WSL terminal, navigate to any project directory and run:
 
@@ -506,14 +506,14 @@ If VSCode shows connection errors or doesn't detect WSL,
 2. Uninstall and reinstall the "Remote - WSL" extension
 3. Run `code --list-extensions --show-versions` in WSL to verify extensions are installed
 
-### Why This Setup is Magical
+### Why this setup is magical
 
 - Files: You're editing files that live in Linux, but using the familiar VSCode interface
 - Terminal: The integrated terminal runs zsh in your Linux environment
 - Extensions: Most VS Code extensions work seamlessly in the WSL environment
 - Performance: Everything runs at native Linux speed because the code execution happens in Linux
 
-### VSCode Extensions for Development
+### VSCode extensions for development
 
 Once you have VSCode connected to WSL, consider installing these extensions:
 
@@ -616,7 +616,7 @@ pip install requests beautifulsoup4
 deactivate
 ```
 
-### Best Practices for Virtual Environments
+### Best practices for virtual environments
 
 - **Always use virtual environments** for Python projects
 - **Name your environment folder `.venv`** - it's the standard convention
@@ -734,7 +734,7 @@ For each profile, you'll need to provide:
 - **Default region**: e.g., us-east-1
 - **Default output format**: json is recommended
 
-### Managing AWS Profiles
+### Managing AWS profiles
 
 ```shell
 # List all configured profiles
@@ -805,7 +805,7 @@ aider --help
 
 One of the most confusing aspects of WSL for newcomers is understanding where files live and how to access them. Let's clear this up once and for all.
 
-### The Two File Systems
+### The two file systems
 
 You're now working with **two** file systems:
 
@@ -822,15 +822,15 @@ You're now working with **two** file systems:
 - Compatibility: Some Linux tools expect Unix-style file permissions and attributes
 - No weird Windows/Linux path translation issues
 
-### Path Translation Guide
+### Path translation guide
 
 - Linux files: Live under `/home/<yourusername>/` (or `~/` as a shortcut)
 - Windows drives: Are mounted at `/mnt/c/`, `/mnt/d/`, etc.
 - From Windows: Your Linux files appear at `\\wsl$\Ubuntu\home\<yourusername>\`
 
-### Accessing Files Between Systems
+### Accessing files between systems
 
-#### From Linux, Open Windows Explorer
+#### From Linux, open Windows Explorer
 
 ```shell
 # Open the current Linux directory in Windows File Explorer
@@ -840,7 +840,7 @@ explorer.exe .
 explorer.exe ~/Developer
 ```
 
-### From Windows, Access Linux Files
+### From Windows, access Linux files
 
 In File Explorer, navigate to: `\\wsl$\Ubuntu\home\<yourusername>\`
 
@@ -926,7 +926,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 - [ScreenToGif](https://www.screentogif.com/): Lightweight screen recorder perfect for creating quick demos or bug reports. Great for sharing your work with team members.
 
-## Troubleshooting Common Issues
+## Troubleshooting common issues
 
 ### Permission denied errors
 

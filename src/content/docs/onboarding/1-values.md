@@ -3,7 +3,7 @@ title: Values
 description: What we believe in
 ---
 
-## Office of Innovation - Mission & Values
+## Office of Innovation - mission & values
 
 _Mission: Improve the lives of New Jerseyans by solving public problems differently_
 
@@ -19,7 +19,7 @@ As the Office of Innovation, we are:
 - **cross-functional**: we leverage diverse skill-sets (product, engineering, design, data, communication, and policy expertise) and diverse tools (technology, process, policy, communication) to solve problems
 - **collaborative**: we work across teams, departments, agencies, levels of government, and nongovernmental partners to advance our work
 
-## XP Values
+## XP values
 
 The following are the [Extreme Programming (XP) Values](http://www.extremeprogramming.org/values.html). We don't follow XP as a methodology/philosophy at large, but we have found that the values laid out in XP is well-aligned with our engineering discipline and we find it useful to leverage for our engineering values.
 

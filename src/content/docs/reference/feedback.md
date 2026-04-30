@@ -3,7 +3,7 @@ title: Giving high-quality feedback
 description: How to give (and receive) feedback effectively
 ---
 
-## 📤 Giving Feedback
+## 📤 Giving feedback
 
 ### Frame feedback as plus and delta not plus and minus
 
@@ -33,7 +33,7 @@ Try to tease these apart when giving feedback:
 
 Giving feedback is a conversation. Prepare for the receiver to seek to understand and investigate why you feel something. And prepare for them to share information about their actions that shows it in a new light. You don’t know all the context. Just share using “I” statements and work through the ambiguity together.
 
-### (T)ASK Framework
+### (T)ASK framework
 
 #### Timely
 
@@ -85,7 +85,7 @@ Notice when you’re using subjective labels in your feedback, and replace it wi
 **Example**
 > “Let me describe what I mean by confident, and you can ask me questions to see if I’m making sense.”
 
-## 📥 Receiving Feedback
+## 📥 Receiving feedback
 
 ### Seek to understand
 

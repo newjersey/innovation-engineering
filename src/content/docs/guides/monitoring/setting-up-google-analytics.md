@@ -3,7 +3,7 @@ title: Setting up Google Analytics
 description: How to setup Google Analytics Tracking on your Website
 ---
 
-## The Basics
+## The basics
 
 For testing, make sure any adblock is turned off.
 
@@ -33,7 +33,7 @@ For testing, make sure any adblock is turned off.
 9. It will take 24-48 hours for analytics reports to start populating, but to confirm the tags once they are live, you can use the “Realtime” reporting within Google Analytics.
 10. For custom dashboards, Looker Studio dashboards can be set up (by Engineering) after Google Analytics is implemented and added (note that it takes 24-48 hours to start seeing new events in Looker). In the meantime, you can see analytics reporting within Google Analytics itself. For an example, see the AI Assistant Looker Studio dashboard
 
-## Setting Up Custom Google Analytics Events
+## Setting up custom Google Analytics events
 
 Here are detailed instructions on how to set
 up [a custom event](https://support.google.com/analytics/answer/12229021?hl=en).
@@ -115,7 +115,7 @@ find [more info on custom dimensions here](https://support.google.com/analytics/
    - Check that the GA4 event successfully fires under "Tags" of the GTM container. Also click into the card in order to
      confirm that the event has been sent to the correct GA tag with the expected event parameters.
 
-### Step 4 - Add custom dimensions to GA4 (if necessary)
+### Step 4 - add custom dimensions to GA4 (if necessary)
 
 If you created a new event parameter, then we need to add a custom dimension for each new event parameter to the GA
 property in order for it to show in the dashboard.
@@ -129,7 +129,7 @@ property in order for it to show in the dashboard.
 4. If you use the Tag Assistant to preview the changes to GTM again, you should now see your events appear in the GA
    dashboard as well.
 
-### Step 5 - Request to publish the GTM changes
+### Step 5 - request to publish the GTM changes
 
 Send an email to [OIT web publish](https://docs.google.com/document/d/1MNDEx6Oabu5CxrgqMnhFpO9XDX-LTYjNNTw6qGNwqKM/edit?tab=t.0#heading=h.k89ioaydzbt3) requesting for your changes to the GTM container to be published.
 
@@ -138,7 +138,7 @@ Make sure to:
 - CC operations@[OIT domain] for visibility
 - Include the name of the Workspace containing the changes to be published
 
-## Best Practices
+## Best practices
 
 - Test any changes using the “Preview” functionality
 - Use “Folders” to organize your tags, variables, and triggers

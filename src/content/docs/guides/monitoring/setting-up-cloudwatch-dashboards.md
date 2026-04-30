@@ -27,7 +27,7 @@ CloudWatch Dashboards are useful when you need to accomplish tasks such as:
 - [📔 AWS Docs: What is CloudWatch?](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html)
 - [📔 AWS Docs: Observability Guidance](https://aws-observability.github.io/observability-best-practices/tools/cloudwatch-dashboard/)
 
-## Setting up your first Dashboard
+## Setting up your first dashboard
 
 ### Before you start
 
@@ -110,15 +110,15 @@ Once you are back on the Dashboard screen, you should see your new Logs Table wi
 
 ![a screenshot of a working dashboard](../../../../assets/working-cloudwatch-dashboard.png)
 
-## Fancy Stuff
+## Fancy stuff
 
 Now that you've created a dashboard and a simple widget, you should be in a good place to start building a robust, application-specific dashboard. Here are features of dashboards to explore next.
 
-### Text Widgets
+### Text widgets
 
 Use **text widgets** to add sections, context, links, or notes.
 
-### Graphs and Charts
+### Graphs and charts
 
 One of the best things about CloudWatch dashboards is the ability to create custom charts and graphs of your data. Pie charts are useful for comparing data or viewing percentages, while line graphs and bar charts can show changes over time or across groups. Creating charts from log data requires a deeper understanding of CWL syntax, as you may wish to filter and group data in unique ways.
 

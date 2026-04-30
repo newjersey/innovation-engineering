@@ -14,7 +14,7 @@ If you have Zscaler on your machine, you might encounter errors about SSL certif
 
 **The solution**: We need to tell your Windows environment to trust the Zscaler root certificate.
 
-### Installing the Zscaler Certificate
+### Installing the Zscaler certificate
 
 1. **Get the certificate file**: Download the [ZScaler CA certificate](https://njcio.slack.com/files/U06GURJCTSR/F06KBFR5PC7/node_awscli_zscaler_ca.crt) from Slack to your Downloads folder on Windows.
 
@@ -32,7 +32,7 @@ If you have Zscaler on your machine, you might encounter errors about SSL certif
    - Browse to your Downloads folder and select the `node_awscli_zscaler_ca.crt` file.
    - Complete the wizard by clicking **Next** and then **Finish**.
 
-### Installing the Zscaler Certificate on Windows
+### Installing the Zscaler certificate on Windows
 
 1. **Get the certificate file**: Download the [ZScaler CA certificate](https://njcio.slack.com/files/U06GURJCTSR/F06KBFR5PC7/node_awscli_zscaler_ca.crt) from Slack to your Downloads folder on Windows.
 

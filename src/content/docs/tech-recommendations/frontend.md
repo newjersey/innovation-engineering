@@ -9,7 +9,7 @@ React - Unless there’s a very good reason, we use React on our team over other
 
 TypeScript - Static typing can be philosophically considered a form of testing - it provides immediate, useful feedback as to whether the code written satisfies the defined constraints. We have a strong preference that TypeScript is used over plain JavaScript.
 
-## React Frameworks
+## React frameworks
 
 - create-vite-app for Single-Page Applications (SPAs)
 - Next.js for server-side rendered applications

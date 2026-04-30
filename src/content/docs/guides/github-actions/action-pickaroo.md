@@ -114,7 +114,7 @@ jobs:
 
 In the above example, when a PR receives a `pr-review` label, it will use Pickaroo to select 2 random reviewers and notify the given Slack channel. When a PR receives a `pr-show` label, Pickaroo will just notify the Slack channel and skip selecting reviewers thanks to the `show` parameter.
 
-### Other Recipes
+### Other recipes
 
 #### Multiple rounds of picking
 

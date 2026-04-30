@@ -60,7 +60,7 @@ Pros of OneDrive/Cons of Sharepoint:
 
 If you would like to set up a Sharepoint, consider whether you want NJIA or the agency partner to own the Sharepoint, given the tradeoffs above. If you want NJIA to be the owning organization, create a Tech Ops ticket to request a Sharepoint.
 
-## NJIA Powerpoint slides template
+## NJIA PowerPoint slides template
 
 NJIA has a [presentation deck template on Google Slides](https://docs.google.com/presentation/d/12qxkMu3teEmbc6suXCDf_jc_Yc_8lNnCSLcmwi8w9fo/edit?slide=id.g2ccee5e38cb_0_46#slide=id.g2ccee5e38cb_0_46). Microsoft Powerpoint does not have templates, but one can export the Google Slide as `.pptx`, and import them into Powerpoint.
 

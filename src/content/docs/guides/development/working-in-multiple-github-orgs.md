@@ -5,7 +5,7 @@ description: Sometimes we need to work in the NJIA GitHub org as well as another
 
 When working in more than one GitHub organization, you need to be able to use multiple SSH keys at the same time. This guide walks through the basic setup, including when you might need to use SSO instead of a standard GitHub login.
 
-## Step 1: Generate Unique SSH Keys
+## Step 1: Generate unique SSH keys
 
 For security and easier management, use a separate SSH key pair for each account (for example, an NJIA GitHub account vs. a DHS GitHub account, or one using NJ SSO).
 
@@ -23,13 +23,13 @@ ssh-keygen -t rsa -b 4096 -C "you(at)example.com" -f ~/.ssh/id_rsa_department
 
 When prompted for a passphrase, it's recommended to add a strong one for extra security.
 
-## Step 2: Add Public Keys to Accounts
+## Step 2: Add public keys to accounts
 
 Copy the public key's content using: `cat ~/.ssh/id_rsa_department.pub | pbcopy` (if you want to display it, then manually copy, remove `| pbcopy`).
 
 Paste the output into the [SSH and GPG keys](https://github.com/settings/keys) section of your account's settings page. Make sure you’re logged into the correct account or organization context.
 
-## Step 3: Configure SSH to Use Specific Keys
+## Step 3: Configure SSH to use specific keys
 
 Create or edit the `~/.ssh/config` file to tell your SSH client which private key to use for which host: `touch ~/.ssh/config` (create) `code ~/.ssh/config` (open with VSCode).
 
@@ -49,7 +49,7 @@ Host github-department
 - IdentityFile: The path to the private key file.
 - IdentitiesOnly yes: Ensures the SSH client only tries the specified key, preventing authentication issues.
 
-## Step 4: Add Keys to the SSH Agent
+## Step 4: Add keys to the SSH agent
 
 - Ensure the SSH agent is running: `eval "$(ssh-agent -s)"`.
 - Add your private key to the agent: `ssh-add ~/.ssh/id_rsa_department`

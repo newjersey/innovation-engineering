@@ -72,7 +72,7 @@ jobs:
     secrets: inherit
 ```
 
-## Slack Message Action
+## Slack message action
 
 If you find yourself limited by it, instead of using the above workflow you can use the underlying Action directly. This gives you a bit more composability for building more complex workflows.
 
