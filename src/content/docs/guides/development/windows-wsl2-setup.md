@@ -245,7 +245,7 @@ Ah, the infamous SSL certificate error. If you're on a corporate or state-issued
 SSL Error: unable to get local issuer certificate
 ```
 
-This error has tormented developers at the Office for years, but don't despair! The problem is that OIT's network security tool (Zscaler) intercepts and decrypts all HTTPS traffic to scan it for security threats. While this keeps the network secure, it means that development tools like `npm`, `pip`, AWS CLI tools, and Azure CLI tools don't trust the connection because they don't recognize Zscaler's certificate.
+This error has tormented developers at NJIA for years, but don't despair! The problem is that OIT's network security tool (Zscaler) intercepts and decrypts all HTTPS traffic to scan it for security threats. While this keeps the network secure, it means that development tools like `npm`, `pip`, AWS CLI tools, and Azure CLI tools don't trust the connection because they don't recognize Zscaler's certificate.
 
 **The solution**: We need to tell your Linux environment to trust the Zscaler root certificate.
 

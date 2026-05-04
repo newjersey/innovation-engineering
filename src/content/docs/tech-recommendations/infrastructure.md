@@ -69,7 +69,7 @@ Docker Engine can still be easily installed on Linux without Docker Desktop. For
 
 ## Infrastructure as Code
 
-- AWS CDK - the recommended IaC at the office. It will package up a lambda for you
+- AWS CDK - the recommended IaC. It will package up a lambda for you
 - Terraform/OpenTofu - used by a couple of projects, is also cloud-agnostic
 - Serverless - we do not start new projects with Serverless due to cost and pain points, but have migrated existing projects on Serverless from v3 to v4
 

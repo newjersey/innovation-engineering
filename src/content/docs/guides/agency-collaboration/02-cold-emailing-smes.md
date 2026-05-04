@@ -7,9 +7,9 @@ description: Guide to writing effective email communications
 
 Tip: write “what is this project” and “why are we speaking with you” as a team to be saved and reused. This can be re-used in emails and also at the start of meetings!
 
-### What is the Office of Innovation?
+### What is the New Jersey Innovation Authority?
 
-> We’re with the New Jersey State Office of Innovation. Our Office works in partnership with government departments and agencies to improve the State’s development and delivery of policy, programs, and services to residents, businesses, and institutions. We were created in 2018 when the Governor appointed the state's first-ever Chief Innovation Officer to his cabinet. Our mandate is to improve the lives of New Jerseyans, and we do that by using technology, design, data, process, and policy to create more effective and efficient government outcomes.
+> We’re with the New Jersey Innovation Authority. Our team works in partnership with government departments and agencies to improve the State’s development and delivery of policy, programs, and services to residents, businesses, and institutions. We were created in 2018 when the Governor appointed the state's first-ever Chief Innovation Officer to his cabinet. Our mandate is to improve the lives of New Jerseyans, and we do that by using technology, design, data, process, and policy to create more effective and efficient government outcomes.
 
 ### What is this project?
 >
@@ -25,7 +25,7 @@ Hi [Name],
 
 **Intro**
 
-> My name is [Name] and I am a [role] with the NJ Office of Innovation.
+> My name is [Name] and I am a [role] with the NJ Innovation Authority.
 
 **Project context**
 

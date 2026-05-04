@@ -7,7 +7,7 @@ We have a collection of reusable GitHub Actions workflows to improve the efficie
 
 ## Pickaroo reviewers workflow
 
-A common workflow at the office is to request a couple random reviews from engineers that are part of the broader initiative (i.e. ResX or BizX), but are external to the given project. This workflow automates that process and sends a Slack notification to a given channel, tagging the selected reviewers.
+A common workflow at NJIA is to request a couple random reviews from engineers that are part of the broader initiative (i.e. ResX or BizX), but are external to the given project. This workflow automates that process and sends a Slack notification to a given channel, tagging the selected reviewers.
 
 ### How it works
 
@@ -26,9 +26,9 @@ The results look something like this:
 
 ### Requirements
 
-#### Install the OOI Pull Request GitHub App
+#### Install the NJIA Pull Request GitHub App
 
-- Install the [OOI Pull Request Github App](https://github.com/apps/ooi-pull-request-app) in your repository. This might require creating a [Tech-Ops ticket](https://github.com/newjersey/internal-ops/issues/new/choose)!
+- Install the [NJIA Pull Request Github App](https://github.com/apps/ooi-pull-request-app) in your repository. This might require creating a [Tech-Ops ticket](https://github.com/newjersey/internal-ops/issues/new/choose)!
 
 #### Repo must be in the same organization
 
@@ -185,4 +185,4 @@ You can always create as many additional jobs triggered on different PR labels t
 ## References
 
 - [Pickaroo workflow](https://github.com/newjersey/innovation-shared-actions/blob/main/.github/workflows/pickaroo.yml)
-- [OOI Pull Request GitHub App](https://github.com/apps/ooi-pull-request-app)
+- [NJIA Pull Request GitHub App](https://github.com/apps/ooi-pull-request-app)

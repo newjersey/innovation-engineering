@@ -24,7 +24,7 @@ Read our [engineering meeting reference](/innovation-engineering/onboarding/7-me
 
 ## Laptop & development setup
 
-Reference our guides to setup an [OOI macbook](/innovation-engineering/guides/getting-started/laptop-setup) or a [state Windows laptop](/innovation-engineering/guides/development/windows-wsl2-setup)
+Reference our guides to setup an [NJIA macbook](/innovation-engineering/guides/getting-started/laptop-setup) or a [state Windows laptop](/innovation-engineering/guides/development/windows-wsl2-setup)
 
 ## Development tools
 

@@ -158,7 +158,7 @@ Our general expectation is: **1 business day for small-medium PRs, 2 business da
 
 ## 📥 Managing pull request notifications
 
-Be you the author or a reviewer on a pull request, it's often difficult to keep track of what pull requests are assigned to you or when people leave a review on your PR. There are a couple patterns that many of us use at the office:
+Be you the author or a reviewer on a pull request, it's often difficult to keep track of what pull requests are assigned to you or when people leave a review on your PR. There are a couple patterns that many of us use:
 
 ### GitHub's pull request page
 

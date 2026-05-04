@@ -29,7 +29,7 @@ State and local governments are required by the ADA to conform to WCAG 2.2 level
 
 > The Web Content Accessibility Guidelines (WCAG) 2.0 Level AA, or the most up-to-date version of the guidelines, shall be the accessibility standard for the web pages, sites, and services of all State agencies.  Each web page, site, and service shall be configured in such a way that it can be navigated, viewed, and accessed on a smartphone, tablet computer, or similar mobile device.
 
-- Automated a11y testing should be used on any project with a frontend that we can change. (If it’s a vendor frontend, we should manually test and report issues to the vendor.) Many OOI teams use Deque’s axe tool or a library based on it in integration or e2e tests
+- Automated a11y testing should be used on any project with a frontend that we can change. (If it’s a vendor frontend, we should manually test and report issues to the vendor.) Many NJIA teams use Deque’s axe tool or a library based on it in integration or e2e tests
 - Automated tools [can only catch ~70% of issues](https://accessibility.blog.gov.uk/2017/02/24/what-we-found-when-we-tested-tools-on-the-worlds-least-accessible-webpage/). They cannot detect usability problems (nonsensical headers, alt text that is too long, etc). Therefore:
   - Accessibility issues should also be flagged and fixed in code review
   - Engineers, designers, and PMs should also do a manual accessibility check whenever they are reviewing front-end changes
@@ -64,6 +64,6 @@ The [accessibility page](/innovation-engineering/reference/accessibility) is you
   - Partners do not have/use Zoom. Use Microsoft Teams for calls with agency stakeholders.
   - Partners do not have/use Slack. Expect to communicate with them using email or Microsoft Teams.
 - Exercise common sense when interacting and communicating with stakeholders
-  - Communication with particularly high-level stakeholders (commissioners, for example) needs to be vetted with Office leadership.
-  - Be aware of the context in how we have communicated with someone in the past and what they may or may not be aware of in working with OOI. It’s your responsibility to seek out this context as you engage in communications with stakeholders.
-  - Talk to your engineering director or OOI's Chief Operating Office about how to best describe the OOI and how we exist within state government to a new stakeholder or partner.
+  - Communication with particularly high-level stakeholders (commissioners, for example) needs to be vetted with NJIA leadership.
+  - Be aware of the context in how we have communicated with someone in the past and what they may or may not be aware of in working with NJIA. It’s your responsibility to seek out this context as you engage in communications with stakeholders.
+  - Talk to your engineering director or NJIA's Chief Operating Officer about how to best describe NJIA and how we exist within state government to a new stakeholder or partner.

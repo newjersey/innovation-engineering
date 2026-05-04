@@ -11,7 +11,7 @@ For testing, make sure any adblock is turned off.
     - **Ideal**: Use your agency partner’s Google Analytics account
         - Ask your agency IT partners whether they have a Google Analytics account, and their preference on using an existing property vs. setting up a new one
         - See if you/your team can gain access to their Google Analytics account so you can view metrics
-    - **Secondary Option**: If for any reason you won’t be able to access a GA4 ID set up through your agency in time, you can set one up via OOI’s property.
+    - **Secondary Option**: If for any reason you won’t be able to access a GA4 ID set up through your agency in time, you can set one up via NJIA's property.
         - Create an [Operations Request ticket](https://github.com/newjersey/internal-ops/issues/new?assignees=&labels=general%2Crequest&projects=newjersey%2F16&template=request_general.yaml&title=%5BGeneral%5D%3A+Create+GA4+ID+for+PROJECT)
         - Make sure to indicate who will need access to the GA4 property. Typically this is the PM and engineers on the team to troubleshoot & debug the analytics set-up. For viewing analytics on an ongoing basis, we typically will set up a Looker dashboard. [View Example](https://github.com/newjersey/internal-ops/issues/349)
 2. Get access to the OIT Google Tag Manager Container

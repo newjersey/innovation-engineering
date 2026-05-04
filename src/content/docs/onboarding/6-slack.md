@@ -20,11 +20,11 @@ description: Where we're talking
 - `#resx` Team channel for ResX initiative members
 - `#business` Team channel for BizX initiative members
 
-## OOI internal channels
+## NJIA internal channels
 
-- `#engineering-internal` Limited to OOI engineers only. For conversations that are specifically internal.
-- `#resx-eng-internal` OOI engineers only, for ResX internal conversations
-- `#business-eng-internal` OOI engineers only, for BizX internal conversations
+- `#engineering-internal` Limited to NJIA engineers only. For conversations that are specifically internal.
+- `#resx-eng-internal` NJIA engineers only, for ResX internal conversations
+- `#business-eng-internal` NJIA engineers only, for BizX internal conversations
 
 ## Extensions
 

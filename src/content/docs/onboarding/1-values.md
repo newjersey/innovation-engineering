@@ -3,15 +3,15 @@ title: Values
 description: What we believe in
 ---
 
-## Office of Innovation - mission & values
+## NJ Innovation Authority - mission & values
 
 _Mission: Improve the lives of New Jerseyans by solving public problems differently_
 
 And by “differently”, we mean: **using participatory, evidence-based, and data-driven approaches and methods.**
 
-The following values are shared Office-wide (not just within the engineering practice). They are defined on our website and you can expect all your team members to subscribe and adhere to these values.
+The following values are shared NJIA-wide (not just within the engineering practice). They are defined on our website and you can expect all your team members to subscribe and adhere to these values.
 
-As the Office of Innovation, we are:
+As the NJIA, we are:
 
 - **human-centered**: we put the user at the center of our problem-solving process, and we design with New Jerseyans, not just for New Jerseyans
 - **agile**: we solve problems iteratively to allow us to measure results, learn fast, and deliver impact as soon as possible

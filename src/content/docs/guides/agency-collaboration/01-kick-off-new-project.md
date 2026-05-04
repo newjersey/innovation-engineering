@@ -59,5 +59,5 @@ You and your team should also be asking non-technical data questions, such as:
 - Production applications should be deployed on agency infrastructure, not NJIA infrastructure.
 
 - If necessary, start working with your technical stakeholders to request the hosting resources necessary, working with the Tech Ops team if needed to help facilitate these conversations.
-  - All engineers on the project AND NJIA Engineering Directors should have admin to the relevant accounts. If the account will be billed to Innovation, the OOI Tech Ops team should also have access.
+  - All engineers on the project AND NJIA Engineering Directors should have admin to the relevant accounts. If the account will be billed to Innovation, the NJIA Tech Ops team should also have access.
     - Detailed instructions can be found in [\[DRAFT\] Innovation Cloud Usage Policy](https://docs.google.com/document/d/1uvNjk2MR9ZOw_MK_XGLDHcM3t8URMdUKQbBXpPJWh3s/edit?usp=sharing)

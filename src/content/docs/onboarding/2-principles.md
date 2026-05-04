@@ -21,7 +21,7 @@ Sometimes, we have teams of just 1 engineer. In this case, we still look for way
 
 ## Context awareness
 
-We aim to have an office where all engineers are at least familiar with the work, challenges, and successes of the rest of the engineering team. Outside of a given initiative where you work closely and frequently, we should at least [know what’s happening](https://docs.google.com/spreadsheets/d/15RsicroDz-Uc3ZK87aVycqIHLCGa9cySv0rWYjmdsJc/edit#gid=450523152), even if not directly having ownership.
+We aim to have an team where all engineers are at least familiar with the work, challenges, and successes of the rest of the engineering team. Outside of a given initiative where you work closely and frequently, we should at least [know what’s happening](https://docs.google.com/spreadsheets/d/15RsicroDz-Uc3ZK87aVycqIHLCGa9cySv0rWYjmdsJc/edit#gid=450523152), even if not directly having ownership.
 
 ## Developer trust & autonomy
 
@@ -44,7 +44,7 @@ We want **product feedback** (“does it solve the problem well?”) - this come
 
 We want **interpersonal feedback** (“are we doing this well?”) - this comes in the form of retrospectives and other touchpoints to consider team health and adjustments to be made. This kind of feedback requires a whole bunch of **courage**, and that's no small thing, which makes the value of fostering a courageous and vulnerable team environment all the more important.
 
-Regarding interpersonal feedback, while there is a formal structure across the office (approximately 3x/year, facilitated by the leadership team), it may still be your responsibility to request feedback from your teammates and stakeholders as applicable and aligned with your career goals. Some initiatives or individuals have avenues for feedback, such as 1:1s and [speedback](/innovation-engineering/reference/glossary). Additionally, you should feel empowered to ask for feedback, set up 1:1s, and organize feedback structures within your team.
+Regarding interpersonal feedback, while there is a formal structure across NJIA (approximately 3x/year, facilitated by the leadership team), it may still be your responsibility to request feedback from your teammates and stakeholders as applicable and aligned with your career goals. Some initiatives or individuals have avenues for feedback, such as 1:1s and [speedback](/innovation-engineering/reference/glossary). Additionally, you should feel empowered to ask for feedback, set up 1:1s, and organize feedback structures within your team.
 
 In all cases, we want **_rapid_** feedback, which is why:
 

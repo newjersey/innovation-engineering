@@ -2,7 +2,7 @@
 
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
 
-The document hub for the NJ Office of Innovation engineering team. Guides, references, and shared
+The document hub for the NJ Innovation Authority engineering team. Guides, references, and shared
 knowledge for building and maintaining our projects.
 
 Deployed at: <https://newjersey.github.io/innovation-engineering/>
@@ -121,14 +121,14 @@ This project is licensed under the MIT license. For more information, see [LICEN
 
 ## Contact
 
-If you want to get in touch with the Office of Innovation team, please email us at
+If you want to get in touch with the NJIA team, please email us at
 [team@innovation.nj.gov](mailto:team@innovation.nj.gov).
 
-### Join the Office of Innovation!
+### Join the NJ Innovation Authority!
 
 If you are excited to design and deliver modern policies and services to improve the lives of all
 New Jerseyans, you should
-[join the New Jersey State Office of Innovation](https://innovation.nj.gov/join.html)!
+[join the New Jersey Innovation Authority](https://innovation.nj.gov/join.html)!
 
 ## Disclaimer
 
