@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.7](https://github.com/newjersey/innovation-engineering/compare/v0.1.6...v0.1.7) (2026-05-05)
+
+
+### Bug Fixes
+
+* update pickaroo and slack docs ([2ef8eec](https://github.com/newjersey/innovation-engineering/commit/2ef8eec7b5011021ad83cc9271a71068d357ee63))
+
 ## [0.1.6](https://github.com/newjersey/innovation-engineering/compare/v0.1.5...v0.1.6) (2026-05-04)
 
 ## [0.1.5](https://github.com/newjersey/innovation-engineering/compare/v0.1.4...v0.1.5) (2026-04-30)
