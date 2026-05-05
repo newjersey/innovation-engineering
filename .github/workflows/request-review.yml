@@ -15,8 +15,8 @@ jobs:
     with:
       include_users: "timwright12 aloverso"
       number_of_reviewers: 1
-      number_of_repicks: 0 # don't repick a director
       channel_id: C03C7NHK9B4 # engineering-all
+      slack_as_author: true
   request-eng-reviewers:
     if: ${{ github.event.label.name == 'pr-review' }}
     needs: request-director-reviewers
@@ -26,8 +26,9 @@ jobs:
     with:
       include_teams: "innovation-engineering"
       exclude_users: "dhcole gamorgana"
-      number_of_repicks: 1
+      extras: true
       channel_id: C03C7NHK9B4 # engineering-all
+      slack_as_author: true
   pr-show:
     if: ${{ github.event.label.name == 'pr-show' }}
     uses: newjersey/innovation-shared-actions/.github/workflows/pickaroo.yml@main
@@ -36,3 +37,4 @@ jobs:
     with:
       show: true
       channel_id: C03C7NHK9B4 # engineering-all
+      slack_as_author: true
