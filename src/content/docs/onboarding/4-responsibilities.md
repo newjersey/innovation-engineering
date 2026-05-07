@@ -16,7 +16,7 @@ As a software engineer on a cross-functional team, you are responsible for:
 ## Security
 
 - Managing secrets in a safe, secure way, including during production deployments as well as for local development. See [secrets page](/innovation-engineering/tech-recommendations/secrets) below for more information.
-- Setting up any data storage, API connections, or integrations in a way that follows data security best practices. This includes understanding and implementing encyrption and access control for sensitive data and PII.
+- Setting up any data storage, API connections, or integrations in a way that follows data security best practices. This includes understanding and implementing encryption and access control for sensitive data and PII.
 - Working with the state IT department (OIT) to manage firewalls and access control for your application.
 - Keeping your ecosystem up-to-date with package updates.
 - Be aware and mindful that any openly accessible project tools should not contain information about “internal government affairs” (such as names of our partners, agencies/departments, personally identifiable information about people, internal tools, and the like). This includes not just code but also commit messages, project management trackers, and any other publicly available tool. See our [public repo guidelines](/innovation-engineering/guides/development/public-private-repo) for more
