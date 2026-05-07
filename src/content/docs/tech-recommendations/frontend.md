@@ -34,14 +34,14 @@ However, we used to use Cypress more commonly, and many older projects still use
 
 If using Cypress, add an [upload-artifact step](https://github.com/actions/upload-artifact?tab=readme-ov-file#upload-an-entire-directory), so that you can view screenshots if the CI fails in ways that you can't reproduce
 
-  - ```yaml
-      - name: Upload screenshots
-        uses: actions/upload-artifact@v6
-        if: failure()
-        with:
-          name: cypress-screenshots
-          path: cypress/screenshots
-      ```
+```yaml
+  - name: Upload screenshots
+    uses: actions/upload-artifact@v6
+    if: failure()
+    with:
+      name: cypress-screenshots
+      path: cypress/screenshots
+```
 
 ### Accessibility testing
 
@@ -53,19 +53,15 @@ In the project Readme include how to run tests, and how to run one specific test
 
 [NJWDS](https://office-of-innovation.gitbook.io/njwds), the New Jersey design system
 
-For React apps, also add the https://github.com/trussworks/react-uswds component library
+For React apps, also add the [https://github.com/trussworks/react-uswds](react-uswds) component library
 
-For non-React, include the USWDS Javascript: https://designsystem.digital.gov/documentation/getting-started-for-developers/
-
+For non-React, include the USWDS Javascript found here: [https://designsystem.digital.gov/documentation/getting-started-for-developers/](https://designsystem.digital.gov/documentation/getting-started-for-developers/).
 
 ## Code Quality
 
-ESLint for code linting, e.g. https://github.com/newjersey/dol-ui-ivr-wrapper/blob/main/eslint.config.ts
-
-Prettier for formatting (see [this starter repo](https://github.com/newjersey/innovation-repo-template))
+[ESLint](https://eslint.org/) for code linting and [Prettier](https://prettier.io/) for formatting. See [this starter repo](https://github.com/newjersey/innovation-repo-template).
 
 [Biome](https://biomejs.dev/) for both linting and formatting.
-
 
 ## Other
 
