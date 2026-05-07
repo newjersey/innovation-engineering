@@ -60,9 +60,11 @@ For non-React, include the USWDS Javascript: https://designsystem.digital.gov/do
 
 ## Code Quality
 
-Linting, e.g. https://github.com/newjersey/dol-ui-ivr-wrapper/blob/main/eslint.config.ts
+ESLint for code linting, e.g. https://github.com/newjersey/dol-ui-ivr-wrapper/blob/main/eslint.config.ts
 
-Prettier (see [this starter repo](https://github.com/newjersey/innovation-repo-template))
+Prettier for formatting (see [this starter repo](https://github.com/newjersey/innovation-repo-template))
+
+[Biome](https://biomejs.dev/) for both linting and formatting.
 
 
 ## Other
