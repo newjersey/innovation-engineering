@@ -36,7 +36,7 @@ State and local governments are required by the ADA to conform to WCAG 2.2 level
 - Coordinate and work with outside accessibility testers as needed who are experts in usage of screen readers and similar accessible software tools (talk to your director for contacts).
 - The ADA applies to workplaces, too – not just our public-facing projects. We should keep accessibility in mind as we choose vendors, write documents, present our work, and build internal tools.
 
-The [accessibility page](/innovation-engineering/reference/accessibility) is your best starting point for our current accessibility resources and recommendations.
+The [accessibility page](/innovation-engineering/reference/accessibility) is your best starting point for our current accessibility resources and recommendations. We also have the `#accessibility-all` Slack channel for posting a11y questions and soliciting advice and discussion from our champion panel of a11y-trained staff.
 
 ## Documentation
 

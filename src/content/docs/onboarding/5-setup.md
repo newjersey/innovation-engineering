@@ -20,7 +20,7 @@ Read our [engineering meeting reference](/innovation-engineering/onboarding/7-me
 - Install the [Outlook Calendar extension](https://slack.com/app-pages/outlook-calendar) (not available to multi-channel Slack guests)
 - Set your default calendar events to [end a 5-10 minutes early](https://support.microsoft.com/en-us/office/end-meetings-early-or-start-late-ebb4c4c9-6992-4ea7-9772-8b5883df8500) and give space between meetings
 - If you’re comfortable, grant visibility to event titles on your calendar. Follow [“Change calendar sharing permissions”](https://support.microsoft.com/en-us/office/share-your-calendar-in-outlook-on-the-web-7ecef8ae-139c-40d9-bae2-a23977ee58d5), and change the “People in my organization” setting to “Can view titles and locations”. You can still [mark specific events as private](https://support.microsoft.com/en-us/office/make-an-appointment-or-meeting-private-dc3898f0-22f5-45c6-8cc8-b4d4db84111d).
-- Review the [Innovation Shared Calendar guidelined](https://docs.google.com/document/d/14EGlnHxP4ZVUq1QZTwIrI_G0r8wrHM38498iwtZdkvQ/edit?usp=sharing)
+- Review the [Innovation Shared Calendar guidelines](https://docs.google.com/document/d/14EGlnHxP4ZVUq1QZTwIrI_G0r8wrHM38498iwtZdkvQ/edit?usp=sharing)
 
 ## Laptop & development setup
 
