@@ -67,3 +67,9 @@ The [accessibility page](/innovation-engineering/reference/accessibility) is you
   - Communication with particularly high-level stakeholders (commissioners, for example) needs to be vetted with NJIA leadership.
   - Be aware of the context in how we have communicated with someone in the past and what they may or may not be aware of in working with NJIA. It’s your responsibility to seek out this context as you engage in communications with stakeholders.
   - Talk to your engineering director or NJIA's Chief Operating Officer about how to best describe NJIA and how we exist within state government to a new stakeholder or partner.
+
+We have detailed guides on agency collaboration including:
+
+- [Bridging communication tools](/innovation-engineering/guides/agency-collaboration/communication-tools/)
+- [Collaborating on development](/innovation-engineering/guides/agency-collaboration/collaborating-on-development/)
+- [Cold-emailing SMEs](/innovation-engineering/guides/agency-collaboration/cold-emailing-smes/)
