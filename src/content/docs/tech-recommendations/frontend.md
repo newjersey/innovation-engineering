@@ -35,12 +35,12 @@ However, we used to use Cypress more commonly, and many older projects still use
 If using Cypress, add an [upload-artifact step](https://github.com/actions/upload-artifact?tab=readme-ov-file#upload-an-entire-directory), so that you can view screenshots if the CI fails in ways that you can't reproduce
 
 ```yaml
-  - name: Upload screenshots
-    uses: actions/upload-artifact@v6
-    if: failure()
-    with:
-      name: cypress-screenshots
-      path: cypress/screenshots
+- name: Upload screenshots
+  uses: actions/upload-artifact@v6
+  if: failure()
+  with:
+    name: cypress-screenshots
+    path: cypress/screenshots
 ```
 
 ### Accessibility testing

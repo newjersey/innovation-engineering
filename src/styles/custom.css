@@ -13,6 +13,7 @@
   --sl-color-black: #121a1c;
 
   --sl-font: "Public Sans";
+  --sl-sidebar-width: 20rem; /* default was 18.75 */
 
   h1 {
     color: #e4bad7;
