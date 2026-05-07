@@ -53,7 +53,7 @@ In the project Readme include how to run tests, and how to run one specific test
 
 [NJWDS](https://office-of-innovation.gitbook.io/njwds), the New Jersey design system
 
-For React apps, also add the [https://github.com/trussworks/react-uswds](react-uswds) component library
+For React apps, also add the [ReactUSWDS](https://trussworks.github.io/react-uswds/) component library
 
 For non-React, include the USWDS Javascript found here: [https://designsystem.digital.gov/documentation/getting-started-for-developers/](https://designsystem.digital.gov/documentation/getting-started-for-developers/).
 
