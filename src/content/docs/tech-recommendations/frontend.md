@@ -1,6 +1,5 @@
 ---
 title: Frontend
-wip: true
 ---
 
 ## Language
@@ -44,8 +43,32 @@ If using Cypress, add an [upload-artifact step](https://github.com/actions/uploa
           path: cypress/screenshots
       ```
 
+### Accessibility testing
+
+For a11y testing, consider setting up Axe for [Playwright](https://playwright.dev/docs/accessibility-testing) or [Cypress](https://www.npmjs.com/package/cypress-axe).
+
+In the project Readme include how to run tests, and how to run one specific test in one specific file. This is technically part of test framework doc, but has been TIL for multiple people.
+
+## Design System
+
+[NJWDS](https://office-of-innovation.gitbook.io/njwds), the New Jersey design system
+
+For React apps, also add the https://github.com/trussworks/react-uswds component library
+
+For non-React, include the USWDS Javascript: https://designsystem.digital.gov/documentation/getting-started-for-developers/
+
+
+## Code Quality
+
+Linting, e.g. https://github.com/newjersey/dol-ui-ivr-wrapper/blob/main/eslint.config.ts
+
+Prettier (see [this starter repo](https://github.com/newjersey/innovation-repo-template))
+
+
 ## Other
 
 Feedback widget
 
 English and Spanish content integration using SmartCat as the TMS
+
+[OOI Translation Process](https://docs.google.com/document/d/1y_VD6Mp4BHLxWKSD2jWzRReMa4wE9uReGnGmgW1x6iU/edit?usp=sharing)
