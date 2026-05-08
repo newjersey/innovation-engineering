@@ -9,7 +9,7 @@ wip: true
 
 **Your go-to option for most projects**
 
-Think of Amplify as the "easy button" for hosting full-stack apps. You've got a React frontend and Node.js backend? Amplify handles it all. Just connect your GitHub repo and it automatically deploys your app, sets up SSL, distributes it via CDN, and even creates preview environments for your pull requests. It's basically zero DevOps work.
+Think of Amplify as the "easy button" for hosting full-stack apps. You've got a React frontend and Node.js backend? Amplify handles it all. Just connect your GitHub repo and it automatically deploys your app, sets up SSL, distributes it via CDN, and even creates preview environments for your pull requests. It's very little DevOps work.
 
 **Use Amplify when**: You're building a normal web app and don't have weird requirements. Start here unless you have a specific reason not to.
 
@@ -65,14 +65,14 @@ curl -fsSL https://get.docker.com/ | sh
 
 Docker Engine can still be easily installed on Linux without Docker Desktop. For Windows machines (e.g. agency stakeholders), we suggest using WSL (see [Setting up a state Windows laptop](/innovation-engineering/guides/development/windows-wsl2-setup/)), which can be harangued into running containers using the Docker engine on Linux.
 
-## Domain management
-
-**Note**: Hosting on a subdomain (e.g. `projectname.nj.gov`) is way easier than hosting on a subpath of `nj.gov` (e.g. `nj.gov/agencyname/projectname`)
-
-**TODO**: Add content about how to get a subdomain set up.
-
 ## Infrastructure as Code
 
 - AWS CDK - the recommended IaC. It will package up a lambda for you
 - Terraform/OpenTofu - used by a couple of projects, is also cloud-agnostic
 - Serverless - we do not start new projects with Serverless due to cost and pain points, but have migrated existing projects on Serverless from v3 to v4
+
+## Tech Ops Configurations
+
+Need to connect Amplify, or set up a domain? Submit an [Operations Request Ticket](https://github.com/newjersey/internal-ops/issues/new?template=request_new_website_webapp.yaml) for a new web application.
+
+**Note**: Hosting on a subdomain (e.g. `projectname.nj.gov`) is way easier than hosting on a subpath of `nj.gov` (e.g. `nj.gov/agencyname/projectname`)
