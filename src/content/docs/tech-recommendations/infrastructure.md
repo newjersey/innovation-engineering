@@ -9,7 +9,7 @@ wip: true
 
 **Your go-to option for most projects**
 
-Think of Amplify as the "easy button" for hosting full-stack apps. You've got a React frontend and Node.js backend? Amplify handles it all. Just connect your GitHub repo and it automatically deploys your app, sets up SSL, distributes it via CDN, and even creates preview environments for your pull requests. It's very little DevOps work, it just needs to be configured behind the right firewalls. ([Ask Tech Ops](https://github.com/newjersey/internal-ops/issues/new?template=request_new_website_webapp.yaml)) to get started.
+Think of Amplify as the "easy button" for hosting full-stack apps. You've got a React frontend and Node.js backend? Amplify handles it all. Just connect your GitHub repo and it automatically deploys your app, sets up SSL, distributes it via CDN, and even creates preview environments for your pull requests. It's very little DevOps work, it just needs to be configured behind the right firewalls. Submit an [Operations Request Ticket](https://github.com/newjersey/internal-ops/issues/new?template=request_new_website_webapp.yaml) to get started.
 
 **Use Amplify when**: You're building a normal web app and don't have weird requirements. Start here unless you have a specific reason not to.
 
