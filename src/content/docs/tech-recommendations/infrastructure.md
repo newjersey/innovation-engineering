@@ -37,8 +37,8 @@ EC2 is a virtual server that you control completely. Think of it like renting a 
 
 We do not have licenses for Docker Desktop, which [requires licenses for government entities](https://docs.docker.com/subscription/desktop-license/). We don’t need the GUI, but Docker Engine is [difficult to install on MacOS without Docker Desktop](https://njcio.slack.com/archives/C03C7NHK9B4/p1760712833246849?thread_ts=1756330087.017419&cid=C03C7NHK9B4). We instead use these open source tools:
 
-1. Docker CLI: Docker’s OCI-compatible container CLI tools  
-2. [Colima](https://github.com/abiosoft/colima): Open source replacement for Docker Engine  
+1. Docker CLI: Docker’s OCI-compatible container CLI tools
+2. [Colima](https://github.com/abiosoft/colima): Open source replacement for Docker Engine
 3. [Docker Compose](https://github.com/docker/compose): it’s open source
 
 For macOS:
@@ -74,3 +74,9 @@ Docker Engine can still be easily installed on Linux without Docker Desktop. For
 Need to connect Amplify, or set up a domain? Submit an [Operations Request Ticket](https://github.com/newjersey/internal-ops/issues/new?template=request_new_website_webapp.yaml) for a new web application.
 
 **Note**: Hosting on a subdomain (e.g. `projectname.nj.gov`) is way easier than hosting on a subpath of `nj.gov` (e.g. `nj.gov/agencyname/projectname`)
+
+## Project Examples
+
+Doula: [https://github.com/newjersey/doula-medicaid/blob/main/lib/cdk-stack.ts](https://github.com/newjersey/doula-medicaid/blob/main/lib/cdk-stack.ts)
+
+- Dockerized frontend running on an ECS cluster within a VPC on agency-owned AWS accounts
