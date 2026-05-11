@@ -8,6 +8,12 @@ Read our [Slack channel reference](/innovation-engineering/onboarding/6-slack) a
 
 In the [GitHub Slack integration](https://github.com/settings/reminders), check the box for **"Enable real-time alerts for pull requests"**. This will give you notifications when assigned to a PR or when someone replies to your comment, and is necessary for our GH Action PR workflow.
 
+Update your Slack profile to add a profile photo and tidbits about yourself (e.g. Title, Initiative, Project(s), etc.).
+
+:::note
+Be sure to fill in the `GitHub Username` field so that [Pickaroo](/innovation-engineering/guides/github-actions/action-pickaroo) can correctly recognize you. If you're not a full-time NJIA member (e.g. a contractor), you'll have to co-opt the `Name pronunciation` field, e.g. `Jayn Doh gh:jane-doe`.
+:::
+
 ## Calendar
 
 Read our [engineering meeting reference](/innovation-engineering/onboarding/7-meetings) and ensure you are added to all appropriate engineering meetings.
