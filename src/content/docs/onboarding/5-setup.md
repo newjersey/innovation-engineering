@@ -11,7 +11,7 @@ In the [GitHub Slack integration](https://github.com/settings/reminders), check 
 Update your Slack profile to add a profile photo and tidbits about yourself (e.g. Title, Initiative, Project(s), etc.).
 
 :::note
-Be sure to fill in the `GitHub Username` field so that [Pickaroo](/innovation-engineering/guides/github-actions/action-pickaroo) can correctly recognize you. If you're not a full-time NJIA member (e.g. a contractor), you'll have to co-opt the `Name pronunciation` field, e.g. `Jayn Doh gh:jane-doe`.
+Be sure to fill in the `GitHub Username` field so that [Pickaroo](/innovation-engineering/guides/github-actions/action-pickaroo) can correctly recognize you. If you're not a full-time NJIA member (e.g. a contractor) this field is unavailable, and you'll have to co-opt the `Name pronunciation` field, e.g. `Jayn Doh gh:jane-doe`.
 :::
 
 ## Calendar
