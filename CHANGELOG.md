@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.17](https://github.com/newjersey/innovation-engineering/compare/v0.1.16...v0.1.17) (2026-05-11)
+
+
+### Bug Fixes
+
+* update onboarding setup guide ([301da23](https://github.com/newjersey/innovation-engineering/commit/301da236382165b6ec8b86a7f99b6a02d70cbd5c))
+
 ## [0.1.16](https://github.com/newjersey/innovation-engineering/compare/v0.1.15...v0.1.16) (2026-05-11)
 
 
