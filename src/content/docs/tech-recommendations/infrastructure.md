@@ -55,6 +55,15 @@ EOF
 brew services start colima
 ```
 
+You may need to install buildx:
+
+```shell
+brew install docker-buildx
+mkdir -p ~/.docker/cli-plugins
+ln -sfn $(brew --prefix)/opt/docker-buildx/bin/docker-buildx ~/.docker/cli-plugins/docker-buildx
+docker buildx create --name colima-builder --use
+```
+
 For Debian/Ubuntu and [WSL](https://docs.google.com/document/d/1q5InFbTTOrY_lZ5Uo6J5TK3TD7nWz5H0m6XjL2BFUc0/edit?tab=t.xhw9dfnru1m3#heading=h.lxm44az1opfg):
 
 ```shell
