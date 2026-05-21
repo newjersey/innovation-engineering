@@ -78,11 +78,9 @@ Docker Engine can still be easily installed on Linux without Docker Desktop. For
 - Terraform/OpenTofu - used by a couple of projects, is also cloud-agnostic
 - Serverless - we do not start new projects with Serverless due to cost and pain points, but have migrated existing projects on Serverless from v3 to v4
 
-## Tech Ops Configurations
+## Internal requirements and configurations
 
-Need to connect Amplify, or set up a domain? Submit an [Operations Request Ticket](https://github.com/newjersey/internal-ops/issues/new?template=request_new_website_webapp.yaml) for a new web application.
-
-**Note**: Hosting on a subdomain (e.g. `projectname.nj.gov`) is way easier than hosting on a subpath of `nj.gov` (e.g. `nj.gov/agencyname/projectname`)
+Ready to deploy your hosting stack? See [this internal document](https://docs.google.com/document/d/1C2489_-2jgauBqlNJ1aNJJuGepM_9Oz0NV1pT9HMCac/edit?tab=t.0#heading=h.er81sd0w396) for what to do and who to talk to, to get hosted with the appropriate billing, security requirements, and networking.
 
 ## Project Examples
 
