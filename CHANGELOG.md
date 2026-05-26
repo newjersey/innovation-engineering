@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.22](https://github.com/newjersey/innovation-engineering/compare/v0.1.21...v0.1.22) (2026-05-26)
+
+
+### Features
+
+* add enhanced colima instructions ([0b1b6b8](https://github.com/newjersey/innovation-engineering/commit/0b1b6b85dfb2265cf952fbab4f3796c2c05062a5))
+
 ## [0.1.21](https://github.com/newjersey/innovation-engineering/compare/v0.1.20...v0.1.21) (2026-05-21)
 
 ## [0.1.20](https://github.com/newjersey/innovation-engineering/compare/v0.1.19...v0.1.20) (2026-05-21)
