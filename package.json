@@ -22,16 +22,16 @@
     ]
   },
   "dependencies": {
-    "@astrojs/starlight": "0.38.3",
+    "@astrojs/starlight": "0.39.2",
     "@fontsource/public-sans": "5.2.7",
-    "astro": "6.1.7",
+    "astro": "6.3.8",
     "sharp": "0.34.5",
-    "starlight-links-validator": "0.23.0"
+    "starlight-links-validator": "0.24.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.12",
+    "@biomejs/biome": "2.4.15",
     "husky": "9.1.7",
-    "lint-staged": "16.4.0",
-    "markdownlint-cli2": "0.22.0"
+    "lint-staged": "17.0.5",
+    "markdownlint-cli2": "0.22.1"
   }
 }
