@@ -30,6 +30,7 @@ export default defineConfig({
       lastUpdated: true,
       editLink: {
         baseUrl: "https://github.com/newjersey/innovation-engineering/edit/main/",
+        head: [{ tag: "meta", attrs: { name: "robots", content: "noindex, nofollow" } }],
       },
       social: [
         {
