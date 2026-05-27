@@ -4,7 +4,6 @@ All notable changes to this project will be documented in this file. See [commit
 
 ## [0.1.24](https://github.com/newjersey/innovation-engineering/compare/v0.1.23...v0.1.24) (2026-05-27)
 
-
 ### Features
 
 * Claude Code preferred settings.json ([0940325](https://github.com/newjersey/innovation-engineering/commit/0940325e59b8c9a367df394539f580ca9ca8e311))
@@ -12,7 +11,6 @@ All notable changes to this project will be documented in this file. See [commit
 ## [0.1.23](https://github.com/newjersey/innovation-engineering/compare/v0.1.22...v0.1.23) (2026-05-26)
 
 ## [0.1.22](https://github.com/newjersey/innovation-engineering/compare/v0.1.21...v0.1.22) (2026-05-26)
-
 
 ### Features
 
@@ -28,13 +26,11 @@ All notable changes to this project will be documented in this file. See [commit
 
 ## [0.1.17](https://github.com/newjersey/innovation-engineering/compare/v0.1.16...v0.1.17) (2026-05-11)
 
-
 ### Bug Fixes
 
 * update onboarding setup guide ([301da23](https://github.com/newjersey/innovation-engineering/commit/301da236382165b6ec8b86a7f99b6a02d70cbd5c))
 
 ## [0.1.16](https://github.com/newjersey/innovation-engineering/compare/v0.1.15...v0.1.16) (2026-05-11)
-
 
 ### Bug Fixes
 
@@ -58,7 +54,6 @@ All notable changes to this project will be documented in this file. See [commit
 
 ## [0.1.7](https://github.com/newjersey/innovation-engineering/compare/v0.1.6...v0.1.7) (2026-05-05)
 
-
 ### Bug Fixes
 
 * update pickaroo and slack docs ([2ef8eec](https://github.com/newjersey/innovation-engineering/commit/2ef8eec7b5011021ad83cc9271a71068d357ee63))
@@ -72,7 +67,6 @@ All notable changes to this project will be documented in this file. See [commit
 ## [0.1.3](https://github.com/newjersey/innovation-engineering/compare/v0.1.2...v0.1.3) (2026-04-29)
 
 ## [0.1.2](https://github.com/newjersey/innovation-engineering/compare/v0.1.1...v0.1.2) (2026-04-22)
-
 
 ### Bug Fixes
 
