@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.24](https://github.com/newjersey/innovation-engineering/compare/v0.1.23...v0.1.24) (2026-05-27)
+
+
+### Features
+
+* Claude Code preferred settings.json ([0940325](https://github.com/newjersey/innovation-engineering/commit/0940325e59b8c9a367df394539f580ca9ca8e311))
+
 ## [0.1.23](https://github.com/newjersey/innovation-engineering/compare/v0.1.22...v0.1.23) (2026-05-26)
 
 ## [0.1.22](https://github.com/newjersey/innovation-engineering/compare/v0.1.21...v0.1.22) (2026-05-26)
