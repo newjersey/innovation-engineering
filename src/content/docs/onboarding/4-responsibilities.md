@@ -57,7 +57,7 @@ The [accessibility page](/innovation-engineering/reference/accessibility) is you
 
 ## Working with state agency partners
 
-- [Not Required] Consider blurring your video background when on a Teams call with agency stakeholders.
+- Consider blurring your video background or using a virtual background when on a call with external stakeholders. We have a folder of [NJIA-branded virtual backgrounds](https://drive.google.com/drive/folders/1YTnQLFsorTd4eLHJfLP7QrR2jJPZbeHt) which you can download.
 - When on a call with external/agency stakeholders, consider dressing business-casual (wear a nice shirt).
 - We have access to several tools and collaboration cloud platforms that agency partners cannot and do not use. Again, we want to maximize collaboration and de-emphasize our unique status when working with agency partners.
   - Partners do not have/use Google. Do not link them to Google Drive documents - copy the contents into a Microsoft Office365 document instead if you need them to have access. (It’s okay to show Google docs and decks when screensharing)
