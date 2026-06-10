@@ -337,22 +337,48 @@ Expected result: Claude Code consistently uses the pinned model.
 
 ### Alternative: Override specific model versions for different tool calls
 
-You can also pin specific model versions. This can be useful because Claude uses
-specific models for some tool calls - for example, Web Fetch uses Haiku, so you
-may wish to tell Claude to use a specific Haiku version for those calls, while
-using a different Sonnet version for regular chat completions. For example:
+You can pin specific model versions per role using four environment variables:
+`ANTHROPIC_DEFAULT_OPUS_MODEL`, `ANTHROPIC_DEFAULT_SONNET_MODEL`,
+`ANTHROPIC_DEFAULT_HAIKU_MODEL`, and `ANTHROPIC_DEFAULT_FABLE_MODEL`. This is
+useful because Claude uses specific models for certain operations — for example,
+Web Fetch uses Haiku — so you can pin each role independently.
 
 ```json
 {
   "env": {
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "us.anthropic.claude-opus-4-8",
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "us.anthropic.claude-sonnet-4-6",
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "us.anthropic.claude-haiku-4-5"
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
   }
 }
 ```
 
+:::note
+
+`ANTHROPIC_DEFAULT_FABLE_MODEL` exists for providers where Fable 5 is
+available, but Claude Fable 5 requires data retention and cannot be used if your
+AWS account enforces zero data retention. Omit it if your org uses ZDR. See
+[Data retention on Bedrock](#zero-data-retention-and-fable-5) below.
+
+:::
+
 Expected result: Claude Code uses the specified models for their respective
 calls.
+
+## Zero data retention and Fable 5
+
+Data retention on Bedrock is controlled by
+[AWS Bedrock's data retention settings](https://docs.aws.amazon.com/bedrock/latest/userguide/data-retention.html),
+not by Claude Code configuration. There is no Claude Code environment variable
+to enable ZDR for Bedrock users.
+
+Claude Fable 5 **requires** data retention and will fail with a `400` error if
+your AWS account has data retention disabled. For this reason:
+
+- Do not set `ANTHROPIC_DEFAULT_FABLE_MODEL` if your org uses ZDR.
+- The recommended `settings.json` below excludes `fable` and `best` from
+  `availableModels` to prevent accidental selection (the `best` alias resolves
+  to Fable 5 where available).
 
 ## Current Preferred `settings.json`
 
@@ -362,11 +388,13 @@ calls.
   "env": {
     "CLAUDE_CODE_USE_BEDROCK": "1",
     "AWS_REGION": "us-east-1",
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+    "CLAUDE_CODE_DISABLE_1M_CONTEXT": "1",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "us.anthropic.claude-opus-4-8",
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "us.anthropic.claude-sonnet-4-6",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "us.anthropic.claude-opus-4-8"
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
   },
-  "model": "us.anthropic.claude-sonnet-4-6",
+  "model": "opusplan",
+  "availableModels": ["opusplan", "opus", "sonnet", "haiku"],
   "enabledPlugins": {
     "typescript-lsp@claude-plugins-official": true,
     "commit-commands@claude-plugins-official": true,
@@ -386,6 +414,26 @@ calls.
   }
 }
 ```
+
+:::tip[Claude Code v2.1.166+: Add a fallback model chain]
+
+If you are on Claude Code v2.1.166 or later, add a `fallbackModel` array to
+degrade gracefully when the primary model is overloaded or unavailable. Add it
+alongside `availableModels`:
+
+```json
+"fallbackModel": [
+  "us.anthropic.claude-sonnet-4-6",
+  "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
+  "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+],
+```
+
+Claude Code tries each model in order and shows a notice when it switches. The
+chain activates only on overload or availability errors — not for content-based
+refusals. Check your version with `claude --version`.
+
+:::
 
 ---
 

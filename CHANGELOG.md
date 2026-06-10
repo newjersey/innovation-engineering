@@ -8,7 +8,6 @@ All notable changes to this project will be documented in this file. See [commit
 
 ## [0.1.28](https://github.com/newjersey/innovation-engineering/compare/v0.1.27...v0.1.28) (2026-06-02)
 
-
 ### Features
 
 * add Codex development guide ([4350e73](https://github.com/newjersey/innovation-engineering/commit/4350e73c1e0d9ebf2f1c53a735e1c4ef75089cc8))
