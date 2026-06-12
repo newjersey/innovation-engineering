@@ -124,16 +124,6 @@ This framing is based off of the following article: [How we estimate user storie
 
 Note that in this guide, the “understanding” is from the team’s perspective, not an individual’s.
 
-1 point
-What: we understand exactly what needs to be done
-How: we understand exactly how to do it
-2 points
-What: we understand exactly what needs to be done
-How: needs a little thinking or experimentation to figure out how to do it
-4 points
-What: we mostly understand what needs to be done
-How: we kind of understand how to do it (unless we’re way off base)
-
 | Points | Definition |
 | ------ | ---------- |
 | 1 point | <ul><li><b>What</b>: we understand exactly what needs to be done</li><li><b>How</b>: we understand exactly how to do it</li></ul> |
