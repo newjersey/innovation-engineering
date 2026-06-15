@@ -21,7 +21,7 @@ Sometimes, we have teams of just 1 engineer. In this case, we still look for way
 
 ## Context awareness
 
-We aim to have an team where all engineers are at least familiar with the work, challenges, and successes of the rest of the engineering team. Outside of a given initiative where you work closely and frequently, we should at least [know what’s happening](https://docs.google.com/spreadsheets/d/15RsicroDz-Uc3ZK87aVycqIHLCGa9cySv0rWYjmdsJc/edit#gid=450523152), even if not directly having ownership.
+We aim to have a team where all engineers are at least familiar with the work, challenges, and successes of the rest of the engineering team. Outside of a given initiative where you work closely and frequently, we should at least [know what’s happening](https://docs.google.com/spreadsheets/d/15RsicroDz-Uc3ZK87aVycqIHLCGa9cySv0rWYjmdsJc/edit#gid=450523152), even if not directly having ownership.
 
 ## Developer trust & autonomy
 
