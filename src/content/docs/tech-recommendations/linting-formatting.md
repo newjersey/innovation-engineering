@@ -3,6 +3,6 @@ title: Linting & Formatting
 wip: true
 ---
 
-eslint
+We use [Biome](https://biomejs.dev/) for linting web applications.
 
-prettier
+An example Biome JSON configuration file can be found in the NJIA repository template here: [https://github.com/newjersey/innovation-repo-template/blob/main/biome.json](https://github.com/newjersey/innovation-repo-template/blob/main/biome.json).

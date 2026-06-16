@@ -197,3 +197,4 @@ You can always create as many additional jobs triggered on different PR labels t
 
 - [Pickaroo workflow](https://github.com/newjersey/innovation-shared-actions/blob/main/.github/workflows/pickaroo.yml)
 - [NJIA Pull Request GitHub App](https://github.com/apps/ooi-pull-request-app)
+- [NJIA Repo Template example workflow](https://github.com/newjersey/innovation-repo-template/blob/main/.github/workflows/pr-review.yml)
