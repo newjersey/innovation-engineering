@@ -33,6 +33,27 @@ For testing, make sure any adblock is turned off.
 9. It will take 24-48 hours for analytics reports to start populating, but to confirm the tags once they are live, you can use the “Realtime” reporting within Google Analytics.
 10. For custom dashboards, Looker Studio dashboards can be set up (by Engineering) after Google Analytics is implemented and added (note that it takes 24-48 hours to start seeing new events in Looker). In the meantime, you can see analytics reporting within Google Analytics itself. For an example, see the AI Assistant Looker Studio dashboard
 
+## Connecting your site to your GA4 account
+After getting the Measurement ID, we need to update our website to send data back to the proper account. GA4 has instructions on how to do this, but the exact implementation depends on your framework. The standard path is to add a script tag to your `layout.tsx` file so it is loaded on every page.
+
+An example for NextJS setup
+```
+    <head>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-YOURMEASUREMENTID"
+        strategy="afterInteractive"
+      />
+      <Script strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-YOURMEASUREMENTID');
+        `}
+      </Script>
+    </head>
+```
+
 ## Setting up custom Google Analytics events
 
 Here are detailed instructions on how to set
