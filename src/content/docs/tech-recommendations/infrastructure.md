@@ -59,6 +59,12 @@ Docker Engine can still be easily installed on Linux without Docker Desktop. For
 - Terraform/OpenTofu - used by a couple of projects, is also cloud-agnostic
 - Serverless - we do not start new projects with Serverless due to cost and pain points, but have migrated existing projects on Serverless from v3 to v4
 
+We also recommend configuring [Checkov](https://www.checkov.io/) to scan for IaC misconfiguration:
+
+- For local development, [set up a Python environment](/innovation-engineering/guides/development/python-setup) then [install and run Checkov](https://www.checkov.io/1.Welcome/Quick%20Start.html). The `checkov` command can be added as a npm script if that's helpful.
+- [Configure Checkov as a Github Action](https://www.checkov.io/4.Integrations/GitHub%20Actions.html)
+  - [See the Medicaid CE project for an example](https://github.com/newjersey/medicaid-community-engagement/blob/main/.github/workflows/checkov.yaml).
+
 ## Internal requirements and configurations
 
 Ready to deploy your hosting stack? See [this internal document](https://docs.google.com/document/d/1C2489_-2jgauBqlNJ1aNJJuGepM_9Oz0NV1pT9HMCac/edit?tab=t.0#heading=h.er81sd0w396) for what to do and who to talk to, to get hosted with the appropriate billing, security requirements, and networking.
