@@ -1,3 +1,8 @@
+h1,
+h2 {
+  font-weight: bold;
+}
+
 /* Dark mode colors. */
 :root {
   --sl-color-accent-low: #36172f;
@@ -42,9 +47,4 @@
 
 .sl-heading-wrapper.level-h2 {
   padding-bottom: 0.5rem;
-}
-
-h1,
-h2 {
-  font-weight: bold;
 }

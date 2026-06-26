@@ -34,10 +34,12 @@ For testing, make sure any adblock is turned off.
 10. For custom dashboards, Looker Studio dashboards can be set up (by Engineering) after Google Analytics is implemented and added (note that it takes 24-48 hours to start seeing new events in Looker). In the meantime, you can see analytics reporting within Google Analytics itself. For an example, see the AI Assistant Looker Studio dashboard
 
 ## Connecting your site to your GA4 account
+
 After getting the Measurement ID, we need to update our website to send data back to the proper account. GA4 has instructions on how to do this, but the exact implementation depends on your framework. The standard path is to add a script tag to your `layout.tsx` file so it is loaded on every page.
 
-An example for NextJS setup
-```
+An example for NextJS setup:
+
+```tsx
     <head>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-YOURMEASUREMENTID"
