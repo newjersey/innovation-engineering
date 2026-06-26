@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.36](https://github.com/newjersey/innovation-engineering/compare/v0.1.35...v0.1.36) (2026-06-26)
+
+
+### Features
+
+* Renovate setup instructions ([e960b63](https://github.com/newjersey/innovation-engineering/commit/e960b63b6e1e489d28f30485c36c85013da2e8f3))
+
 ## [0.1.35](https://github.com/newjersey/innovation-engineering/compare/v0.1.34...v0.1.35) (2026-06-18)
 
 ## [0.1.34](https://github.com/newjersey/innovation-engineering/compare/v0.1.33...v0.1.34) (2026-06-16)
