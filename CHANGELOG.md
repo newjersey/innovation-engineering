@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.38](https://github.com/newjersey/innovation-engineering/compare/v0.1.37...v0.1.38) (2026-06-29)
+
+
+### Features
+
+* prefer uv over pyenv ([37ba6d9](https://github.com/newjersey/innovation-engineering/commit/37ba6d96c96a7fbb59672ec78fb6473659b95683))
+
 ## [0.1.37](https://github.com/newjersey/innovation-engineering/compare/v0.1.36...v0.1.37) (2026-06-29)
 
 ## [0.1.36](https://github.com/newjersey/innovation-engineering/compare/v0.1.35...v0.1.36) (2026-06-26)
