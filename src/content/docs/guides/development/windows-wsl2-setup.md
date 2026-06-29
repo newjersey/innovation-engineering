@@ -588,77 +588,7 @@ node -e "require('https').get('https://ipinfo.io/ip', res => res.on('data', d =>
 
 You should see your public IP address if everything is working correctly.
 
-## 12. Python virtual environments: keeping your projects clean
-
-Let's set up Python virtual environments. **Why use virtual environments?** When you install Python packages globally (with pip3 install package-name), they can conflict with each other when different projects need different versions of the same package. Virtual environments solve this by creating isolated Python installations for each project.
-
-### Creating and using virtual environments
-
-```shell
-# Navigate to your projects directory (we created this earlier)
-cd ~/Developer
-
-# Create a new project directory
-mkdir my-python-project
-cd my-python-project
-
-# Create a virtual environment named 'venv'
-python3 -m venv .venv
-
-# Activate the virtual environment
-source .venv/bin/activate
-
-# Your prompt should now show (venv) at the beginning
-# Install packages only for this project
-pip install requests beautifulsoup4
-
-# When you're done working, deactivate the environment
-deactivate
-```
-
-### Best practices for virtual environments
-
-- **Always use virtual environments** for Python projects
-- **Name your environment folder `.venv`** - it's the standard convention
-- **Add `.venv/` to your `.gitignore`** - never commit virtual environments to version control
-- **Keep a `requirements.txt` file** with your project dependencies:
-
-```shell
-# Generate requirements.txt from your current environment
-pip freeze > requirements.txt
-
-# Install from requirements.txt in a new environment
-pip install -r requirements.txt
-```
-
-### Global vs. virtual environment packages
-
-**Install globally only for system tools:**
-
-```shell
-# These are tools you want available everywhere
-pip3 install --user aider-install  # AI assistant
-pip3 install --user black          # Python code formatter
-```
-
-**Install in virtual environments for project dependencies:**
-
-```shell
-# Create a virtual environment
-python3 -m venv .venv
-
-# Activate your project's virtual environment first
-source .venv/bin/activate
-
-# Then install project-specific packages
-pip install -r requirements.txt
-pip install django flask requests
-pip freeze > requirements.txt
-```
-
-**Why this matters**: This approach prevents dependency conflicts, makes your projects reproducible, and keeps your system Python installation clean.
-
-## 13. Docker CLI: container management without Docker Desktop (optional)
+## 12. Docker CLI: container management without Docker Desktop (optional)
 
 For containerized development, we'll install the Docker CLI without Docker Desktop. This gives you access to Docker commands while keeping your system lightweight.
 
@@ -694,7 +624,7 @@ docker compose version
 # These should show version information
 ```
 
-## 14. AWS CLI: cloud development essentials
+## 13. AWS CLI: cloud development essentials
 
 The AWS CLI is essential for cloud development. Let's install it and configure it to work with multiple AWS accounts and profiles.
 
@@ -801,7 +731,7 @@ aider --help
 
 **What is Aider?** Aider is an AI-powered coding assistant that can help you write and edit code directly in your terminal. It's particularly useful for code refactoring, bug fixes, and implementing new features. Talk to the tech ops team if you'd like to join this pilot.
 
-## 16. Understanding the file system: where your code lives
+## 15. Understanding the file system: where your code lives
 
 One of the most confusing aspects of WSL for newcomers is understanding where files live and how to access them. Let's clear this up once and for all.
 
@@ -846,7 +776,7 @@ In File Explorer, navigate to: `\\wsl$\Ubuntu\home\<yourusername>\`
 
 **Pro tip**: You can bookmark this location in Windows File Explorer for quick access.
 
-## 17. Quality of life tools
+## 16. Quality of life tools
 
 These aren't strictly necessary, but they'll make your Windows development experience much more pleasant:
 
