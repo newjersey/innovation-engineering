@@ -6,7 +6,6 @@ All notable changes to this project will be documented in this file. See [commit
 
 ## [0.1.36](https://github.com/newjersey/innovation-engineering/compare/v0.1.35...v0.1.36) (2026-06-26)
 
-
 ### Features
 
 * Renovate setup instructions ([e960b63](https://github.com/newjersey/innovation-engineering/commit/e960b63b6e1e489d28f30485c36c85013da2e8f3))
