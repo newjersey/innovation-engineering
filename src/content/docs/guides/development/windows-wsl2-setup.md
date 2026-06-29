@@ -588,7 +588,11 @@ node -e "require('https').get('https://ipinfo.io/ip', res => res.on('data', d =>
 
 You should see your public IP address if everything is working correctly.
 
-## 12. Docker CLI: container management without Docker Desktop (optional)
+## 12. Python projects
+
+Use [Set up a Python project](/innovation-engineering/guides/development/python-setup/) for Python version management, virtual environments, project dependencies, and Python command-line tools.
+
+## 13. Docker CLI: container management without Docker Desktop (optional)
 
 For containerized development, we'll install the Docker CLI without Docker Desktop. This gives you access to Docker commands while keeping your system lightweight.
 
@@ -624,7 +628,7 @@ docker compose version
 # These should show version information
 ```
 
-## 13. AWS CLI: cloud development essentials
+## 14. AWS CLI: cloud development essentials
 
 The AWS CLI is essential for cloud development. Let's install it and configure it to work with multiple AWS accounts and profiles.
 
@@ -720,7 +724,8 @@ aws configure --profile work-production
 If you're part of the Aider AI assistant pilot program, you can now install it:
 
 ```shell
-python3 -m pip install aider-install
+uv tool install aider-install
+aider-install
 ```
 
 Verify the installation:
@@ -731,7 +736,7 @@ aider --help
 
 **What is Aider?** Aider is an AI-powered coding assistant that can help you write and edit code directly in your terminal. It's particularly useful for code refactoring, bug fixes, and implementing new features. Talk to the tech ops team if you'd like to join this pilot.
 
-## 15. Understanding the file system: where your code lives
+## 16. Understanding the file system: where your code lives
 
 One of the most confusing aspects of WSL for newcomers is understanding where files live and how to access them. Let's clear this up once and for all.
 
@@ -776,7 +781,7 @@ In File Explorer, navigate to: `\\wsl$\Ubuntu\home\<yourusername>\`
 
 **Pro tip**: You can bookmark this location in Windows File Explorer for quick access.
 
-## 16. Quality of life tools
+## 17. Quality of life tools
 
 These aren't strictly necessary, but they'll make your Windows development experience much more pleasant:
 
