@@ -70,7 +70,7 @@ See [this thread for additional conversation and considerations](https://njcio.s
 
 ### Teams calls do not allow screen annotations while controlling the shared screen
 
-Microsoft teams has a tool to enable people to draw and annotate on a shared screen.
+Microsoft teams has a tool to enable people to [draw and annotate on a shared screen](https://support.microsoft.com/en-US/teams/meetings-events/use-annotation-while-sharing-your-screen-in-microsoft-teams). However, the screen cannot be controlled while annotation is enabled.
 
 ### We have not figured out how to @-mention external users on shared Microsoft Online documents
 
