@@ -1,9 +1,19 @@
 ---
-title: Design system
-wip: true
+title: Design system (Grove)
 ---
 
-We use NJWDS for micro-css classes, not Tailwind or similar
+## Grove design system
 
-For React apps, also add the <https://github.com/trussworks/react-uswds> component library
-For non-react, include the USWDS javascript
+[Grove](https://grove.nj.gov/) is the Garden State Design System that we expect projects to use. This was formerly called NJWDS; you may see references to this old name in some code or documentation.
+
+Quick links:
+
+- [Grove documentation](https://grove.nj.gov/guides/gettingstarted/)
+- [Storybook components](https://storybook.grove.nj.gov/)
+- [GitHub repo](https://github.com/newjersey/njwds)
+
+For questions or information on the design system, talk to the team in Slack in the `#grove-all` channel.
+
+## Usage
+
+Use the [Trussworks implementation](https://github.com/trussworks/react-uswds) of USWDS components when building React components that follow the design system specs. Here is an [example of project code](https://github.com/newjersey/doula-medicaid/tree/main/src/app/form/(formSteps)/components) that wraps the Trussworks form components.
