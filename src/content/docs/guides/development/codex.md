@@ -48,12 +48,50 @@ If you are looking for the analogous Claude Code setup, see
 Create or edit `~/.codex/config.toml`:
 
 ```toml
-model = "openai.gpt-5.5"
+model = "openai.gpt-5.6-sol"
 model_provider = "amazon-bedrock"
 
 [model_providers.amazon-bedrock.aws]
 region = "us-east-2"
 ```
+
+:::note[Checking available Bedrock models]
+
+Use the AWS CLI to inspect the OpenAI models and inference profiles that are
+visible to your AWS profile in `us-east-2`:
+
+```shell
+AWS_PROFILE=<profile-name> aws bedrock list-foundation-models \
+  --region us-east-2 \
+  --by-provider OpenAI \
+  --query 'modelSummaries[].{modelId:modelId,modelName:modelName,status:modelLifecycle.status}' \
+  --output table
+```
+
+```shell
+AWS_PROFILE=<profile-name> aws bedrock list-inference-profiles \
+  --region us-east-2 \
+  --query 'inferenceProfileSummaries[?contains(inferenceProfileId, `openai`) || contains(inferenceProfileName, `OpenAI`) || contains(inferenceProfileName, `GPT`)].{id:inferenceProfileId,name:inferenceProfileName,status:status}' \
+  --output table
+```
+
+The Codex Bedrock path can expose OpenAI model IDs through Bedrock even when
+they do not appear in the standard Bedrock catalog output. If
+`openai.gpt-5.6-sol` is missing from the AWS command output, test the Codex
+runtime path directly:
+
+```shell
+AWS_PROFILE=<profile-name> codex exec --ephemeral \
+  -m openai.gpt-5.6-sol \
+  -c 'model_provider="amazon-bedrock"' \
+  "Reply with exactly: model-ok"
+```
+
+Expected result: Codex starts with `provider: amazon-bedrock`, uses
+`model: openai.gpt-5.6-sol`, and returns `model-ok`. This command makes a real
+model request, so it may incur minimal Bedrock usage.
+
+:::
 
 ## Step 2: Authenticate with AWS SSO
 
@@ -115,7 +153,7 @@ preferred `~/.codex/config.toml` reference for engineers using Bedrock:
 
 ```toml
 # For Amazon Bedrock:
-model = "openai.gpt-5.5"
+model = "openai.gpt-5.6-sol"
 model_provider = "amazon-bedrock"
 model_reasoning_effort = "high"
 personality = "pragmatic"
@@ -172,6 +210,8 @@ export AZURE_OPENAI_API_KEY=<your-azure-foundry-key>
 
 For the official Bedrock setup, see
 [Use Codex with Amazon Bedrock](https://developers.openai.com/codex/amazon-bedrock).
+For current OpenAI model guidance, see
+[Using GPT-5.6](https://developers.openai.com/api/docs/guides/latest-model).
 For more detail on Codex settings, see
 [Codex configuration basics](https://developers.openai.com/codex/config-basic).
 For more detail on sandbox and network behavior, see
@@ -191,5 +231,5 @@ see
 | Codex uses the wrong AWS account         | The profile passed to `AWS_PROFILE` is not the account you expected                                    | Run `aws sts get-caller-identity --profile <profile-name>` and restart Codex with the correct `AWS_PROFILE=<profile-name> codex`  |
 | `AWS_PROFILE` seems ignored              | Explicit access-key env vars (`AWS_ACCESS_KEY_ID`, etc.) are taking precedence                         | Run `env \| grep AWS_`, then unset stale values with `unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN`            |
 | `AccessDeniedException` invoking a model | Missing IAM permission and/or model access not granted in Bedrock                                      | Confirm IAM includes Bedrock invoke permissions and check Bedrock model access for the AWS account and Region                     |
-| Region or model availability error       | The configured model is not available in the configured Region                                         | Confirm `openai.gpt-5.5` is available in `us-east-2`, or adjust `model` and `region` based on the Bedrock model availability list |
+| Region or model availability error       | The configured model is not available in the configured Region                                         | Confirm `openai.gpt-5.6-sol` works in `us-east-2`, or adjust `model` and `region` based on the Bedrock model availability list    |
 | `/status` does not show `amazon-bedrock` | Codex is not reading the expected `~/.codex/config.toml`, or `model_provider` is missing or misspelled | Confirm the config file is saved at `~/.codex/config.toml`, then restart Codex and check `/status` again                          |

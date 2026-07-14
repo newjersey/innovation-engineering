@@ -328,7 +328,7 @@ available in Bedrock.
    ```json
    {
      "env": {
-       "ANTHROPIC_MODEL": "us.anthropic.claude-sonnet-4-6"
+       "ANTHROPIC_MODEL": "us.anthropic.claude-sonnet-5"
      }
    }
    ```
@@ -347,7 +347,7 @@ Web Fetch uses Haiku — so you can pin each role independently.
 {
   "env": {
     "ANTHROPIC_DEFAULT_OPUS_MODEL": "us.anthropic.claude-opus-4-8",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "us.anthropic.claude-sonnet-4-6",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "us.anthropic.claude-sonnet-5",
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
   }
 }
@@ -390,7 +390,7 @@ your AWS account has data retention disabled. For this reason:
     "AWS_REGION": "us-east-1",
     "CLAUDE_CODE_DISABLE_1M_CONTEXT": "1",
     "ANTHROPIC_DEFAULT_OPUS_MODEL": "us.anthropic.claude-opus-4-8",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "us.anthropic.claude-sonnet-4-6",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "us.anthropic.claude-sonnet-5",
     "ANTHROPIC_DEFAULT_HAIKU_MODEL": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
   },
   "model": "opusplan",
@@ -423,6 +423,7 @@ alongside `availableModels`:
 
 ```json
 "fallbackModel": [
+  "us.anthropic.claude-sonnet-5",
   "us.anthropic.claude-sonnet-4-6",
   "us.anthropic.claude-sonnet-4-5-20250929-v1:0",
   "us.anthropic.claude-haiku-4-5-20251001-v1:0"
@@ -447,5 +448,5 @@ see [Set up AWS CLI with SSO: Troubleshooting](/innovation-engineering/guides/de
 | `aws sso login` succeeds but Claude Code still fails | The profile you logged in with doesn't match `AWS_PROFILE` in `~/.claude/settings.json`, or stale env vars are overriding it | Confirm `AWS_PROFILE` value matches your profile name exactly. Run `env \| grep AWS_` to check for overriding env vars; unset any you find. |
 | Region error on startup                              | `AWS_REGION` isn't set (or isn't being picked up)                                                                            | Set `AWS_REGION` in `~/.claude/settings.json` or your shell env; restart `claude`                                                           |
 | `AccessDeniedException` invoking a model             | Missing IAM permission and/or model access not granted in Bedrock console                                                    | Confirm IAM includes `bedrock:InvokeModel` (and streaming if needed); check Bedrock console model access/approvals for your account/region  |
-| Every message fails immediately                      | Incorrect `ANTHROPIC_MODEL` value or mismatched region/model                                                                 | Remove `ANTHROPIC_MODEL` to test; then re-add using a cross-region inference profile ID (e.g. `us.anthropic.claude-sonnet-4-6`)             |
+| Every message fails immediately                      | Incorrect `ANTHROPIC_MODEL` value or mismatched region/model                                                                 | Remove `ANTHROPIC_MODEL` to test; then re-add using a cross-region inference profile ID (e.g. `us.anthropic.claude-sonnet-5`)               |
 | `/login` / `/logout` doesn't behave as expected      | Bedrock uses AWS auth, not an Anthropic API key login flow                                                                   | Use AWS auth (`aws sso login`, profiles, IAM creds) instead                                                                                 |
