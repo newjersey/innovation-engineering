@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.43](https://github.com/newjersey/innovation-engineering/compare/v0.1.42...v0.1.43) (2026-07-14)
+
 ## [0.1.42](https://github.com/newjersey/innovation-engineering/compare/v0.1.41...v0.1.42) (2026-07-07)
 
 ## [0.1.41](https://github.com/newjersey/innovation-engineering/compare/v0.1.40...v0.1.41) (2026-07-07)
