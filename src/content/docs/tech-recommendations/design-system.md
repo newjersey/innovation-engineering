@@ -18,7 +18,7 @@ For questions or information on the design system, talk to the team in Slack in 
 
 For React, use the [Trussworks implementation](https://github.com/trussworks/react-uswds) of USWDS components when building React components that follow the design system specs. Here are two examples of project code that wraps the Trussworks form components:
 
-* [Doula Medicaid]([https://github.com/newjersey/profile-nj/blob/main/apps/profile/frontend/src/components](https://github.com/newjersey/doula-medicaid/tree/main/src/app/form/(formSteps)/components))
+* [Doula Medicaid](https://github.com/newjersey/doula-medicaid/tree/main/src/app/form/(formSteps)/components)
 * [Profile-NJ](https://github.com/newjersey/profile-nj/blob/main/apps/profile/frontend/src/components)
 
 For non-React, use the [USWDS JavaScript](https://designsystem.digital.gov/documentation/getting-started-for-developers/) directly.
