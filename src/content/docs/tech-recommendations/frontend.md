@@ -11,10 +11,10 @@ Always use the [starter repo template](https://github.com/newjersey/innovation-r
 ## Language
 
 - **We use React as our frontend library.**
-We do not use Angular, Vue, etc. There may sometimes be a reason to use pure vanilla JS and not use a frontend framework at all; that’s fine. In general, talk to the team and engineering directors before making a choice besides React.
+  We do not use Angular, Vue, etc. There may sometimes be a reason to use pure vanilla JS and not use a frontend framework at all; that’s fine. In general, talk to the team and engineering directors before making a choice besides React.
 
 - **TypeScript should be used over plain JavaScript.**
-Static typing can be philosophically considered a form of testing: it provides immediate, useful feedback as to whether the code written satisfies the defined constraints.
+  Static typing can be philosophically considered a form of testing: it provides immediate, useful feedback as to whether the code written satisfies the defined constraints.
 
 ## React frameworks
 
@@ -23,6 +23,19 @@ Static typing can be philosophically considered a form of testing: it provides i
 - Use **Astro** for content-centric static pages.
 
 Talk to the team and engineering directors before making a choice besides these three frameworks.
+
+## Forms
+
+We use [React Hook Form](https://react-hook-form.com/) (RHF) for handling form logic.
+
+For user input validation, either use:
+
+- RHF's native validation capabilities
+- Or use [@hookform/resolvers](https://github.com/react-hook-form/resolvers) to wire up [Zod](https://zod.dev/)
+
+Additionally, [@hookform/lens](https://github.com/react-hook-form/lenses) may be useful for typesafe mapping of nested data to RHF.
+
+Some existing projects may still handle form logic and validation in different ways.
 
 ## Testing
 
