@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.46](https://github.com/newjersey/innovation-engineering/compare/v0.1.45...v0.1.46) (2026-07-20)
+
+### Documentation
+
+* note about Fable access ([4ae9398](https://github.com/newjersey/innovation-engineering/commit/4ae9398baee1117ca9a579aa505b2b2bdee6b669))
 ## [0.1.45](https://github.com/newjersey/innovation-engineering/compare/v0.1.44...v0.1.45) (2026-07-20)
 
 ### Features
