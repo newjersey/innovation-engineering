@@ -21,6 +21,20 @@ If you would like to see Claude or Claude Code become a procured service, please
 
 :::
 
+:::caution[Fable 5 is not available]
+
+Claude Fable 5 is not conformant with NJ state AI guidelines and cannot be
+used. API requests to Fable return:
+
+```text
+API Error: 400 data retention mode 'default' is not available for this model
+```
+
+Fable will remain unavailable until this data retention mode is supported.
+See [Zero data retention and Fable 5](#zero-data-retention-and-fable-5) below.
+
+:::
+
 ## Before you begin
 
 Confirm:
@@ -90,10 +104,12 @@ haven't already. Once you have a working SSO profile (you can verify with
    Replace `ui-dev` with whatever you named your profile during SSO setup.
 
    :::caution
+
    Your `AWS_PROFILE` determines which AWS account is billed. If you work on
    multiple projects with different funding sources, **do not hardcode a single
    profile here**. Instead, set `AWS_PROFILE` in each project's
    `.claude/settings.json`. See [Working across multiple AWS accounts](#working-across-multiple-aws-accounts-recommended) below.
+
    :::
 
 2. (Optional) Add an auth refresh command to automatically re-authenticate
@@ -373,7 +389,15 @@ not by Claude Code configuration. There is no Claude Code environment variable
 to enable ZDR for Bedrock users.
 
 Claude Fable 5 **requires** data retention and will fail with a `400` error if
-your AWS account has data retention disabled. For this reason:
+your AWS account has data retention disabled:
+
+```text
+API Error: 400 data retention mode 'default' is not available for this model
+```
+
+Because most NJ state accounts enforce zero data retention, Fable 5 is not
+conformant with NJ state AI guidelines and is not available for use until
+Bedrock supports this data retention mode. For this reason:
 
 - Do not set `ANTHROPIC_DEFAULT_FABLE_MODEL` if your org uses ZDR.
 - The recommended `settings.json` below excludes `fable` and `best` from

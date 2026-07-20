@@ -31,6 +31,19 @@ speak with your director.
 
 :::
 
+:::caution[Fable 5 is not available]
+
+Claude Fable 5 is not conformant with NJ state AI guidelines and cannot be
+used. API requests to Fable return:
+
+```text
+API Error: 400 data retention mode 'default' is not available for this model
+```
+
+Fable will remain unavailable until this data retention mode is supported.
+
+:::
+
 ## Before you begin
 
 Confirm:
