@@ -13,3 +13,7 @@ Prove connection between your frontend and backend via a basic API call in the â
 
 - Express
 - Hono (see decision doc)
+
+## API type safety
+
+- Use [Zod](https://zod.dev/) for validating API input formats and types
