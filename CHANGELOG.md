@@ -7,11 +7,13 @@ All notable changes to this project will be documented in this file. See [commit
 ### Documentation
 
 * note about Fable access ([4ae9398](https://github.com/newjersey/innovation-engineering/commit/4ae9398baee1117ca9a579aa505b2b2bdee6b669))
+
 ## [0.1.45](https://github.com/newjersey/innovation-engineering/compare/v0.1.44...v0.1.45) (2026-07-20)
 
 ### Features
 
 * Claude Desktop setup ([fc72ef5](https://github.com/newjersey/innovation-engineering/commit/fc72ef5249e8648e7739141abd90efa0dc0fac90))
+
 ## [0.1.44](https://github.com/newjersey/innovation-engineering/compare/v0.1.43...v0.1.44) (2026-07-17)
 
 ## [0.1.43](https://github.com/newjersey/innovation-engineering/compare/v0.1.42...v0.1.43) (2026-07-14)

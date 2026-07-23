@@ -14,6 +14,7 @@ etc.
 
 Confirm:
 
+- **macOS only:** [Homebrew](https://brew.sh) is installed (`brew --version`)
 - AWS CLI is installed (`aws --version`)
   - **macOS (Homebrew):** `brew install awscli`
   - **Linux/WSL (apt):** `sudo apt update && sudo apt install awscli`
@@ -90,15 +91,21 @@ nothing about which account it points to.
 
 :::
 
+:::caution[AWS Account Name as Profile Name]
+
+It's very important that you name your profile in this step the exact same name as the AWS account you're configuring. Some of our tools and examples require you to name these precisely, and accepting the default name will break those tools and make your life harder.
+
+:::
+
 ---
 
 ## Step 2: Verify your config file
 
 Open `~/.aws/config` and confirm it contains _both_ a profile block _and_ a
-matching `sso-session` block. The example below uses the profile name `ui-dev`; yours will match the name you chose in the previous step:
+matching `sso-session` block. The example below uses the profile name `Innov-RES-Dev`; yours will match the name you chose in the previous step:
 
 ```ini
-[profile ui-dev]
+[profile Innov-RES-Dev]
 region = us-east-1
 output = json
 sso_session = njoitaws
@@ -120,7 +127,7 @@ You can also verify programmatically:
 
 ```zsh
 # Should print the sso_start_url; if it prints nothing, the config is wrong
-aws configure get sso_start_url --profile ui-dev
+aws configure get sso_start_url --profile Innov-RES-Dev
 ```
 
 ---
@@ -130,7 +137,7 @@ aws configure get sso_start_url --profile ui-dev
 Log in:
 
 ```zsh
-aws sso login --profile ui-dev
+aws sso login --profile Innov-RES-Dev
 ```
 
 This opens your browser for authentication. Once you approve, the CLI
@@ -139,7 +146,7 @@ caches temporary credentials locally.
 Verify:
 
 ```zsh
-aws sts get-caller-identity --profile ui-dev
+aws sts get-caller-identity --profile Innov-RES-Dev
 ```
 
 You should see your role ARN and account ID in the output.
@@ -156,7 +163,7 @@ authenticate through the browser once per session.
 For example, after setting up two accounts your config might look like:
 
 ```ini
-[profile ui-dev]
+[profile Innov-RES-Dev]
 region = us-east-1
 sso_session = njoitaws
 sso_account_id = 123456789012
@@ -177,7 +184,7 @@ sso_registration_scopes = sso:account:access
 Switch between accounts by passing `--profile` to any AWS CLI command:
 
 ```zsh
-aws sts get-caller-identity --profile ui-dev
+aws sts get-caller-identity --profile Innov-RES-Dev
 aws sts get-caller-identity --profile dol-prod
 ```
 

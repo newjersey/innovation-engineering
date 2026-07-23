@@ -31,12 +31,13 @@ your director.
 
 Confirm:
 
+- You have completed
+  [Set up AWS CLI with SSO](/innovation-engineering/guides/development/aws-sso/)
+  and can authenticate to AWS
+  (`aws sts get-caller-identity --profile <profile-name>`).
 - Homebrew is installed (`brew --version`)
 - Codex is installed (`codex --version`)
   - Install via Homebrew if not installed (`brew install --cask codex`)
-- You can authenticate to AWS. (If you haven't set up AWS SSO yet, follow
-  [Set up AWS CLI with SSO](/innovation-engineering/guides/development/aws-sso/)
-  first.)
 
 If you are looking for the analogous Claude Code setup, see
 [Configure Claude Code](/innovation-engineering/guides/development/claude-code-bedrock/).
