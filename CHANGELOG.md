@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.47](https://github.com/newjersey/innovation-engineering/compare/v0.1.46...v0.1.47) (2026-07-23)
+
+### Documentation
+
+* clarify AWS CLI setup instructions ([dbb0b40](https://github.com/newjersey/innovation-engineering/commit/dbb0b40944e99e799da640d45c5cb89abc1d16eb))
 ## [0.1.46](https://github.com/newjersey/innovation-engineering/compare/v0.1.45...v0.1.46) (2026-07-20)
 
 ### Documentation
