@@ -39,10 +39,12 @@ See [Zero data retention and Fable 5](#zero-data-retention-and-fable-5) below.
 
 Confirm:
 
+- You have completed
+  [Set up AWS CLI with SSO](/innovation-engineering/guides/development/aws-sso/)
+  and can authenticate to AWS
+  (`aws sts get-caller-identity --profile <your-profile>`).
 - Claude Code is installed (`claude --version`)
   - Install via Homebrew if not installed (`brew install --cask claude-code`)
-- You can authenticate to AWS. (If you haven't set up AWS SSO yet, follow
-  [Set up AWS CLI with SSO](/innovation-engineering/guides/development/aws-sso/) first.)
 
 For a full list of supported environment variables and settings keys, see
 [Amazon Bedrock configuration reference](https://docs.anthropic.com/en/docs/claude-code/bedrock).
