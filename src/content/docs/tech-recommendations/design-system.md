@@ -9,6 +9,7 @@ title: Design system (Grove)
 Quick links:
 
 - [Grove documentation](https://grove.nj.gov/guides/gettingstarted/)
+- Guidance on patterns like [conditional fields](https://grove.nj.gov/patterns/conditionalfields/) and [error validation](https://grove.nj.gov/patterns/errorvalidation/)
 - [Storybook components](https://storybook.grove.nj.gov/)
 - [GitHub repo](https://github.com/newjersey/njwds)
 
