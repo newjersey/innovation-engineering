@@ -35,6 +35,8 @@ For user input validation, either use:
 
 Additionally, [@hookform/lens](https://github.com/react-hook-form/lenses) may be useful for typesafe mapping of nested data to RHF.
 
+See [Design system (Grove) - Usage](/innovation-engineering/tech-recommendations/design-system/#usage) for examples of wrapping Grove components with RHF.
+
 Some existing projects may still handle form logic and validation in different ways.
 
 ## Testing
