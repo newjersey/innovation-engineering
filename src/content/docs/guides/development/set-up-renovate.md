@@ -111,7 +111,9 @@ After the Renovate configuration pull request is reviewed and Tech Ops has
 enabled Renovate, merge the pull request into the repository's default branch.
 
 Renovate reads configuration from the default branch, so the file must be
-merged before Renovate can use the settings.
+merged before Renovate can use the settings. If the `renovate.json5` configuration
+file from Step 1 does not yet exist on the default branch of the codebase, this
+pull request will automatically include its own instance of the configuration file.
 
 ## Step 5: Confirm Renovate is working
 
