@@ -153,3 +153,9 @@ Confirm that:
 
 Check the pull request status. Automerge can be blocked by failing CI checks,
 branch protection rules, required reviews, or Renovate permissions.
+
+Another place to debug can be the Renovate logs at https://developer.mend.io/
+
+### Renovate auto-merge is failing with DEBUG message "Pull request is in clean status"
+
+GitHub [requires at least one branch protection ruleset](https://github.com/peter-evans/enable-pull-request-automerge#conditions) to be set in order to enable automerge.
