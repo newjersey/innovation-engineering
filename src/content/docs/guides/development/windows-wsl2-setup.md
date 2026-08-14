@@ -1,7 +1,5 @@
 ---
 title: Setting up a state Windows laptop with WSL2
-sidebar:
-  order: 3
 ---
 
 _TODO: extract the non-Windows development instructions (like zsh, python, nvm, AWS CLI setup) into shared setup documentation_
