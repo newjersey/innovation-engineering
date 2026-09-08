@@ -3,18 +3,27 @@
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
 ## [0.1.55](https://github.com/newjersey/innovation-engineering/compare/v0.1.54...v0.1.55) (2026-08-10)
+
 ## [0.1.54](https://github.com/newjersey/innovation-engineering/compare/v0.1.53...v0.1.54) (2026-08-07)
+
 ## [0.1.53](https://github.com/newjersey/innovation-engineering/compare/v0.1.52...v0.1.53) (2026-08-03)
+
 ## [0.1.52](https://github.com/newjersey/innovation-engineering/compare/v0.1.51...v0.1.52) (2026-07-27)
+
 ## [0.1.51](https://github.com/newjersey/innovation-engineering/compare/v0.1.50...v0.1.51) (2026-07-27)
+
 ## [0.1.50](https://github.com/newjersey/innovation-engineering/compare/v0.1.49...v0.1.50) (2026-07-27)
+
 ## [0.1.49](https://github.com/newjersey/innovation-engineering/compare/v0.1.48...v0.1.49) (2026-07-24)
+
 ## [0.1.48](https://github.com/newjersey/innovation-engineering/compare/v0.1.47...v0.1.48) (2026-07-24)
+
 ## [0.1.47](https://github.com/newjersey/innovation-engineering/compare/v0.1.46...v0.1.47) (2026-07-23)
 
 ### Documentation
 
 * clarify AWS CLI setup instructions ([dbb0b40](https://github.com/newjersey/innovation-engineering/commit/dbb0b40944e99e799da640d45c5cb89abc1d16eb))
+
 ## [0.1.46](https://github.com/newjersey/innovation-engineering/compare/v0.1.45...v0.1.46) (2026-07-20)
 
 ### Documentation
