@@ -21,17 +21,15 @@ If you would like to see Claude or Claude Code become a procured service, please
 
 :::
 
-:::caution[Fable 5 is not available]
+:::note[Fable 5 requires a ZDR exemption]
 
-Claude Fable 5 is not conformant with NJ state AI guidelines and cannot be
-used. API requests to Fable return:
+Fable 5 and 5.1 are available on Bedrock for NJIA use under an Enterprise
+Frontier Safeguards (EFS) zero-data-retention exemption through
+**December 31, 2026**.
 
-```text
-API Error: 400 data retention mode 'default' is not available for this model
-```
-
-Fable will remain unavailable until this data retention mode is supported.
-See [Zero data retention and Fable 5](#zero-data-retention-and-fable-5) below.
+After that date, traffic is retained with automated safety monitoring (no human
+review). Re-confirm conformance with NJ AI guidelines before then. See
+[Zero data retention and Fable 5](#zero-data-retention-and-fable-5) below.
 
 :::
 
@@ -366,17 +364,17 @@ Web Fetch uses Haiku — so you can pin each role independently.
   "env": {
     "ANTHROPIC_DEFAULT_OPUS_MODEL": "us.anthropic.claude-opus-5",
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "us.anthropic.claude-sonnet-5",
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+    "ANTHROPIC_DEFAULT_FABLE_MODEL": "us.anthropic.claude-fable-5-1"
   }
 }
 ```
 
 :::note
 
-`ANTHROPIC_DEFAULT_FABLE_MODEL` exists for providers where Fable 5 is
-available, but Claude Fable 5 requires data retention and cannot be used if your
-AWS account enforces zero data retention. Omit it if your org uses ZDR. See
-[Data retention on Bedrock](#zero-data-retention-and-fable-5) below.
+`ANTHROPIC_DEFAULT_FABLE_MODEL` pins the model behind the `fable` alias. See
+[Zero data retention and Fable 5](#zero-data-retention-and-fable-5) below for
+the data retention terms that apply to Fable.
 
 :::
 
@@ -390,21 +388,28 @@ Data retention on Bedrock is controlled by
 not by Claude Code configuration. There is no Claude Code environment variable
 to enable ZDR for Bedrock users.
 
-Claude Fable 5 **requires** data retention and will fail with a `400` error if
-your AWS account has data retention disabled:
+Fable 5 and 5.1 are available under an Enterprise Frontier Safeguards (EFS)
+zero-data-retention exemption that runs through **December 31, 2026**. Prompts
+and outputs are not retained during that period.
+
+After December 31, 2026, Fable traffic is subject to retention with automated
+safety monitoring: pattern detection across many requests, not human review of
+individual prompts. Re-confirm conformance with NJ AI guidelines before the
+exemption lapses.
+
+Fable is only reachable through a cross-region inference profile; on-demand
+throughput is not supported. Use `us.anthropic.claude-fable-5-1` rather than the
+bare `anthropic.claude-fable-5-1` model ID, which returns:
 
 ```text
-API Error: 400 data retention mode 'default' is not available for this model
+Invocation of model ID anthropic.claude-fable-5-1 with on-demand throughput isn't supported. Retry your request with the ID or ARN of an inference profile that contains this model.
 ```
 
-Because most NJ state accounts enforce zero data retention, Fable 5 is not
-conformant with NJ state AI guidelines and is not available for use until
-Bedrock supports this data retention mode. For this reason:
-
-- Do not set `ANTHROPIC_DEFAULT_FABLE_MODEL` if your org uses ZDR.
-- The recommended `settings.json` below excludes `fable` and `best` from
-  `availableModels` to prevent accidental selection (the `best` alias resolves
-  to Fable 5 where available).
+The recommended `settings.json` below adds `fable` to `availableModels` but still
+leaves out `best`. The `best` alias resolves dynamically to the strongest
+available model and has no corresponding `ANTHROPIC_DEFAULT_BEST_MODEL`
+variable, so there is no way to pin what it selects — prefer naming a tier
+explicitly.
 
 ## Current Preferred `settings.json`
 
@@ -417,10 +422,11 @@ Bedrock supports this data retention mode. For this reason:
     "CLAUDE_CODE_DISABLE_1M_CONTEXT": "1",
     "ANTHROPIC_DEFAULT_OPUS_MODEL": "us.anthropic.claude-opus-5",
     "ANTHROPIC_DEFAULT_SONNET_MODEL": "us.anthropic.claude-sonnet-5",
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+    "ANTHROPIC_DEFAULT_FABLE_MODEL": "us.anthropic.claude-fable-5-1"
   },
   "model": "opusplan",
-  "availableModels": ["opusplan", "opus", "sonnet", "haiku"],
+  "availableModels": ["opusplan", "opus", "sonnet", "haiku", "fable"],
   "enabledPlugins": {
     "typescript-lsp@claude-plugins-official": true,
     "commit-commands@claude-plugins-official": true,

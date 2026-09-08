@@ -31,16 +31,14 @@ speak with your director.
 
 :::
 
-:::caution[Fable 5 is not available]
+:::note[Fable 5 requires a ZDR exemption]
 
-Claude Fable 5 is not conformant with NJ state AI guidelines and cannot be
-used. API requests to Fable return:
+Fable 5 and 5.1 are available on Bedrock for NJIA use under an Enterprise
+Frontier Safeguards (EFS) zero-data-retention exemption through
+**December 31, 2026**.
 
-```text
-API Error: 400 data retention mode 'default' is not available for this model
-```
-
-Fable will remain unavailable until this data retention mode is supported.
+After that date, traffic is retained with automated safety monitoring (no human
+review). Re-confirm conformance with NJ AI guidelines before then.
 
 :::
 
@@ -117,6 +115,8 @@ identifiers), follow Anthropic's
 and
 [Configuration reference](https://claude.com/docs/third-party/claude-desktop/configuration)
 docs.
+
+Fable 5 will not appear in Claude Desktop until you've updated your managed profile with one that includes the Fable model identifiers.
 
 :::
 
