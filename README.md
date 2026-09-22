@@ -104,16 +104,23 @@ see fit.
 
 ### Process
 
-See the [adding docs](https://github.com/newjersey/innovation-engineering/meta/adding-docs/) page
+See the [adding docs](https://newjersey.github.io/innovation-engineering/meta/adding-docs/) page
 for all info!
 
 ### General Workflow
 
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a pull request
+NJIA engineers have write access and work on branches in this repo (no fork needed). Outside
+contributors: fork first, then follow the same steps.
+
+1. Create a branch (`git checkout -b add-lighthouse-guide`)
+2. Add or edit files in `src/content/docs`
+3. Commit with a [conventional commit](https://www.conventionalcommits.org/) message
+   (`git commit -m 'docs: add lighthouse guide'`)
+4. Push and open a pull request, then request review per our
+   [code review guidelines](https://newjersey.github.io/innovation-engineering/reference/code-review/)
+5. Squash and merge to `main`. GitHub Pages redeploys automatically.
+
+Small fixes (typos, grammar, clarity) can go straight to `main`.
 
 ## License
 
