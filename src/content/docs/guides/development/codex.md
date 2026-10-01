@@ -49,7 +49,7 @@ If you are looking for the analogous Claude Code setup, see
 Create or edit `~/.codex/config.toml`:
 
 ```toml
-model = "openai.gpt-5.6-sol"
+model = "us.openai.gpt-6.1-sol"
 model_provider = "amazon-bedrock"
 
 [model_providers.amazon-bedrock.aws]
@@ -76,20 +76,24 @@ AWS_PROFILE=<profile-name> aws bedrock list-inference-profiles \
   --output table
 ```
 
+OpenAI models on Bedrock only support inference-profile invocation, not
+on-demand throughput. Use the `us.`-prefixed profile ID (e.g.
+`us.openai.gpt-6.1-sol`), not the bare model ID or `global.`-prefixed models.
+
 The Codex Bedrock path can expose OpenAI model IDs through Bedrock even when
 they do not appear in the standard Bedrock catalog output. If
-`openai.gpt-5.6-sol` is missing from the AWS command output, test the Codex
+`us.openai.gpt-6.1-sol` is missing from the AWS command output, test the Codex
 runtime path directly:
 
 ```shell
 AWS_PROFILE=<profile-name> codex exec --ephemeral \
-  -m openai.gpt-5.6-sol \
+  -m us.openai.gpt-6.1-sol \
   -c 'model_provider="amazon-bedrock"' \
   "Reply with exactly: model-ok"
 ```
 
 Expected result: Codex starts with `provider: amazon-bedrock`, uses
-`model: openai.gpt-5.6-sol`, and returns `model-ok`. This command makes a real
+`model: us.openai.gpt-6.1-sol`, and returns `model-ok`. This command makes a real
 model request, so it may incur minimal Bedrock usage.
 
 :::
@@ -154,7 +158,7 @@ preferred `~/.codex/config.toml` reference for engineers using Bedrock:
 
 ```toml
 # For Amazon Bedrock:
-model = "openai.gpt-5.6-sol"
+model = "us.openai.gpt-6.1-sol"
 model_provider = "amazon-bedrock"
 model_reasoning_effort = "high"
 personality = "pragmatic"
@@ -232,5 +236,5 @@ see
 | Codex uses the wrong AWS account         | The profile passed to `AWS_PROFILE` is not the account you expected                                    | Run `aws sts get-caller-identity --profile <profile-name>` and restart Codex with the correct `AWS_PROFILE=<profile-name> codex`  |
 | `AWS_PROFILE` seems ignored              | Explicit access-key env vars (`AWS_ACCESS_KEY_ID`, etc.) are taking precedence                         | Run `env \| grep AWS_`, then unset stale values with `unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN`            |
 | `AccessDeniedException` invoking a model | Missing IAM permission and/or model access not granted in Bedrock                                      | Confirm IAM includes Bedrock invoke permissions and check Bedrock model access for the AWS account and Region                     |
-| Region or model availability error       | The configured model is not available in the configured Region                                         | Confirm `openai.gpt-5.6-sol` works in `us-east-2`, or adjust `model` and `region` based on the Bedrock model availability list    |
+| Region or model availability error       | The configured model is not available in the configured Region                                         | Confirm `us.openai.gpt-6.1-sol` works in `us-east-2`, or adjust `model` and `region` based on the Bedrock model availability list |
 | `/status` does not show `amazon-bedrock` | Codex is not reading the expected `~/.codex/config.toml`, or `model_provider` is missing or misspelled | Confirm the config file is saved at `~/.codex/config.toml`, then restart Codex and check `/status` again                          |
