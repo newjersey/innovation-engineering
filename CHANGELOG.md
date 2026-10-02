@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.60](https://github.com/newjersey/innovation-engineering/compare/v0.1.59...v0.1.60) (2026-10-02)
+
+### Features
+
+* update Claude Desktop setup instructions ([29253d8](https://github.com/newjersey/innovation-engineering/commit/29253d86304c13ea33b6a0247e7b01f93910cfd6))
+
 ## [0.1.59](https://github.com/newjersey/innovation-engineering/compare/v0.1.58...v0.1.59) (2026-10-01)
 
 ## [0.1.58](https://github.com/newjersey/innovation-engineering/compare/v0.1.57...v0.1.58) (2026-09-22)
