@@ -38,6 +38,27 @@ with your director.
 
 :::
 
+:::danger[Be prepared to troubleshoot independently]
+
+Claude Desktop can be difficult to set up and use, even when you follow these
+instructions correctly. It's not designed for third-party inference from AWS as
+the primary login mechanism, it's not designed to work with Zscaler, and most of
+all, each computer it's installed on will have a unique setup for which this
+guide cannot fully account.
+
+While these steps should work, this guide cannot cover every warning, error,
+configuration problem, or unexpected side effect.
+
+For example, on Windows PCs managed by the Office of Information Technology,
+Zscaler’s inspection of encrypted traffic can cause certificate errors that
+prevent Claude Desktop from establishing secure network connections.
+
+Proceed only if you are comfortable troubleshooting independently. Tech Ops may
+not have capacity to support networking issues, Model Context Protocol server
+installation, project setup, or other Claude Desktop troubleshooting.
+
+:::
+
 :::note[Fable 5 requires a ZDR exemption]
 
 Fable 5 and 5.1 are available on Bedrock for NJIA use under an Enterprise
