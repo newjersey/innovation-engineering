@@ -23,7 +23,9 @@ All notable changes to this project will be documented in this file. See [commit
 ### Features
 
 * add chatgpt desktop install instructions ([e977d99](https://github.com/newjersey/innovation-engineering/commit/e977d999ae9578e861c78aeee981514a916881bc))
+
 ## [0.1.56](https://github.com/newjersey/innovation-engineering/compare/v0.1.55...v0.1.56) (2026-09-08)
+
 ## [0.1.55](https://github.com/newjersey/innovation-engineering/compare/v0.1.54...v0.1.55) (2026-08-10)
 
 ## [0.1.54](https://github.com/newjersey/innovation-engineering/compare/v0.1.53...v0.1.54) (2026-08-07)
