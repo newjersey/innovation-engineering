@@ -1,8 +1,6 @@
 ---
 title: Setting up an NJIA laptop
 description: Consistent & easy setup and installs
-sidebar:
-  order: 2
 ---
 
 When setting up a new NJIA Macbook, use the [nj-laptop-setup](https://github.com/newjersey/nj-laptop-setup) script to keep the setup consistent across machines.
