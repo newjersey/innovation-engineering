@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.63](https://github.com/newjersey/innovation-engineering/compare/v0.1.62...v0.1.63) (2026-10-22)
+
+### Documentation
+
+* guidance around billing codes and Claude desktop ([d4f381a](https://github.com/newjersey/innovation-engineering/commit/d4f381abf384efcb1a3765a3a0d01d2dc432af22))
+
 ## [0.1.62](https://github.com/newjersey/innovation-engineering/compare/v0.1.61...v0.1.62) (2026-10-13)
 
 ## [0.1.61](https://github.com/newjersey/innovation-engineering/compare/v0.1.60...v0.1.61) (2026-10-02)
