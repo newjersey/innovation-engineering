@@ -82,6 +82,16 @@ Confirm:
 - You have a budget in mind for your AI spend on that account.
 - You know whether your computer runs macOS or Windows.
 
+:::caution
+
+This tool really only works for users that whose time is associated with a
+single project. Users who switch between projects that are billed to different
+departments or agencies (for example, if you use different billing codes on your
+timesheets) will not be able to use this tool, since you can't switch AWS
+accounts on the fly.
+
+:::
+
 If you're looking for the analogous CLI setups instead, see
 [Configure Claude Code](/innovation-engineering/guides/development/claude-code-bedrock/)
 or [Configure Codex](/innovation-engineering/guides/development/codex/).
