@@ -47,19 +47,19 @@ export default defineConfig({
           label: "Guides",
           items: [
             {
-              label: "Getting Started",
+              label: "Development",
               collapsed: false,
+              items: [{ autogenerate: { directory: "guides/development" } }],
+            },
+            {
+              label: "Getting Started",
+              collapsed: true,
               items: [{ autogenerate: { directory: "guides/getting-started" } }],
             },
             {
               label: "Agency Collaboration",
               collapsed: true,
               items: [{ autogenerate: { directory: "guides/agency-collaboration" } }],
-            },
-            {
-              label: "Development",
-              collapsed: true,
-              items: [{ autogenerate: { directory: "guides/development" } }],
             },
             {
               label: "Github Actions",
