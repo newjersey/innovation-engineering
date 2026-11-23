@@ -1,0 +1,27 @@
+---
+title: Security, credential, and data incidents
+order: 3
+---
+
+Follow these steps **in addition to** the incident steps, at any hour.
+
+**This includes data exposure caused by a bug.** If anyone may have seen, received, or accessed personal information they weren't authorized to (for example, one applicant seeing another's record), the SISM treats it as a data breach (IR-09, Cat 7\) even when nothing malicious happened. Don't decide "it was a bug, not an attack" on your own; tell the IRT Coordinator.
+
+**You will never be penalized for reporting.** State policy prohibits interfering with or retaliating against anyone who reports or investigates a suspected security incident (SISM IR-03, OR-24). Report early, even if you turn out to be wrong.
+
+**If NJCCIC contacts us first** (their monitoring covers state systems around the clock), treat that as a declared incident: notify the IRT Coordinator, who opens the private security channel, and follow these steps.
+
+1. **Notify the IRT Coordinator immediately** (the Office CISO, or the TechOps Director or Chief of Staff if they're acting), by email and Slack, and by phone if you have a number. Don't wait until you're sure. The IRT Coordinator decides whether the 72-hour reporting clock has started. **If the incident looks active** (ongoing access, data still exposed, or a credential you can't revoke) **and you can't reach the IRT Coordinator within about an hour, call the NJCCIC hotline at 1.833.465.2242** or use [https\://www\.cyber.nj.gov/cyber-incident](https://www.cyber.nj.gov/cyber-incident). They have tools and staff we don't.  
+2. **Preserve and assemble evidence.** The engineers working the incident are responsible for gathering evidence in line with the SISM (IR-13, CP-13). Tech Ops is responsible for storing it and keeping the chain of custody.  
+   - Don't delete logs, instances, branches, or messages. Take snapshots before changing a system if you can.  
+   - Write down every command you run and when.  
+   - Collect what's relevant: log exports, snapshots, configuration and commit history, screenshots, and your command log. For each item, note who collected it, when, from where, and how. Include a checksum if you can generate one.  
+   - Upload everything to the incident's restricted SharePoint folder. Tech Ops creates the folder and controls access, version history, and the chain-of-custody record. Don't keep copies on laptops or in Slack.  
+3. **Contain, if it's safe and reversible.** If a credential, token, or key has been exposed, revoke or rotate it if you can do so safely, and record what you did. Don't attempt anything more invasive without the IRT Coordinator. **Don't restore** (redeploy from backup, re-enable access, bring a system back online) until the IRT Coordinator confirms the threat is gone and credentials have been rotated (SISM IR-12, CP-13).  
+4. **Keep details out of public places.** NJIA works in the open, so be careful: don't open public GitHub issues, PRs, or commits describing a vulnerability or exposure (see the repo's SECURITY.md). Work in a **private security channel** that the IRT Coordinator creates, with a neutral name (e.g., \#sec-\<yyyymmdd\>, not the name of the vulnerability). Its members are always the IRT Coordinator, the TechOps Director, and the Engineering Directors, plus the responders the IRT Coordinator adds.  
+5. **The IRT Coordinator handles external reporting**, including:  
+   - the cybersecurity incident report to NJOHSP / NJCCIC within 72 hours of discovery (P.L. 2023, c.19; SISM IR-03), coordinated with the partner agency's CISO when it's their data, so there's one agreed filer;  
+   - breach-notification review if personal data may have been exposed;  
+   - notifying the partner agency whose data or system is involved, and NJOIT if state infrastructure is involved;  
+   - a Cybersecurity Event Report to Treasury Records Management Services if public records were damaged or lost.  
+6. **Keep the c.19 notification separate from the incident review.** The statute makes the notification confidential; the review may not be. Put sensitive details in the review's restricted appendix, not the body.

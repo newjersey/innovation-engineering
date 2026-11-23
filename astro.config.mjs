@@ -67,6 +67,11 @@ export default defineConfig({
               items: [{ autogenerate: { directory: "guides/github-actions" } }],
             },
             {
+              label: "Incident Response",
+              collapsed: true,
+              items: [{ autogenerate: { directory: "guides/incident-response" } }],
+            },
+            {
               label: "Monitoring & Analytics",
               collapsed: true,
               items: [{ autogenerate: { directory: "guides/monitoring" } }],
