@@ -1,0 +1,53 @@
+---
+title: Incident review
+order: 4
+---
+
+## How to use this template
+
+### Purpose
+
+The purpose of an incident review is for the organization to learn: to understand how the system actually behaves and why the people involved made the choices they did. Fixes are a valuable byproduct, not the point. A review has succeeded when an engineer who joins in six months can read it and understand what happened, why it made sense at the time, and what we know now that we didn't before. If all they get is a timeline and three tickets, it's a receipt, not a review.
+
+### Ground rules
+
+- **Blame-aware.** We assume everyone acted reasonably with the information they had. We name people as participants, never as causes. When you notice yourself reaching for "should have," stop and ask what made the actual choice reasonable.  
+- **Ask "what" and "how," not "who" and "why."** "How did the deploy reach production without the check running?" rather than "Why didn't you run the check?"  
+- **Write it soon.** Hold the review meeting within three working days for SEV1 and SEV2, within two weeks otherwise. Publish the document within a week of the meeting. Later is cleaner and worse.  
+- **Separate the documents.** The statutory c.19 report, the public status post, and this review are different documents for different audiences with different legal status.  
+- **Contributing factors, not root cause.** During the incident, hunting for "the cause" is fine. In the review, it isn't; it stops the analysis at the first plausible answer.
+
+### When to write one (triggers)
+
+A review is required whenever the incident met any of the leadership escalation conditions in the [Incident Response playbook](http://incident-response-playbook.md#when-to-escalate-to-leadership): SEV1 or SEV2; any security, credential, or data involvement, even suspected (which also triggers Section 1); a partner agency escalation; a threatened benefits, tax, or legal deadline; likely public attention; use of a pre-defined playbook; or a repeat incident. A Light-tier review is encouraged for anything else, and anyone, including a partner agency, can ask for one. Near misses qualify.
+
+### Choosing a tier
+
+| Tier | When | Required sections | Typical effort |
+| :---- | :---- | :---- | :---- |
+| **Light** | SEV3–4, near misses, short internal-only impact | Header, 1, 2, 3, 4 (brief), 7, 10 | One author, 1–2 hours, optional 30-minute meeting |
+| **Standard** | SEV2, any user-visible impact, any partner-agency escalation | All of Light plus 5, 6, 8, 9, 11A, 12 | One author plus a 60-minute meeting with responders |
+| **Full** | SEV1, any security or data incident, cross-agency incidents, repeat incidents, anything leadership or a partner requests | Everything, with a facilitator who was not a responder, short interviews with responders before the meeting, and 11C reviewed before publication | Facilitator plus author; a week of elapsed time |
+
+If you are unsure, go one tier up.
+
+### Severity
+
+Severity levels (SEV1–4) are defined in the [Incident Response playbook](http://incident-response-playbook.md#severity). Use the severity assigned during the incident, corrected if you learned more afterward.
+
+### Running the review meeting (Standard and Full)
+
+Spend most of the meeting (roughly two-thirds) walking the timeline and the narrative, asking participants what they saw and what they believed at each point. Park proposed fixes on a list as they come up; do not debate them yet. Only in the last part of the meeting, turn to contributing factors and actions. For Full tier, the facilitator should circulate a draft of Sections 4 and 7 to participants before the meeting so there are no surprises in the room.
+
+### Publishing
+
+Default to publishing the review where the team and partner agencies can read it. Review Section 11C before any wider publication, and ask counsel if you are unsure about OPRA treatment. Public versions should drop Appendix C and may summarize Appendix B. Accessible formatting applies: headings in order, tables with headers, plain language, no information carried only by color or screenshots.
+
+### Keeping it alive
+
+Someone owns the action check-in at the 30-day mark. The team reviews open actions from all reviews monthly. Once a quarter, look across reviews for recurring factors; that cross-incident view is where the largest improvements come from.
+
+---
+
+(insert template link here)
+

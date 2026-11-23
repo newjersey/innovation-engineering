@@ -1,0 +1,33 @@
+---
+title: Incident severity scale
+order: 2
+---
+
+Assign a severity as soon as you can; it's fine to change it as you learn more. If you're between two levels, pick the higher one.
+
+| Severity | Description | Examples |
+| :---- | :---- | :---- |
+| SEV1 | Service unavailable or materially wrong for most users; confirmed data exposure or loss; a benefits, tax, or legal deadline put at risk; any threat to someone's safety; an incident likely to spread to other systems or agencies | Application form down on a filing deadline; personal data visible to the wrong people; malware on a shared system |
+| SEV2 | Significant degradation, or a subset of users blocked; a suspected security incident; a partner agency unable to do its work | 20% of lookups fail; a leaked credential; caseworkers can't load records |
+| SEV3 | Minor degradation with a workaround; internal-only impact | Slow page loads; an admin report fails |
+| SEV4 | Cosmetic issue, or a near miss caught before anyone was affected | Broken image; a bad deploy caught in staging |
+
+Security incidents: SISM categories and severity
+
+The SISM requires every security incident to be given a category (IR-09) and a High / Medium / Low severity (IR-10). We keep SEV1–4 for everything and also record the SISM category and severity for security incidents, in the incident channel, in the NJCCIC report, and in the incident review header. The IRT Coordinator confirms both.
+
+| SISM category | What it means | Our response path | Typical NJIA severity |
+| :---- | :---- | :---- | :---- |
+| Cat 0: Security Testing | Approved penetration tests and security exercises | Not an incident by itself. Coordinate tests with the IRT Coordinator in advance so they aren't mistaken for attacks. If a test causes real user impact, handle that impact as an operational incident. | n/a |
+| Cat 1: Unauthorized Access | Someone gains access to a system, application, or data they aren't authorized for | Security path; report to NJCCIC | SEV1 if personal or restricted data or production systems are involved; otherwise SEV2 |
+| Cat 2: Denial of Service | An attack that impairs a service by exhausting its resources | Security path; report to NJCCIC. An outage with no attack behind it is not Cat 2; it's an operational incident. | SEV1 or SEV2 by impact |
+| Cat 3: Malicious Code | Malware, ransomware, or other malicious code installed on a system | Security path; report to NJCCIC. Don't restore until the IRT Coordinator confirms the threat is gone. | SEV1 |
+| Cat 4: Improper Usage | A policy violation, e.g., putting personal data into an unapproved AI tool | Security path through the IRT Coordinator; report to NJCCIC. HR may be involved. Any HR process stays separate from the blame-aware incident review. | SEV2 or SEV3 |
+| Cat 5: Scans, Probes, Attempted Access | Attempts to find or reach our systems that don't succeed | Routine blocked scans are expected on public sites; NJCCIC's monitoring sees them if the web app is behind Imperva. Report anything unusual or targeted. If an attempt succeeds, it becomes Cat 1\. | SEV4 |
+| Cat 6: Investigation | Suspicious or unusual activity that isn't confirmed yet | Security path; report to NJCCIC; re-categorize once confirmed or ruled out | SEV2 until resolved |
+| Cat 7: Data Breach | Personal information exposed, lost, or accessed without authorization, including by a bug | Security path; report to NJCCIC; breach-notification review | SEV1 if confirmed; SEV2 if suspected |
+| Not a SISM category | Non-malicious outages, bugs, and degradations with no security or data impact | Normal operational path; not reported to NJCCIC but should be tracked with a postmortem for the team to learn from. | By impact |
+
+If an incident spans more than one category, use the one with the highest severity (SISM IR-09).
+
+**Mapping to SISM severity:** SEV1 → High. SEV2 → Medium, or High if personal or restricted data is involved. SEV3–4 → Low.

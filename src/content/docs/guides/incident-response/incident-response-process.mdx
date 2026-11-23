@@ -1,0 +1,148 @@
+---
+title: Incident response process
+order: 1
+---
+
+This document outlines how the NJIA team responds to incidents involving NJIA projects and systems. It covers issues we can fix ourselves and issues caused by services we don't control (e.g., when an external service or a partner agency's system goes down).
+
+All incidents start with the assumption that the team has been alerted to an issue. Defining monitoring services is outside the scope of this process. Individual teams may adapt this process to their needs as long as **leadership notification** and the **security and legal steps** below remain in place.
+
+## The Short Version
+
+1. **Declare it.** Whoever notices becomes the incident commander and opens an incident through the appropriate channels.  
+2. **Stop the bleeding.** Take safe, reversible steps to reduce impact. You don’t need permission to roll back.  
+3. **Notify leadership** if any escalation condition is met. If security, credentials, or user data might be involved, notify the IRT Coordinator (normally NJIA’s CISO)   
+4. **Keep people updated** on a predictable cadence, and always say when the next update will come.  
+5. **Close it out** with a resolution message, and write a [documented incident review](incident-review).
+
+## Hours of coverage
+
+This process applies during business hours only (Monday – Friday, 9am – 5pm ET). We're not asking anyone to be responsive outside of normal work hours at this time.
+
+Exception for security, credentials, and user data. If you discover an incident involving security, credentials, or user data at any time, send the leadership notification described below so it’s on record, and follow the steps in [Security, credential, and data incidents](#security-credential-and-data-incidents). New Jersey law (P.L. 2023, c.19) requires public agencies to report cybersecurity incidents to the NJ Office of Homeland Security and Preparedness (via NJCCIC) within 72 hours, and the Statewide Information Security Manual (SISM IR-03) counts those hours **from discovery**.
+
+NJIA does not run an on-call rotation. Instead: NJIA system logs should be set up to forward to the NJCCIC SIEM (SISM AU-04, AU-12), so NJCCIC's around-the-clock monitoring can cover our systems when we're not watching. Each team should make sure every production system is forwarding.
+
+## NJIA leadership
+
+Throughout this document, "NJIA leadership" means:
+
+- Office CISO
+- Office Chief of Staff
+- TechOps Director
+- Engineering Directors
+
+The Office CISO is NJIA's Incident Response Team (IRT) Coordinator under the SISM (IR-07). The TechOps Director or the Office Chief of Staff serves as IRT Coordinator when the CISO delegates the role or is unavailable.
+
+### When to escalate to leadership
+
+Notify NJIA leadership if **any** of the following is true:
+
+* It is SEV1 or SEV2  
+* It involves the security of a system, a credential, or a user's data, **even if only suspected**  
+* A partner agency has escalated to us, or needs to be told  
+* It threatens a benefits, tax, or legal deadline  
+* It is likely to draw public, press, or legislative attention  
+* It requires the use of a pre-defined playbook (see [Procedures and playbooks](#procedures-and-playbooks))  
+* It is a repeat of a recent incident
+
+There are no fixed thresholds beyond these. Use your judgment, and if you're unsure, escalate. An unnecessary notification is cheap; a missed one is not.
+
+For all other incidents, use your best judgment on who to notify and how to proceed.
+
+### How to notify leadership
+
+Send both of the following:
+
+1. Email to all NJIA leadership, using the subject line: `[Incident][SEV#] <project> – <short description>`.  
+2. Slack message to leadership with a link to (or summary of) the email, so it's seen quickly.
+
+Include in the notification:
+
+* What's happening and when it started  
+* Who or what is impacted (users, systems, data, partner agencies)  
+* Severity, and whether security or user data might be involved  
+* Whether it's in our control or a dependency (it's fine to say "unknown yet")  
+* Who is the incident commander (or reporting team member)  
+* What's being done now, and when the next update will come
+
+Send updates on the same email thread as the incident progresses and when it's resolved.
+
+## Roles
+
+Keep roles minimal, but keep them explicit. On a small incident one person may hold all of them.
+
+* **Incident commander (IC)**. The team member who discovers or is leading the issue is the [incident commander](https://www.atlassian.com/incident-management/incident-response/incident-commander), the primary point of contact. The IC coordinates; they don't have to be the one fixing it. The IC may hand off the role, as long as the handoff is explicit in the incident channel and leadership is told who the new IC is.
+* **Scribe**. Keeps a running log in the incident channel of what was observed, what was tried, and what people believed at the time, with timestamps. For SEV1 and SEV2, the IC should ask someone else to do this. 
+* **Partner liaison**. For incidents affecting a partner agency, one person (often the product owner) is the single point of contact with that agency, so they hear one consistent story.
+
+## Incidents we control
+
+Issues with our systems that we can fix with a code or configuration update. If you're not sure yet whether the cause is ours or a dependency's, treat it as ours until you know.
+
+The [incident commander](https://www.atlassian.com/incident-management/incident-response/incident-commander) (IC) is empowered to take safe, reversible steps to reduce impact without waiting for approval: rolling back a deploy, turning off a feature flag, putting up a service banner, or scaling up. 
+
+Get a leadership decision before actions that are irreversible or externally visible: deleting or modifying user data, public statements beyond a standard service banner, contacting residents directly, or anything involving press.
+
+### Declare and assess the incident
+
+Open a Slack channel for the incident (e.g., \#inc-\<project\>-\<yyyymmdd\>) and post a one-line description, the severity, and who the IC is. Do the investigation there, not in DMs, so the record is complete.
+
+The IC answers these questions, pulling in whoever can help:
+
+* **Impact:** Who and how many are affected and what are they experiencing?
+* **Severity:** [Which severity level](incident-severity-scale)?
+* **Security and data:** Could credentials, personal data, or system integrity be involved? If yes, follow [Security, credential, and data incidents](data-incidents) in parallel.
+* **Remediation:** What's the fastest safe way to reduce impact, and what's the expected effort and timeline for a real fix?
+
+### Communication expectations based on severity
+
+| Severity | Leadership updates | Partner agency | Users |
+| :---- | :---- | :---- | :---- |
+| SEV1 | At least hourly, plus at major changes | Notify as soon as impact is confirmed; update with leadership | Service banner as soon as impact is confirmed |
+| SEV2 | Every few hours, plus at major changes | Notify if their work or their users are affected | Banner if users are blocked |
+| SEV3 & SEV4 | At resolution, if notified at all | Only if they're affected | Usually none |
+
+### Procedures and playbooks
+
+| Procedure | Usage |
+| ----- | ----- |
+| TBD | TBD |
+
+### Example
+
+1. Incident happens  
+2. A team member notices it, becomes the IC, and opens an incident channel  
+3. The IC assesses impact and severity, and checks whether security or data is involved  
+4. The IC takes safe, reversible steps to reduce impact  
+5. If an escalation condition is met, the IC notifies NJIA leadership via email and Slack  
+6. The IC makes a recommendation for anything beyond reversible mitigation, and communicates with stakeholders (partner agency, users) on the cadence above  
+7. The IC monitors and reports progress on the email thread until resolved  
+8. Once resolved, the IC sends a resolution message and makes sure an incident review is written (and a playbook added, if applicable)
+
+### Incident review
+
+Engineers track the incident through to closure in an incident review, our name for a postmortem. Write one using the [incident review template](http://incident-review-template.md) whenever an escalation condition is met. For everything else, a Light-tier review is encouraged; near misses are often the cheapest lessons.
+
+* **Who writes it:** The IC, or someone the IC names in the resolution message.
+* **When:** Hold the review meeting within 3 working days for SEV1 and SEV2, within 2 weeks otherwise. Publish within a week of the meeting.
+* **Tone:** Blame-aware. Name people as participants, never as causes.
+* **Security incidents:** The incident review also serves as NJIA's after-action review and written incident summary under the SISM (PM-13.1, IR-07). Store it in the incident's restricted SharePoint folder alongside the evidence, and record the SISM category and severity in its header.
+* **Follow-ups:** Every action has a named owner, due date, and tracker link. The engineering directors review open actions monthly.
+
+Incident records live in SharePoint and are managed by Tech Ops.
+
+## Incidents we don’t control
+
+Incidents caused by services the NJIA team does not control should be reported to the affected service or agency and monitored in case any user messaging is necessary. These issues do not require an incident commander, but the reporting team member should notify NJIA leadership with a link to where the issue was reported (support ticket or channel link) so it's known the issue is being tracked. 
+
+An outage caused by a dependency is still significant, and you should still assess the impact. Identifying a dependency as the cause changes your response, not its importance. Make sure the team responsible for the upstream service is aware of the outage; if they are not, escalate the issue to them. If you need to escalate to another agency, inform the product owners and copy them, along with NJIA leadership, on all communications with other teams.
+
+### Example
+
+1. Incident happens
+2. A team member notices it
+3. That person checks whether it's been reported to the service owner, and reports it if not
+4. That person notifies NJIA leadership via email and Slack, including a link to the report
+5. The team monitors the issue and determines whether user messaging is needed
+6. Once resolved, the reporting team member completes the documented incident retro if an escalation condition was met
